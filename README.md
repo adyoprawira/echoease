@@ -9,7 +9,7 @@
 | 3  | Putri Anadamia binti Zulkafli     | 49400252       | Putri-Anadamia  | p.bintizulkafli@student.uq.edu.au             |
 | 4  | Darren Marcello Sidabutar         | 49800526       | DarrenM07       | d.sidabutar@student.uq.edu.au                 |
 
-
+---
 
 # 📌 Project Overview
 
@@ -25,10 +25,10 @@ The following table outlines the assigned responsibilities for each team member,
 
 | Team Member | Task                  | Deadline        |
 |-------------|-----------------------|-----------------|
-| Darren      | Interview 9 customers | Next Wednesday  |
-| Adyo        | Interview 9 customers | Next Wednesday  |
-| Farisha     | Interview 9 customers | Next Wednesday  |
-| Putri       | Interview 9 customers | Next Wednesday  |
+| Darren      | Interview 4 customers | Next Wednesday  |
+| Adyo        | Interview 4 customers | Next Wednesday  |
+| Farisha     | Interview 4 customers | Next Wednesday  |
+| Putri       | Interview 4 customers | Next Wednesday  |
 
 ---
 
