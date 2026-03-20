@@ -23,13 +23,14 @@
 
 The following table outlines the assigned responsibilities for each team member, including their tasks and deadlines.
 
-| Team Member | Task                  | Deadline        |
-|-------------|-----------------------|-----------------|
-| Darren      | Interview 4 customers | Next Wednesday  |
-| Adyo        | Interview 4 customers | Next Wednesday  |
-| Farisha     | Interview 4 customers | Next Wednesday  |
-| Putri       | Interview 4 customers | Next Wednesday  |
-
+| Team Member | Task                            | Deadline        |
+|-------------|---------------------------------|-----------------|
+| Darren      | Interview 4 customers           | Next Wednesday  |
+| Adyo        | Interview 4 customers           | Next Wednesday  |
+| Farisha     | Interview 4 customers           | Next Wednesday  |
+| Putri       | Interview 4 customers           | Next Wednesday  |
+| ALL         | Upload audio recordings (Teams) | Next Friday   | 
+| ALL         | Audio transcripts docs (Git)    | Next Friday    |
 ---
 
 ## 📝 Notes
