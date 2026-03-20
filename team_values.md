@@ -1,13 +1,21 @@
-### CONTRACT
+## 🤝 Team Values (Contract)
 
-# Punctual — Come to meetings, whether offline or online, on time.
+We agree to uphold the following values to ensure effective teamwork and a positive working environment:
 
-# Responsive — Reply to messages in the group during school hours.
+- **Punctuality**  
+  Attend all meetings (online or offline) on time.
 
-# Communicate — Tell the team about all progress and any problems you face.
+- **Responsiveness**  
+  Respond to group messages within reasonable time, especially during school hours.
 
-# Discipline — Finish your work by the deadline.
+- **Communication**  
+  Keep the team informed about your progress and any issues you encounter.
 
-# Support — Be there and help each other.
+- **Discipline**  
+  Complete assigned tasks and meet all deadlines.
 
-# Professional — Don’t play around.
+- **Support**  
+  Collaborate actively and support each other when needed.
+
+- **Professionalism**  
+  Maintain a serious and respectful attitude towards the project and team.
