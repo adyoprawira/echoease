@@ -1,37 +1,40 @@
 # 54_Richard
 
-### Member 1
-Name: Adyo Arkan Prawira
+## 👥 Team Members
 
-UQ Student Number: 49943937
+| No | Name                              | Student Number | GitHub Username | UQ Email Address                              |
+|----|-----------------------------------|----------------|-----------------|-----------------------------------------------|
+| 1  | Adyo Arkan Prawira                | 49943937       | adyoprawira     | adyoarkan.prawira@student.uq.edu.au           |
+| 2  | Nur Nabiha Farisha binti Mohd Kamsin | 49401026    | Nabiha1702      | n.bintimohdkamsin@student.uq.edu.au           |
+| 3  | Putri Anadamia binti Zulkafli     | 49400252       | Putri-Anadamia  | p.bintizulkafli@student.uq.edu.au             |
+| 4  | Darren Marcello Sidabutar         | 49800526       | DarrenM07       | d.sidabutar@student.uq.edu.au                 |
 
-Github Username: adyoprawira
+---
 
-UQ Email Address: adyoarkan.prawira@student.uq.edu.au
+# 📌 Project Overview
 
-### Member 2
-Name: Nur Nabiha Farisha binti Mohd Kamsin
+## 🔗 Table of Contents
+- [Task Allocation](#-task-allocation)
+- [Notes](#-notes)
 
-UQ Student Number: 49401026
+---
 
-Github Username: Nabiha1702
+## 📋 Task Allocation For Week 5
 
-UQ Email Address: n.bintimohdkamsin@student.uq.edu.au
+The following table outlines the assigned responsibilities for each team member, including their tasks and deadlines.
 
-### Member 3
-Name: Putri Anadamia binti Zulkafli
+| Team Member | Task                  | Deadline        |
+|-------------|-----------------------|-----------------|
+| Darren      | Interview 4 customers | Next Wednesday  |
+| Adyo        | Interview 4 customers | Next Wednesday  |
+| Farisha     | Interview 4 customers | Next Wednesday  |
+| Putri       | Interview 4 customers | Next Wednesday  |
 
-UQ Student Number: 49400252
+---
 
-Github Username: Putri-Anadamia
+## 📝 Notes
 
-UQ Email Address: p.bintizulkafli@student.uq.edu.au
-
-### Member 4
-Name: Darren Marcello Sidabutar
-
-UQ Student Number: 49800526
-
-Github Username: DarrenM07
-
-UQ Email Address: d.sidabutar@student.uq.edu.au
+- Each member is responsible for conducting interviews independently.
+- Ensure that all interviews are completed before the deadline.
+- Key insights from interviews should be documented and shared with the team.
+- Maintain clear and consistent communication throughout the process.
