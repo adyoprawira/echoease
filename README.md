@@ -29,8 +29,8 @@ The following table outlines the assigned responsibilities for each team member,
 | Adyo        | Interview 4 customers           | Next Wednesday  |
 | Farisha     | Interview 4 customers           | Next Wednesday  |
 | Putri       | Interview 4 customers           | Next Wednesday  |
-| ALL         | Upload audio recordings (Teams) | Next Friday   | 
-| ALL         | Audio transcripts docs (Git)    | Next Friday    |
+| ALL         | Upload audio recordings (Teams) | Next Friday     | 
+| ALL         | Audio transcripts docs (Git)    | Next Friday     |
 ---
 
 ## 📝 Notes
