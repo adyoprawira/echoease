@@ -26,3 +26,12 @@ UQ Student Number: 49400252
 Github Username: Putri-Anadamia
 
 UQ Email Address: p.bintizulkafli@student.uq.edu.au
+
+### Member 4
+Name: Darren Marcello Sidabutar
+
+UQ Student Number: 49800526
+
+Github Username: DarrenM07
+
+UQ Email Address: d.sidabutar@student.uq.edu.au
