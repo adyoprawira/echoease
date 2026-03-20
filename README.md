@@ -18,4 +18,11 @@ Github Username: Nabiha1702
 
 UQ Email Address: n.bintimohdkamsin@student.uq.edu.au
 
+### Member 3
+Name: Putri Anadamia binti Zulkafli
 
+UQ Student Number: 49400252
+
+Github Username: Putri-Anadamia
+
+UQ Email Address: p.bintizulkafli@student.uq.edu.au
