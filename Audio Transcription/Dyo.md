@@ -1,5 +1,7 @@
 ## Interview 1 (Exchange Student)
 
+Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%201_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=qVIPvi)
+
 | Question | Response |
 |----------|----------|
 | How do you manage your time juggling between school and personal matters? | I set aside just one hour to do something, like studying. It’s better than not doing it at all. |
@@ -12,6 +14,8 @@
 ---
 
 ## Interview 2 (Local Student)
+
+Recording link: [Listen to Interview 2](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%202_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=Usjwlr)
 
 | Question | Response |
 |----------|----------|
