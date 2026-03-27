@@ -247,7 +247,7 @@ Recording link: [Listen to Interview 4]
 |your financial, will you be okay with that?||                                              |
 ---------------------------------------------------------------------------------------------
 |So, can you introduce yourself?            ||Hello, my name is Adni. I'm the 2nd year      | 
-|                                           ||student Bachelor in Computer Science          |
+|                                           ||student Bachelor in Computer Science.         |
 ---------------------------------------------------------------------------------------------
 |So, my first question would be, how do you ||Um, I don't really have like an actual plan or|
 |manage your time juggling between school   ||whatsoever, but I did have like a reminder on |
@@ -255,18 +255,15 @@ Recording link: [Listen to Interview 4]
 |                                           ||of period and now I'm doing something similar |
 |                                           ||to that.                                      |
 ---------------------------------------------------------------------------------------------
-*need to edit on this part!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-|Alright, so, what do you do to get yourself||Usually, if I'm too stressed, I usually opt to|
-|out of stress?                             ||eat spicy food, so I will buy like Samyang two|
-|                                           ||times spicy. I don't know why, but it feels   |
-|                                           ||satisfying to eat spicy food, and then instead|
-|                                           ||of, other than that, I usually go to karaoke  |
-|                                           ||with my friends, just to realease some stress |
-|                                           ||and have some fun.                            |
+|Alright, so, what do you do to get yourself||I'm not sure about that, but usually I love to|
+|out of stress?                             ||I love to strolling around, usually, at       |
+|                                           ||evening or jogging, or doing some exercise,   |
+|                                           ||just to release stress, but I also kinda love |
+|                                           ||to talk to others when I'm in stress.         |
 ---------------------------------------------------------------------------------------------
-|Yeap, okay. So, like, is there any point in||There is some point in my life that I feel    |
+|Yeap. So, like, is there any point in      ||****There is some point in my life that I feel|
 |your life that makes you feel like giving  ||like giving up. Sometimes I feel like if it's,|
-|giving up, and why?                        ||if I'm too stressed and I feel like that I'm  |
+|giving up, and can you tell me why?        ||if I'm too stressed and I feel like that I'm  |
 |                                           ||too weak to do anything, and there's one,     |
 |                                           ||there's this one point where I feel like I    |
 |                                           ||I don't understand anything that I learnt.    |
