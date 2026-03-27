@@ -44,7 +44,7 @@ Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:v:/r/teams/Se
 
 | Question | Answer |
 |----------|--------|
-| Can you introduce your name and age? | My name is Ili Bahardin, and I am 27 years old. |
+| Can you introduce your name and age? | My name is Ili Baharudin, and I am 27 years old. |
 | What degree are you taking right now? | I am doing a Bachelor’s in Computer Science, majoring in Cybersecurity. |
 | How do you manage your time between school and personal matters? | I use a scheduling system in OneNote where I create a layout of pages for each day of the week. Within each day, I make a to-do list or checklist of tasks I want to complete. For miscellaneous tasks not related to school, I put them in a general box so I can attend to them later if they are not urgent. |
 | What do you do to manage your stress? | I try to engage in my hobbies, although it can be difficult when assignments are back-to-back. If I cannot engage in hobbies like arts, I watch dramas and take some time for myself as a form of entertainment outside of my studies. |
@@ -64,7 +64,7 @@ Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:v:/r/teams/Se
 
 | Question | Answer |
 |----------|--------|
-| Can you introduce your name and age? | Hi, my name is Reena Adriana Roddy, and I am currently 23 years old. |
+| Can you introduce your name and age? | Hi, my name is Riena Adriana Roddy, and I am currently 23 years old. |
 | What degree are you taking right now? | I am currently doing my Bachelor’s in Computer Science, majoring in Data Science. |
 | Did you give your consent for this recording? | Yes, I fully give my consent. |
 | How do you manage your time between school and personal matters? | During weekends, I fully dedicate my time to personal matters. However, during weekdays, it is slightly imbalanced as I focus more on school. At night, I usually log off from everything and rest. |
