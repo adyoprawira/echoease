@@ -1,6 +1,6 @@
 ## Interview 1 (Exchange Student)
 
-Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%201_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=qVIPvi)
+Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%202_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=Usjwlr)
 
 | Question | Response |
 |----------|----------|
@@ -15,7 +15,7 @@ Recording link: [Listen to Interview 1](https://uq.sharepoint.com/:u:/r/teams/Se
 
 ## Interview 2 (Local Student)
 
-Recording link: [Listen to Interview 2](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%202_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=Usjwlr)
+Recording link: [Listen to Interview 2](https://uq.sharepoint.com/:u:/r/teams/Section_7620_22283/Shared%20Documents/54_Richard/Interview%201_Adyo%20Arkan%20Prawira.m4a?csf=1&web=1&e=qVIPvi)
 
 | Question | Response |
 |----------|----------|
