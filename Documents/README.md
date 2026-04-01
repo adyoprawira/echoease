@@ -1,26 +1,40 @@
-Project Documentation: Student Well-being & Financial Support
-This folder contains the core strategy and research documents for our project. The project focuses on reducing friction for university students seeking mental health and financial support, specifically targeting international and part-time working students.
+# 📂 Project Documentation Index
 
-📂 File Directory
-1. [Test Cards](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/learning_cards.md)
-This document outlines our initial assumptions. It defines how we planned to verify our ideas using specific metrics and success criteria.
+| Section | Document | Description | Key Focus Area |
+|:---|:---|:---|:---|
+| **Phase 1: Planning** | [Test Cards](test_cards.md) | Our initial guesses and how we planned to test them. | Hypothesis & Success Metrics |
+| **Phase 2: Research** | [Interview Folder](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Interview/Iteration_1) | Data from 20 students regarding stress and money. | Primary Evidence |
+| **Phase 3: Analysis** | [Learning Cards](learning_cards.md) | What we learned and which ideas we changed. | Validated Insights |
+| **Phase 4: Strategy** | [Business Model Canvas](business_model_canvas.md) | The final plan for the support platform. | Value Proposition |
 
-Key Hypotheses: Intuitive services, Anonymity vs. Formal Entry, Financial Accessibility, and Self-Coping habits.
+---
 
-Includes: The list of 11 core interview questions used during our primary research.
+## 📋 1. Test Cards (The Assumptions)
+| Hypothesis | Goal | Test Method |
+|:---|:---|:---|
+| **Centralized Services** | Speed up help-seeking. | Time students finding the "Financial Aid" page. |
+| **Anonymity** | Reduce fear of judgment. | Compare preference: "Talk to Counselor" vs. "Quiz". |
+| **Financial Access** | Help working students. | Interview students on why they avoid asking for money. |
+| **Low-Effort** | Support self-coping. | Send check-in texts and measure response rates. |
 
-2. [Learning Cards](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/learning_cards.md)
-This is the results document. It synthesizes the data from our 20 student interviews and compares our observations against our original hypotheses.
+---
 
-Key Insights: Reveals the "Stigma" barrier in financial aid and the preference for "Low-Friction" human connection over automated quizzes.
+## 📝 2. Learning Cards (The Findings)
+| Hypothesis | Result | Key Discovery |
+|:---|:---|:---|
+| **Students will use services more if the process is intuitive and centralized** | ⚠️ **Partial** | Students know where to go, but services are closed at 2:00 AM. |
+| **Anonymity and low-effort entry points will increase service uptake compared to formal appointments** | ❌ **Refuted** | Quizzes feel "fake." Students want anonymous **human** chat. |
+| **Part-time working students avoid financial aid because it isn't "guided" or easy to access** | ❌ **Refuted** | It’s not "hard to find"; students feel **guilty** or want to be independent. |
+| **Students prefer self-coping unless an intervention is "extremely low-effort."** | ✅ **Accepted** | 100% of students use gym, music, or sleep before seeking help. |
 
-Decisions: Outlines whether we accepted, partially accepted, or refuted our initial ideas.
+---
 
-3. [Business Model Canvas](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/business_model_canvas.md)
-The strategic roadmap for our proposed solution. It defines how we create, deliver, and capture value for our student segments.
+## 🖼️ 3. Business Model Canvas (The Blueprint)
+| Component | Details |
+|:---|:---|
+| **Customer Segments** | International students, part-time workers, and "self-coping" students. |
+| **Value Proposition** | 24/7 support, low-friction access, and stigma-free financial aid. |
+| **Revenue Streams** | Freemium model, Uni partnerships, and Educational grants. |
+| **Key Channels** | Mobile App, Blackboard integration, and Social Media. |
 
-Value Proposition: Focuses on 24/7 after-hours support and reducing the "identity friction" students feel when seeking help.
-
-Revenue Model: Includes a Freemium structure and institutional university partnerships.
-
-
+---

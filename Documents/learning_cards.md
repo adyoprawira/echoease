@@ -48,7 +48,7 @@ Therefore, we will partially accept this hypothesis and investigate a new hypoth
 
 
 
-## Hypothesis 4 : Students prefer self-coping unless an intervention is "extremely low-effort."
+## Hypothesis 4 : Students prefer self-coping unless an intervention is "extremely low-effort".
 
 **HYPOTHESIS**
 We believed that students prefer self-coping unless an intervention is "extremely low-effort".
