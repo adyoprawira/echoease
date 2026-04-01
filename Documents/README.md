@@ -24,7 +24,7 @@
 |:---|:---|:---|
 | **Students will use services more if the process is intuitive and centralized** | ⚠️ **Partial** | Students know where to go, but services are closed at 2:00 AM. |
 | **Anonymity and low-effort entry points will increase service uptake compared to formal appointments** | ❌ **Refuted** | Quizzes feel "fake." Students want anonymous **human** chat. |
-| **Part-time working students avoid financial aid because it isn't "guided" or easy to access** | ❌ **Refuted** | It’s not "hard to find"; students feel **guilty** or want to be independent. |
+| **Part-time working students avoid financial aid because it isn't "guided" or easy to access** | ⚠️ **Partial** | Accessibility matters, but the stronger barriers are stigma, guilt, and self-reliance. |
 | **Students prefer self-coping unless an intervention is "extremely low-effort."** | ✅ **Accepted** | 100% of students use gym, music, sleep etc. before seeking help. |
 
 ---
