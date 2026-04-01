@@ -12,10 +12,10 @@
 ## 📋 1. Test Cards (The Assumptions)
 | Hypothesis | Goal | Test Method |
 |:---|:---|:---|
-| **Centralized Services** | Speed up help-seeking. | Time students finding the "Financial Aid" page. |
-| **Anonymity** | Reduce fear of judgment. | Compare preference: "Talk to Counselor" vs. "Quiz". |
-| **Financial Access** | Help working students. | Interview students on why they avoid asking for money. |
-| **Low-Effort** | Support self-coping. | Send check-in texts and measure response rates. |
+| **Centralized Services** | Speed up help-seeking. | Interview: Ask students if they would use the official uni portal for a 2:00 AM mental crisis. Ask why or why not |
+| **Anonymity** | Reduce fear of judgment. | Comparison: Ask students: "Would you rather take an anonymous quiz or have an anonymous chat with a real person?" |
+| **Financial Access** | Help working students. | Interview: Ask working students: "What is the #1 reason you haven't asked the uni for money?" (Check for answers like "guilt" or "self-reliance"). |
+| **Low-Effort** | Support self-coping. | Interview : Ask students their actions when stressed |
 
 ---
 
