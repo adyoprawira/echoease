@@ -34,8 +34,6 @@
 - Freemium model for optional premium features
 - Partnerships with student-support or mental health organizations
 
----
-
 ## Hypothesis Validation
 
 **Accepted Hypothesis**
