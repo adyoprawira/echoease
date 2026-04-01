@@ -22,7 +22,7 @@ Therefore, we will partially accept this hypothesis and further investigate a ne
 We believed that anonymity and low-effort entry points will increase service uptake compared to formal appointments.
 
 **OBSERVATIONS**
-We observed that the preference was highly divided. While several students emphasized that anonymity and data privacy are the most critical factors for feeling "safe," others explicitly rejected a "stress quiz," calling it "inaccurate" or "not enough." Many participants stated they preferred talking to a counselor specifically because they wanted experienced human advice and a way to organize their thoughts.
+We observed that the preference was highly divided. While several students emphasized that anonymity and data privacy are the most critical factors for feeling "safe," others explicitly rejected a "stress quiz," calling it "inaccurate" or "not enough." Many students stated they preferred talking to a counselor specifically because they wanted experienced human advice and a way to organize their thoughts.
 
 **LEARNING AND INSIGHTS**
 From that we learnt that while anonymity lowers the barrier to entry, a quiz is perceived as having low value. Students desire the "safety" of anonymity but the "utility" of a human conversation. The 80% criteria for the quiz preference was not met because students value the depth of counseling.
@@ -38,7 +38,7 @@ Therefore, we will reject the hypothesis that a quiz is the preferred low-effort
 We believed that part-time working students avoid financial aid because it isn't "guided" or easy to access.
 
 **OBSERVATIONS**
-We observed that the primary reasons for avoiding aid were not "effort" or "lack of knowledge," but rather "Internalized Self-Reliance" and "Imposter Syndrome." Students reported that they would rather work more hours or reduce their lifestyle than ask for money, with one participant stating they felt "other students deserve it more." Another student mentioned they had never even considered asking because they preferred to "just work through it."
+We observed that the primary reasons for avoiding aid were not "effort" or "lack of knowledge," but rather "Internalized Self-Reliance" and "Imposter Syndrome." Students reported that they would rather work more hours or reduce their lifestyle than ask for money, with one student stating they felt "other students deserve it more." Another student mentioned they had never even considered asking because they preferred to "just work through it."
 
 **LEARNING AND INSIGHTS**
 From that we learnt that the barrier is psychological and cultural rather than just navigational. Students view seeking financial aid as an admission of "failure" or "neediness," whereas working a tiring job is seen as a badge of independence.
@@ -54,7 +54,7 @@ Therefore, we will partially accept this hypothesis and investigate a new hypoth
 We believed that students prefer self-coping unless an intervention is "extremely low-effort".
 
 **OBSERVATIONS**
-We observed that 100% of the participants default to personal coping strategies—such as exercise, music, sleeping, or gaming—before seeking any external help. At 2:00 AM, students turn to friends, TikTok, or prayer because university services are closed and feel too "professional". One participant noted they would "keep their guard up" even with a counselor, making the interaction feel like "extra labor".
+We observed that 100% of the students default to personal coping strategies such as exercise, music, sleeping, or gaming—before seeking any external help. At 2:00 AM, students turn to friends, TikTok, or prayer because university services are closed and feel too "professional". One student noted they would "keep their guard up" even with a counselor, making the interaction feel like "extra labor".
 
 **LEARNING AND INSIGHTS**
 From that we learnt that students value "low-friction" over "low-effort". University support is high-friction because it requires a shift from a "student" identity to a "patient" identity. Self-coping is low-friction because it integrates with their daily life and current mood.
