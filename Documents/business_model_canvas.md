@@ -1,40 +1,49 @@
 # Business Model Canvas
 
-## Customer Segments
-- University students experiencing stress, time management difficulties, and mental fatigue  
-- International students facing financial pressure and limited support access  
-- Students who prefer self-coping rather than seeking formal help  
-- Part-time working students struggling to access financial or well-being support  
+**Customer Segments**
+- University students experiencing stress, burnout, or difficulty balancing academic and personal responsibilities
+- Students who prefer self-coping strategies before seeking formal support
+- International students facing financial pressure, tuition-related stress, and limited financial flexibility
+- Part-time working students who may avoid financial support due to self-reliance or stigma
+- Students seeking support outside normal university service hours, especially late at night
+
+**Value Propositions**
+- A low-friction and student-friendly support experience that feels less formal and more approachable than existing university services
+- Access to support pathways beyond office hours, especially during moments of peak stress
+- A hybrid support model that balances anonymity with meaningful human connection, rather than relying only on automated tools
+- Reframed financial support that reduces stigma and presents assistance as practical support rather than a sign of failure
+- Wellness support that fits naturally into students’ existing coping habits and daily routines
+
+**Channels**
+- Mobile application
+- University student portals or learning platforms
+- Social media platforms used by students
+- Student clubs, communities, and peer networks
+- Push notifications and in-app check-ins
+
+**Customer Relationships**
+- Anonymous and low-pressure first contact
+- Self-service access with optional escalation to human support
+- Personalized and context-sensitive recommendations
+- Ongoing engagement through gentle reminders and check-ins
+
+**Revenue Streams**
+- University partnerships and institutional licensing
+- Student well-being innovation grants
+- Government or education-sector funding
+- Freemium model for optional premium features
+- Partnerships with student-support or mental health organizations
 
 ---
 
-## Value Propositions
-- Provides a centralized and low-effort access point to student well-being services  
-- Reduces friction in seeking help by offering simple, intuitive, and immediate support  
-- Supports both independent coping (self-help tools) and guided support when needed  
-- Offers personalized prompts and interventions at the moment students experience stress  
-- Enables after-hours support when traditional university services are unavailable  
+## Hypothesis Validation
 
----
+**Accepted Hypothesis**
+- Students prefer self-coping unless an intervention is extremely low-friction. This shaped the model to prioritize passive, low-friction, and everyday support rather than formal intervention-first services.
 
-## Channels
-- Mobile application (primary platform)  
-- Integration with university platforms (e.g., Blackboard, student portals)  
-- Push notifications and in-app prompts  
-- Social media or student communities for awareness  
+**Refuted Hypothesis**
+- Anonymity and low-effort entry points alone do not automatically increase service uptake if they rely only on automated quizzes. Students still value meaningful human support, so the model shifted toward a hybrid approach that combines anonymity with optional human interaction.
 
----
-
-## Customer Relationships
-- Self-service interaction with optional guided support  
-- Personalized recommendations based on user behaviour or stress signals  
-- Anonymous and low-pressure interaction to increase trust  
-- Continuous engagement through reminders, check-ins, and nudges  
-
----
-
-## Revenue Streams
-- Freemium model (basic features free, advanced features premium)  
-- University partnerships or institutional licensing  
-- Government or educational grants for student well-being initiatives  
-- Potential collaboration with mental health organizations  
+**Partially Accepted Hypotheses**
+- Students value centralized services, but centralization alone is not enough because formal university systems often feel too administrative or inaccessible during high-stress moments. This influenced the model to emphasize approachable and after-hours support.
+- Financial aid is not avoided only because it is hard to access, but also because of stigma, guilt, and self-reliance. This shaped the model to reframe financial support in a more empowering and less judgment-heavy way.
