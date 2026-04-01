@@ -5,8 +5,8 @@
 | **Phase 1: Planning** | [Test Cards](test_cards.md) | Our initial guesses and how we planned to test them. | Hypothesis & Success Metrics |
 | **Phase 2: Research** | [Interview Folder](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Interview/Iteration_1) | Data from 20 students regarding stress and money. | Primary Evidence |
 | **Phase 3: Analysis** | [Learning Cards](learning_cards.md) | What we learned and which ideas we changed. | Validated Insights |
-| **Phase 4: Strategy** | [Business Model Canvas](business_model_canvas.md) | The final plan for the support platform. | Value Proposition |
-
+| **Phase 4: Strategy** | [Business Model Canvas](business_model_canvas.md) | The final plan for the support platform. | Business Model |
+| **Phase 4: Strategy** | [Value Proposition Canvas](value_proposition_canvas.md) | The relationship between student needs and the value of the proposed platform. | Customer Value |
 ---
 
 ## 📋 1. Test Cards (The Assumptions)
@@ -38,3 +38,11 @@
 | **Key Channels** | Mobile App, Blackboard integration, and Social Media. |
 
 ---
+
+## 💡 4. Value Proposition Canvas
+| Component | Details |
+|:---|:---|
+| **Customer Segment** | Students experiencing stress, burnout, and difficulty balancing study and personal life |
+| **Core Pains** | Formal support feels intimidating, after-hours support is limited, and financial help carries stigma |
+| **Core Gains** | Low-friction, safe, flexible, and approachable support |
+| **Value Proposition** | A student-friendly platform that combines low-pressure access, after-hours availability, and hybrid support options |
