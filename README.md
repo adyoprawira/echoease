@@ -39,3 +39,46 @@ The following table outlines the assigned responsibilities for each team member,
 - Ensure that all interviews are completed before the deadline.
 - Key insights from interviews should be documented and shared with the team.
 - Maintain clear and consistent communication throughout the process.
+
+---
+## 📋 Task Allocation For Week 8
+
+The following table outlines the assigned responsibilities for each team member, including their tasks and deadlines.
+
+| Team Member | Task                            | Deadline          |
+|-------------|---------------------------------|-------------------|
+| ALL         | Make hypotheses                 | Wednesday (Week8) |
+| ALL         | Create a set of questions       | Wednesday (Week8) |
+| ALL         | Create test cards               | Wednesday (Week8) |
+| Darren      | Interview 5 customers           | Friday (Week8)    |
+| Adyo        | Interview 5 customers           | Friday (Week8)    |
+| Farisha     | Interview 5 customers           | Friday (Week8)    |
+| Putri       | Interview 5 customers           | Friday (Week8)    |
+| ALL         | Upload audio recordings (Teams) | Friday (Week8)    | 
+| ALL         | Audio transcripts docs (Git)    | Friday (Week8)    |
+
+---
+
+## 📝 Notes
+
+- Refine the hypotheses based on the past valid hypotheses to create the test cards. 
+- Each member must contribute their idea about the set of questions.
+- Each member is responsible for conducting interviews independently.
+- Ensure that all interviews are completed before the deadline.
+- Key insights from interviews should be documented and shared with the team.
+- Maintain clear and consistent communication throughout the process.
+
+---
+## 📋 Task Allocation For Week 9
+
+The following table outlines the assigned responsibilities for each team member, including their tasks and deadlines.
+
+| Team Member | Task                            | Deadline          |
+|-------------|---------------------------------|-------------------|
+| ALL         | Make analysis based on interview| Wednesday (Week9) |
+| ALL         | Create a learning card          | Wednesday (Week9) | 
+| ALL         | Plan for the prototype          | Friday (Week9)    |
+
+---
+
+## 📝 Notes
