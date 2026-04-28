@@ -2,59 +2,48 @@
 
 ## Project Overview
 
-This MVP is a student wellbeing support platform designed to reduce barriers to accessing university support services. The system is integrated through a **Support Button inside UQ Blackboard**, allowing students to quickly access support without needing to search multiple university websites.
+The UQ Student Wellbeing Support Platform is a community-first digital support system designed to reduce barriers preventing students from accessing help.
 
-The platform focuses on three major student pain points:
+Instead of forcing students into formal counselling pathways immediately, this MVP creates a safer and lower-pressure first step through anonymous peer community support, with private support options available when needed.
 
-- Low awareness of existing support services  
-- High friction caused by booking systems and complicated processes  
-- Preference for relatable, immediate, and low-pressure support options  
+The platform is accessed through a **Support Button integrated inside UQ Blackboard**, allowing students to seek support directly from a system they already use daily.
 
 ---
 
 # Problem Statement
 
-Many university students experience stress related to academics, finances, loneliness, or mental health. Although support services already exist, students often avoid using them because:
+Although university wellbeing services already exist, many students do not use them.
+
+Common barriers identified include:
 
 | Problem | Description |
 |--------|-------------|
-| Low Visibility | Students do not know where support services are located |
-| Too Much Effort | Searching websites and booking appointments feels tiring |
-| Formal Systems | Traditional counselling systems feel intimidating |
-| Delayed Help | Slow responses reduce motivation to seek support |
-| Isolation | Students often prefer coping alone |
+| Low Awareness | Students are unaware of available support services |
+| Hidden Access Points | Support is difficult to find across separate websites |
+| Booking Friction | Appointments feel formal, stressful, and time-consuming |
+| Emotional Pressure | Many students are not ready for immediate counselling |
+| Isolation | Students often cope alone rather than seek help |
 
 ---
 
-# Proposed MVP Solution
+# Core MVP Solution
 
-A **Support Button inside Blackboard** redirects students to a dedicated wellbeing support website.
+A **Support Button inside Blackboard** redirects students to a dedicated wellbeing platform built around progressive support.
 
-This website provides:
+## Support Journey
 
-| Core Feature | Purpose |
-|-------------|---------|
-| Anonymous Forum | Students share experiences and support each other |
-| Private Chat | Students talk directly with trained professionals |
-| Quick Resources | Fast access to useful wellbeing information |
-| Low-Friction Access | No complicated booking system |
-
----
-
-# User Journey
-
-| Step | User Action | Result |
-|------|------------|--------|
-| 1 | Student opens Blackboard | Notices Support Button |
-| 2 | Clicks Support Button | Redirected to support platform |
-| 3 | Selects support type | Forum / Chat / Resources |
-| 4 | Receives support | Immediate assistance |
+| Stage | Student Need | Feature |
+|------|--------------|---------|
+| 1 | I feel alone | Community Forum |
+| 2 | I want advice | Anonymous Post / Peer Replies |
+| 3 | I need deeper help | Private Chat |
+| 4 | I need urgent support | Emergency Resources |
 
 ---
 
 # Blackboard Integration
 
-## Existing Blackboard Navigation
+## Current Blackboard Navigation
 
 | Home | Courses | Grades | Calendar |
 |------|--------|--------|----------|
@@ -64,7 +53,7 @@ This website provides:
 | Home | Courses | Grades | Calendar | Support |
 |------|--------|--------|----------|---------|
 
-The Support button should remain visible across all Blackboard pages.
+The Support button remains visible across all pages.
 
 ---
 
@@ -72,99 +61,119 @@ The Support button should remain visible across all Blackboard pages.
 
 ## Landing Page
 
-| Section | Content |
-|--------|---------|
-| Header | You Don’t Have To Deal With It Alone |
-| Button 1 | Anonymous Forum |
-| Button 2 | Private Chat Now |
-| Button 3 | Quick Resources |
+### Header
+
+**You Are Not Alone. Support Starts Here.**
+
+### Main Options
+
+| Option | Purpose |
+|-------|---------|
+| Read Student Experiences | Passive support and reassurance |
+| Ask Anonymously | Community advice and connection |
+| Talk Privately | One-to-one support |
+| Urgent Help | Crisis resources |
 
 ---
 
-# Feature 1 – Anonymous Forum
+# Primary Feature – Anonymous Community Forum
 
 ## Description
 
-Students can post publicly while remaining anonymous. Other students may reply anonymously as well.
+Students can safely engage with a moderated anonymous forum where they can:
 
-## Example Use Cases
+- Read similar student experiences  
+- Ask questions anonymously  
+- Receive peer support  
+- Feel less isolated  
+- Engage without pressure  
 
-| Student Post | Peer Reply |
-|-------------|-----------|
-| Feeling overwhelmed with assignments lately | Same here, try splitting tasks smaller |
-| Struggling financially this semester | Have you checked university emergency grants? |
-| Feeling lonely on campus | Join clubs, helped me a lot |
+This acts as the first support layer for students who may not be ready for direct counselling.
 
-## Forum MVP Functions
+---
+
+# Forum MVP Functions
 
 | Feature | Included |
 |--------|----------|
-| Anonymous Posting | Yes |
+| Anonymous Posts | Yes |
 | Anonymous Replies | Yes |
-| Reactions / Likes | Yes |
-| Report Content | Yes |
+| Like / Support Reactions | Yes |
+| Tags (Stress / Finance / Study) | Yes |
+| Search Posts | Yes |
+| Report Harmful Content | Yes |
 | Moderator Review | Yes |
 
 ---
 
-# Feature 2 – Private Chat With Professional
+# Example Forum Posts
+
+| Student Post | Community Reply |
+|-------------|----------------|
+| Feeling overwhelmed with deadlines | Same here, try breaking tasks into smaller goals |
+| Struggling financially this semester | Have you checked student assistance grants? |
+| Feeling lonely at university | Joining clubs helped me a lot |
+
+---
+
+# Secondary Feature – Private Support Chat
 
 ## Description
 
-Students who need confidential help can start a private chat with trained staff.
+Students needing deeper or more personal support can transition into private chat.
 
-## Chat Entry Form
+This is available as a secondary pathway after community support or through direct access.
 
-| Field | Type |
-|------|------|
-| Nickname | Optional |
-| Topic | Dropdown |
-| Message | Text |
+---
 
-## Support Topics
-
-| Topic Options |
-|--------------|
-| Stress |
-| Anxiety |
-| Financial Pressure |
-| Academic Burnout |
-| Loneliness |
-| Other |
-
-## Private Chat MVP Functions
+# Private Chat MVP Functions
 
 | Feature | Included |
 |--------|----------|
-| Live Chat | Yes |
-| Queue System | Yes |
+| Live Text Chat | Yes |
 | Anonymous Nickname | Yes |
-| Crisis Escalation | Yes |
+| Topic Selection | Yes |
+| Queue System | Yes |
+| Escalation to Staff | Yes |
 
 ---
 
-# Feature 3 – Quick Resources
+# Chat Topics
 
-Students can access helpful self-service resources immediately.
-
-| Resource Type | Examples |
-|--------------|----------|
-| Mental Health | Stress management guides |
-| Finance | Emergency support / budgeting |
-| Academic Help | Extensions / study support |
-| Emergency Help | Crisis contacts |
+| Topic |
+|------|
+| Stress |
+| Anxiety |
+| Academic Pressure |
+| Financial Stress |
+| Loneliness |
+| Other |
 
 ---
 
-# Why This MVP Works
+# Emergency Support Layer
 
-| Research Insight | MVP Response |
-|-----------------|-------------|
-| Students dislike booking systems | Instant access support |
-| Students want anonymity | Anonymous forum and chat |
-| Students prefer relatable support | Peer forum |
-| Students trust experts for serious issues | Private professional chat |
-| Students use Blackboard daily | Integrated support button |
+Students in urgent situations can immediately access crisis support.
+
+| Resource | Example |
+|---------|---------|
+| Emergency Contact | 000 |
+| Crisis Line | University / External Hotline |
+| Immediate Help Page | Mental health emergency guide |
+
+---
+
+# Why Forum Is Primary
+
+Research findings suggest many students are more comfortable reading or anonymously engaging before talking directly with staff.
+
+| User Behaviour Insight | MVP Response |
+|-----------------------|-------------|
+| Students fear formal systems | Anonymous low-pressure forum |
+| Students want relatable advice | Peer responses |
+| Students feel less alone seeing others struggle | Shared experiences |
+| Students avoid counselling first step | Community-first pathway |
+| Students still need deeper support later | Private chat escalation |
 
 ---
 
@@ -172,12 +181,13 @@ Students can access helpful self-service resources immediately.
 
 | ID | Requirement |
 |----|------------|
-| FR1 | User can click Support Button from Blackboard |
-| FR2 | User can post anonymously in forum |
-| FR3 | User can reply anonymously |
-| FR4 | User can start private chat |
-| FR5 | User can browse quick resources |
-| FR6 | Moderator can review reports |
+| FR1 | User can access Support Button from Blackboard |
+| FR2 | User can read forum posts |
+| FR3 | User can create anonymous posts |
+| FR4 | User can reply anonymously |
+| FR5 | User can start private chat |
+| FR6 | User can access urgent help resources |
+| FR7 | Moderator can review reports |
 
 ---
 
@@ -185,36 +195,38 @@ Students can access helpful self-service resources immediately.
 
 | ID | Requirement |
 |----|------------|
-| NFR1 | Platform must be simple and intuitive |
-| NFR2 | Response time should feel fast |
-| NFR3 | User anonymity must be protected |
-| NFR4 | Mobile friendly design |
-| NFR5 | Secure data handling |
+| NFR1 | Platform must feel safe and welcoming |
+| NFR2 | Navigation must be simple and intuitive |
+| NFR3 | Forum must protect anonymity |
+| NFR4 | Platform must be mobile responsive |
+| NFR5 | Fast loading and responsive performance |
+| NFR6 | Secure data storage |
 
 ---
 
 # MVP Tech Stack
 
-| Layer | Recommended Tool |
-|------|------------------|
+| Layer | Tool |
+|------|------|
 | Frontend | React / Next.js |
 | Backend | Firebase / Supabase |
 | Database | Firestore / PostgreSQL |
-| Realtime Chat | Firebase Realtime DB |
+| Authentication | Optional Guest Access |
 | Hosting | Vercel |
 
 ---
 
 # Prototype Screens
 
-| Screen No | Screen Name |
-|----------|------------|
+| Screen No | Name |
+|----------|------|
 | 1 | Blackboard Dashboard |
-| 2 | Landing Page |
+| 2 | Support Landing Page |
 | 3 | Anonymous Forum |
-| 4 | Private Chat |
-| 5 | Resource Hub |
-| 6 | Moderator Dashboard |
+| 4 | Create Post Modal |
+| 5 | Private Chat |
+| 6 | Emergency Help Page |
+| 7 | Moderator Dashboard |
 
 ---
 
@@ -222,42 +234,42 @@ Students can access helpful self-service resources immediately.
 
 | Metric | Target |
 |-------|-------|
-| Support button click rate | 40%+ users notice |
-| Forum usage | 20+ weekly posts |
-| Chat requests | Growing weekly demand |
-| User satisfaction | Positive feedback |
-| Reduced access friction | Faster first contact |
+| Blackboard Support Click Rate | High visibility |
+| Forum Weekly Active Users | Growing engagement |
+| Anonymous Posts Created | Regular activity |
+| Transition to Private Chat | Students escalate when needed |
+| Positive Feedback | Improved student trust |
 
 ---
 
 # Future Improvements
 
-| Version | New Feature |
-|--------|------------|
-| V2 | AI triage assistant |
-| V2 | Mood tracking |
-| V2 | Appointment booking |
-| V2 | Push notifications |
-| V3 | Blackboard native integration |
+| Version | Feature |
+|--------|---------|
+| V2 | AI moderation assistant |
+| V2 | Mood check-ins |
+| V2 | Smart triage chatbot |
+| V3 | Native Blackboard embedded version |
+| V3 | Peer volunteer mentor system |
 
 ---
 
-# Final Value Proposition
+# Value Proposition
 
-Students need wellbeing support that feels:
-
-| Need | Delivered By MVP |
-|-----|------------------|
-| Fast | One-click access |
-| Safe | Anonymous options |
-| Human | Peer + professional help |
-| Easy | Blackboard integration |
-| Supportive | Community connection |
+| Student Need | MVP Solution |
+|-------------|-------------|
+| I need low-pressure help | Anonymous forum |
+| I feel alone | Shared student experiences |
+| I need private support | Direct chat pathway |
+| I need urgent help | Crisis resources |
+| I need easy access | Blackboard integration |
 
 ---
 
 # Summary
 
-This MVP transforms university wellbeing support from a hidden, formal, high-effort system into an accessible, student-friendly, low-pressure digital experience.
+This MVP rethinks student wellbeing support by recognising that many students need connection before counselling.
 
-Instead of searching for help, students can receive support directly where they already study: Blackboard.
+Rather than starting with formal appointments, the platform creates a safer first step through community support, anonymity, and easy access.
+
+By integrating into Blackboard, support becomes visible, immediate, and part of everyday student life.
