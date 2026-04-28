@@ -62,11 +62,3 @@ This MVP addresses those barriers directly.
 | 6 | Emergency Resources |
 
 ---
-
-## Next Steps
-
-- Build low-fidelity Figma prototype  
-- Test usability with students  
-- Gather feedback on forum vs private chat usage  
-- Improve trust, moderation, and response pathways  
-- Explore Blackboard native integration in future versions |
