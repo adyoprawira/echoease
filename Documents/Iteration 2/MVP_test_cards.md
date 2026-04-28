@@ -1,69 +1,141 @@
-## 🎯 Scenario Cards
-Scenario 1 — Feeling Overwhelmed
-You’re stressed about upcoming assignments. While browsing Blackboard, you notice a new Support button.
+# Test Cards (MVP)
 
-Scenario 2 — Curious but Hesitant
-You’re not in crisis, but you want to explore wellbeing options without booking anything formal.
+Test Card 1: Support Button Discoverability
+STATUS: New
 
-Scenario 3 — Looking for Peer Experiences
-You want to read about other students’ experiences before deciding whether to talk to someone.
+HYPOTHESIS  
+We believe students will easily notice and understand a Support button placed directly on the Blackboard dashboard.
 
-Scenario 4 — Need Private Help
-You want to talk to a trained support staff member privately without going through a long booking process.
+TEST  
+To confirm that, we will ask students to complete a task where they must locate the Support button during a usability test.
 
-## 🧪 Task Cards
-Task 1 — Find Support
-You’re on the Blackboard dashboard.
-Task: Locate and click the Support button.
+METRIC  
+Measure the percentage of students who find the Support button within 10 seconds without hints.
 
-Task 2 — Explore the Landing Page
-You’ve opened the wellbeing platform.
-Task: Describe what you think this page is for and where you would click next.
+CRITERIA  
+We are right if 80% of students locate the button quickly and describe it as “obvious” or “easy to find.”
 
-Task 3 — Browse the Anonymous Forum
-You want to see if other students have similar experiences.
-Task: Navigate to the forum and read a post.
+INTERVIEW QUESTIONS
 
-Task 4 — Create a Post
-You decide to share something anonymously.
-Task: Create a new post or reply to an existing one.
+“You’re on your Blackboard dashboard. Show me where you would go if you needed help.”
 
-Task 5 — Start a Private Chat
-You want to talk to a trained support staff member.
-Task: Find and open the private chat feature.
+“What do you expect this Support button to do when you click it?”
 
-Task 6 — Find Emergency Resources
-You’re worried about someone who needs urgent help.
-Task: Locate the emergency resources page.
+“Is the placement clear or would you expect it somewhere else?”
 
-## 💬 Question Cards
-After Each Task
-What were you expecting to happen?
+Test Card 2: Landing Page Clarity & First Impressions
+STATUS: New
 
-Was anything confusing or unexpected?
+HYPOTHESIS  
+We believe students will immediately understand the purpose of the wellbeing platform upon landing on the homepage.
 
-How confident did you feel completing this task?
+TEST  
+To confirm that, we will observe students’ first reactions when they open the landing page.
 
-What would make this easier?
+METRIC  
+Measure how many students can correctly describe the platform’s purpose in one sentence.
 
-Post‑Test Interview Questions
-Which feature felt most helpful?
+CRITERIA  
+We are right if 70% of students can articulate the platform’s purpose without confusion.
 
-Which feature felt least helpful?
+INTERVIEW QUESTIONS
 
-Would you trust this platform for wellbeing support?
+“What do you think this page is for?”
 
-Would you prefer anonymous peer support or private chat first?
+“Where would you click next, and why?”
 
-How likely are you to use this if it were inside Blackboard?
+“Is anything unclear or unexpected here?”
 
-What would make you more comfortable using this platform?
+Test Card 3: Anonymous Forum Engagement
+STATUS: New
 
-## 📌 Rapid Evaluation Metrics (Optional)
-Metric	Scale
-Task Success	Success / Partial / Fail
-Time on Task	Short / Medium / Long
-Confidence	1–5
-Friction Level	Low / Medium / High
-Emotional Response	Positive / Neutral / Negative
+HYPOTHESIS  
+We believe students will feel comfortable browsing and posting in an anonymous peer forum before seeking professional help.
 
+TEST  
+To confirm that, we will ask students to navigate to the forum, read a post, and create a new post or reply.
+
+METRIC  
+Measure the percentage of students who describe the forum as safe, relatable, or low‑pressure.
+
+CRITERIA  
+We are right if 60% of students say they would use the forum to read or share experiences.
+
+INTERVIEW QUESTIONS
+
+“How comfortable do you feel reading or posting here?”
+
+“Would you use this more as a reader or as someone who posts? Why?”
+
+“Does anonymity make this feel safer or less safe for you?”
+
+Test Card 4: Private Chat Accessibility
+STATUS: New
+
+HYPOTHESIS  
+We believe students will prefer a private chat option over booking formal counselling appointments because it feels faster and less intimidating.
+
+TEST  
+To confirm that, we will ask students to locate and open the private chat feature.
+
+METRIC  
+Measure the percentage of students who describe the chat as easy to find and less formal than traditional counselling.
+
+CRITERIA  
+We are right if 70% of students say they would use the chat when stressed.
+
+INTERVIEW QUESTIONS
+
+“How easy was it to find the private chat?”
+
+“Would you use this instead of booking an appointment?”
+
+“What would make you more likely to start a chat?”
+
+Test Card 5: Emergency Resources Visibility
+STATUS: New
+
+HYPOTHESIS  
+We believe students will be able to quickly locate emergency resources when needed, even under stress.
+
+TEST  
+To confirm that, we will ask students to find the emergency resources page during the usability test.
+
+METRIC  
+Measure the time it takes for students to locate the emergency section.
+
+CRITERIA  
+We are right if 90% of students find it within 15 seconds.
+
+INTERVIEW QUESTIONS
+
+“If someone needed urgent help, where would you go on this page?”
+
+“Does this feel easy to find in a stressful moment?”
+
+“Is the wording clear enough for emergencies?”
+
+Test Card 6: Overall Platform Effortlessness
+STATUS: New
+
+HYPOTHESIS  
+We believe students will perceive the entire platform as low‑effort, reducing the friction that normally stops them from seeking help.
+
+TEST  
+To confirm that, we will observe students completing all tasks (Support button → Landing page → Forum → Chat → Emergency resources).
+
+METRIC  
+Measure the number of steps students describe as “effortless,” “quick,” or “simple.”
+
+CRITERIA  
+We are right if 75% of students report that the platform feels easier than existing UQ support systems.
+
+INTERVIEW QUESTIONS
+
+“Which part of this platform felt easiest to use?”
+
+“Which part felt like effort?”
+
+“Would this reduce the friction you normally feel when seeking help?”
+
+“What would make this even more effortless for you?”
