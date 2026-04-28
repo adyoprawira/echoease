@@ -36,7 +36,7 @@ This reduces friction and makes support easier to access through a platform stud
 
 ## Why This Works
 
-Our interviews showed that students often do not reject support itself — they reject friction, formality, and hidden systems.
+Our interviews showed that students often do not reject support itself, they reject friction, formality, and hidden systems.
 
 Key insights included:
 
