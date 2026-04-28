@@ -75,10 +75,15 @@ The following table outlines the assigned responsibilities for each team member,
 
 | Team Member | Task                            | Deadline          |
 |-------------|---------------------------------|-------------------|
+| Putri       | Business Model Canvas           | Tuesday (Week9)   |
+| Darren      | Create MVP features             | Tuesday (Week9)   |
+| Farisha     | MVP's test card                 | Tuesday (Week9)   |
+| Dyo         | Value proposition               | Tuesday (Week9)   |
+| ALL         | Plan for second interview       | Tuesday (Week9)   |
 | ALL         | Make analysis based on interview| Wednesday (Week9) |
-| ALL         | Create a learning card          | Wednesday (Week9) | 
+| ALL         | Create a learning card          | Wednesday (Week9) |
 | ALL         | Plan for the prototype          | Friday (Week9)    |
-
 ---
 
 ## 📝 Notes
+- 
