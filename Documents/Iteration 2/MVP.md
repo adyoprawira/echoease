@@ -36,7 +36,7 @@ This reduces friction and makes support easier to access through a platform stud
 
 ## Why This Works
 
-Our interviews showed that students often do not reject support itself — they reject friction, formality, and hidden systems.
+Our interviews showed that students often do not reject support itself, they reject friction, formality, and hidden systems.
 
 Key insights included:
 
@@ -62,11 +62,3 @@ This MVP addresses those barriers directly.
 | 6 | Emergency Resources |
 
 ---
-
-## Next Steps
-
-- Build low-fidelity Figma prototype  
-- Test usability with students  
-- Gather feedback on forum vs private chat usage  
-- Improve trust, moderation, and response pathways  
-- Explore Blackboard native integration in future versions |
