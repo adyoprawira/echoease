@@ -2,42 +2,22 @@
 
 ---
 
-## 1. Customer Segments
+**Customer Segments**
 
-Based on validated hypotheses and interview analysis, our primary customer segments are:
+- University students who avoid formal wellbeing services due to friction and booking barriers. This was supported by [Hypothesis 4 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
 
-- **University students who avoid formal wellbeing services due to friction and booking barriers**  
-  Supported by:  
-  - Hypothesis 4 – accepted (Self-coping vs low-effort intervention)  
-  - Theme: Booking systems are a major barrier  
-  - Theme: Friction and commitment barriers reduce help-seeking  
+- University students who prefer peer-based, relatable support over clinical environments. This was supported by:  [Hypothesis 6 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
 
-- **University students who prefer peer-based, relatable support over clinical environments**  
-  Supported by:  
-  - Hypothesis 6 – accepted (Community vs Automation)  
-  - Theme: Peer support feels safer and more relatable  
-  - Sentiment: Strong preference for shared lived experiences  
+- University students who need immediate, low-effort emotional support during stress. This was supported by [Hypothesis 4 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
 
-- **University students who need immediate, low-effort emotional support during stress**  
-  Supported by:  
-  - Hypothesis 4 – accepted  
-  - Theme: Desire for instant and effortless support  
-  - Theme: Response speed strongly influences engagement  
-
-- **University students unaware of existing wellbeing services and require integrated access**  
-  Supported by:  
-  - Hypothesis 5 – accepted (Integrated Access via Blackboard)  
-  - Theme: Low awareness of formal support channels  
-  - Theme: Students trust embedded university systems more than external services  
+- University students unaware of existing wellbeing services and require integrated access. This was supported by [Hypothesis 5 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)
 
 ---
 
 ## 2. Value Proposition
 
-- **Instant, low-effort emotional support**
-  - Removes booking friction and delays
-  - Enables immediate access to help through chat-based interaction  
-  - Validated by Hypothesis 4 (accepted)
+- The problem of students avoiding help due to friction and booking barriers can be solved by instant, zero-booking chat support.  
+  This is proven and justified because students consistently avoid services requiring effort. 
 
 - **Integrated wellbeing access inside Blackboard**
   - Centralises support within a platform students already use
@@ -127,14 +107,16 @@ Validated by:
 - Moderators for community safety
 - Cloud infrastructure (messaging, notifications, data storage)
 - Interview data and validated hypotheses insights
+- Promotion (social media, campus outreach)    
 
 ---
 
 ## 8. Key Activities
 
-- Develop and maintain instant chat-based support system
-- Integrate “Support” feature into Blackboard
-- Recruit and train peer supporters and moderators
-- Maintain anonymous community forums
-- Ensure fast response time through system design and staffing
-- Conduct continuous user testing and iterative improvement cycles
+- Develop instant chat support system  
+- Integrate “Support” feature into Blackboard  
+- Train peer supporters and moderators  
+- Maintain anonymous forums and community spaces  
+- Ensure fast response times through system optimisation  
+- Collect feedback and continuously improve features  
+- Promote platform through campus and social media channels  
