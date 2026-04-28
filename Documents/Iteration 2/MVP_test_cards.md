@@ -15,9 +15,9 @@ Measure the percentage of students who find the button within 10 seconds without
 We are right if 80% of students locate the button quickly and describe it as “clear,” “visible,” or “easy to find.”
 
 **INTERVIEW QUESTIONS**
-1. You’re on your Blackboard dashboard. Where would you go if you needed help or support?
-2. What do you expect to happen when you click Support & Well-being?
-3. Is this where you would expect mental health or wellbeing support to live?
+1. Imagine you’re on your usual Blackboard dashboard. If there was a button called Support & Well‑being, where would you expect it to be located?
+2. If you saw a Support & Well‑being button on Blackboard, what would you expect it to do?
+3. Would you naturally think of Blackboard as a place to access wellbeing support, or would that feel unexpected?
 
 ## Test Card 2: Landing Page Clarity & First Impressions
 
@@ -35,9 +35,9 @@ We are right if 70% of students can articulate the purpose without confusion.
 
 **INTERVIEW QUESTIONS**
 
-1. What do you think this page is for?
-2. Which option would you click first, and why?
-3. Is anything unclear or unexpected here?
+1. Imagine you click a support button and land on a page with three options: Read Community Stories, Chat with Someone, and Emergency Resources. What would you think this page is for?
+2. Which of those three options would you be most likely to click first, and why?
+3. Does that kind of layout feel clear to you, or would you expect something different?
 
 ## Test Card 3: Anonymous Community Engagement
 
@@ -54,9 +54,9 @@ Measure the percentage of students who describe the community as safe, relatable
 We are right if 60% of students say they would use the community to read or understand others’ experiences.
 
 **INTERVIEW QUESTIONS**
-1. How comfortable do you feel reading these anonymous posts
-2. Does the read‑only format make this feel safer or more limiting
-3. Would you come here to see if others are going through similar things
+1. Imagine there’s an anonymous community where students share short posts about stress, loneliness, exams, or finances. How comfortable would you feel reading posts like that?
+2. Would a read‑only anonymous community feel safe and helpful, or would you prefer being able to reply or interact?
+3. Do you think seeing other students’ experiences would make you feel less alone, or would it not affect you much?
 
 ## Test Card 4: Create Post Flow (Peer Support Community)
 
@@ -74,13 +74,12 @@ We are right if 75% of students can create a post smoothly and understand the an
 
 **INTERVIEW QUESTIONS**
 
-1. How easy or difficult was it to create a post?
-2. Did the topic tags make sense to you?
-3. How do you feel about the ‘Post Anonymously’ option?
-4. Would you actually post something here? Why or why not?
+1. Imagine you could write an anonymous post about something you’re struggling with. How easy or difficult do you think it would be to share something in that space?
+2. If you could choose up to three topic tags (like Stress, Anxiety, Sleep, Relationships), would that help you express what you’re going through?
+3. How important is the option to post anonymously for you?
+4. In what situations would you actually consider posting something?
 
 ## Test Card 5: Private Chat Accessibility
-STATUS: New
 
 **HYPOTHESIS**
 We believe students will perceive the Chat feature as approachable, safe, and less intimidating than formal counselling.
@@ -96,13 +95,12 @@ We are right if 70% of students say they would use the chat when stressed.
 
 **INTERVIEW QUESTIONS**
 
-1. How easy was it to find the chat feature?
-2. How does this chat feel compared to booking a counselling appointment?
-3. Does the peer mentor introduction make you feel safe?
-4. Would you use this chat in a real moment of stress?
+1. Imagine there’s a private chat where you can talk to a peer mentor or counsellor without booking anything. How likely are you to use something like that?
+2. Would chatting with a peer mentor feel less intimidating than booking a formal counselling appointment?
+3. What would make you feel safe or unsafe about using a chat feature for support?
+4. If you were stressed late at night, would a chat option feel helpful?
 
 ## Test Card 6: Emergency Resources Visibility
-STATUS: New
 
 **HYPOTHESIS**  
 We believe students will be able to quickly locate Emergency Resources when needed, even under stress.
@@ -118,7 +116,7 @@ We are right if 90% of students find it within 15 seconds.
 
 **INTERVIEW QUESTIONS**
 
-1. If someone needed urgent help, where would you go on this page?
-2. Does this feel easy to find in a stressful moment?
-3. Is the wording clear enough for emergencies?
-4. Would you trust these resources?
+1. Imagine there’s a clearly labelled Emergency Resources section inside a wellbeing platform. Where would you expect to find it?
+2. What wording would make emergency resources feel clear and trustworthy to you?
+3. If you were in a stressful situation, what would help you quickly recognise where urgent help is located?
+4. Would you trust a university platform to direct you to the right emergency contacts?
