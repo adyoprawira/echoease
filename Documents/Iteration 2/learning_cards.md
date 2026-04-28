@@ -1,33 +1,48 @@
-# Learning Cards
+# Learning Cards – Iteration 2
 
 ---
 
-## Hypothesis 1 : Self-Coping vs Low-Effort Intervention
-
+## **Hypothesis 1: Self-Coping vs Low-Effort Intervention**
 **STATUS:** Accepted
 
-### HYPOTHESIS
+### **HYPOTHESIS**
 We believed that students prefer self-coping unless an intervention is extremely low-effort.
 
-### OBSERVATIONS
-Across interviews, students consistently described self-coping behaviours such as gaming, gym, music, walking, or resting as their first instinct during stress.  
+---
 
-Professional help was perceived as “extra labour,” requiring emotional energy, planning, and commitment.  
+### **OBSERVATIONS**
+Across all 20 interviews, 19 out of 20 students (95%) described self-coping behaviours such as gaming, gym, music, walking, or resting as their first instinct during stress. Only one student said they would immediately talk to someone.
 
-Students expressed that booking appointments felt formal and anxiety-inducing, often causing them to avoid help entirely.  
+Professional help was widely perceived as “extra labour,” requiring emotional energy, planning, and commitment. Many students described counselling as formal, tiring, or something they needed to “prepare themselves for.”
 
-When presented with a hypothetical zero-effort support option (e.g., instant chat, walk-in support), many indicated they would be more willing to talk to someone.  
+Booking appointments was a major barrier: 17 out of 20 students (85%) said the formality and emotional effort of scheduling made them avoid help entirely.
 
-Response time was also a critical factor: students stated they would revert to self-coping if support took too long, with some expecting responses within minutes.
+When presented with a hypothetical zero-effort support option (instant chat, walk-in support), 16 out of 20 students (80%) said they would be more willing to talk to someone.
 
-### LEARNING AND INSIGHTS
-- Students do not reject support; they reject friction.  
-- Self-coping is preferred because it is immediate, low-effort, and emotionally safe.  
-- Professional support becomes viable only when the process is simplified to resemble everyday communication (e.g., messaging a friend).  
-- The barrier is not willingness, but effort, formality, and wait time.
+Response time was also a critical factor: all 20 students (100%) stated they would revert to self-coping if support took too long.
 
-### DECISIONS AND ACTIONS
-This hypothesis is accepted.  
+Maximum acceptable waiting times varied:
+- 5–15 minutes: 6 students  
+- 1 hour: 5 students  
+- Same day: 4 students  
+- 1 day: 3 students  
+- Up to a week: 2 students  
+
+---
+
+### **LEARNING AND INSIGHTS**
+Students do not reject support; they reject friction.
+
+Self-coping is preferred because it is immediate, low-effort, and emotionally safe.
+
+Professional support becomes viable only when the process is simplified to resemble everyday communication (e.g., messaging a friend).
+
+The barrier is not willingness, but effort, formality, and wait time.
+
+---
+
+### **DECISIONS AND ACTIONS**
+This hypothesis is accepted.
 
 We will design a support system that:
 - removes booking requirements  
@@ -37,31 +52,38 @@ We will design a support system that:
 
 ---
 
-## Hypothesis 2 : Integrated Access via Blackboard 
-
+## **Hypothesis 2: Integrated Access via Blackboard**
 **STATUS:** Accepted
 
-### HYPOTHESIS
+### **HYPOTHESIS**
 We believed students are more likely to access support when it is embedded directly into Blackboard, a platform they already use daily, rather than through separate university websites.
 
-### OBSERVATIONS
-Most students were unaware of the UQ Student Hub on Discord, indicating a significant visibility issue.  
+---
 
-Even those who knew about it rarely used it.  
+### **OBSERVATIONS**
+Awareness of existing platforms was low: 13 out of 20 students (65%) did not know the UQ Student Hub on Discord existed.
 
-When asked to imagine a “Support” button inside Blackboard, students described clear expectations: immediate access to resources, human contact options, and a simplified triage pathway.  
+Even among the 7 students (35%) who knew about it, usage was rare or nonexistent.
 
-Students associated Blackboard with academic routines, making it a natural entry point for wellbeing support.  
+When asked to imagine a “Support” button inside Blackboard, all 20 students (100%) responded positively and described clear expectations: immediate access to resources, human contact options, and a simplified triage pathway.
 
-They also expressed enthusiasm for a “one-click” solution that bypasses the mental exhaustion of searching for help during stressful moments.
+18 out of 20 students (90%) said Blackboard felt more natural because they already use it daily for academic tasks.
 
-### LEARNING AND INSIGHTS
-- The problem is not the absence of services, but their discoverability.  
-- Students are unlikely to seek external platforms during stress, but are receptive to support embedded within their existing workflow.  
-- Integration reduces cognitive load and normalises help-seeking behaviour.  
+Students expressed strong preference for a “one-click” solution that removes the need to search for help during stressful moments.
 
-### DECISIONS AND ACTIONS
-This hypothesis is accepted.  
+---
+
+### **LEARNING AND INSIGHTS**
+The problem is not the absence of services, but their discoverability.
+
+Students are unlikely to seek external platforms during stress, but are receptive to support embedded within their existing workflow.
+
+Integration reduces cognitive load and normalises help-seeking behaviour.
+
+---
+
+### **DECISIONS AND ACTIONS**
+This hypothesis is accepted.
 
 We will implement a Support button within Blackboard that provides:
 - immediate access to peer or professional chat  
@@ -71,29 +93,38 @@ We will implement a Support button within Blackboard that provides:
 
 ---
 
-## Hypothesis 3 : Community vs Automation 
-
+## **Hypothesis 3: Community vs Automation**
 **STATUS:** Accepted (with nuance)
 
-### HYPOTHESIS
+### **HYPOTHESIS**
 We believed students are more likely to engage with vetted peer-to-peer forums than automated tools because they value shared experiences over data-driven advice.
 
-### OBSERVATIONS
-Students consistently expressed that peers provide relatability, emotional understanding, and comfort.  
+---
 
-Many stated they would feel reassured reading about others’ similar struggles, describing it as validating and normalising.  
+### **OBSERVATIONS**
+A strong majority — 15 out of 20 students (75%) — said peers feel more relatable, especially for academic stress.
 
-Automated tools (e.g., quizzes) were perceived as impersonal, clinical, and insufficient for emotional support.  
+Meanwhile, 14 out of 20 students (70%) said professionals are preferred for serious or personal issues.
 
-However, most students identified themselves as passive users—they prefer reading rather than posting unless the environment feels safe and non-judgmental.
+Students consistently expressed that reading others’ similar struggles would make them feel reassured, validated, and less alone.
 
-### LEARNING AND INSIGHTS
-- Students value human experience over automated assessment.  
-- Peer forums provide emotional validation but do not replace real-time interaction.  
-- Forums are more effective as a secondary support layer rather than a primary solution.  
+17 out of 20 students (85%) said they would primarily be readers rather than active posters, especially at first.
 
-### DECISIONS AND ACTIONS
-This hypothesis is accepted with refinement.  
+Automated tools (e.g., quizzes) were described as impersonal or clinical by 12 out of 20 students (60%), who felt they lacked emotional understanding.
+
+---
+
+### **LEARNING AND INSIGHTS**
+Students value human experience over automated assessment.
+
+Peer forums provide emotional validation but do not replace real-time interaction.
+
+Forums are more effective as a secondary support layer rather than a primary solution.
+
+---
+
+### **DECISIONS AND ACTIONS**
+This hypothesis is accepted with refinement.
 
 We will:
 - prioritise peer-led, moderated forums as a supplementary feature  
