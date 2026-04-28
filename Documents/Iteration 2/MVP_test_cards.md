@@ -1,105 +1,132 @@
 # Test Cards (MVP)
 
-Test Card 1: Support Button Discoverability
+## Test Card 1: Support Button Discoverability
 STATUS: New
 
 HYPOTHESIS  
-We believe students will easily notice and understand a Support button placed directly on the Blackboard dashboard.
+We believe students will easily notice and understand the Support & Well-being button inside Blackboard and recognise it as the entry point to the UQ Wellness platform.
 
 TEST  
-To confirm that, we will ask students to complete a task where they must locate the Support button during a usability test.
+To confirm that, we will ask students to locate the Support & Well-being button on the Blackboard dashboard during a usability test.
 
 METRIC  
-Measure the percentage of students who find the Support button within 10 seconds without hints.
+Measure the percentage of students who find the button within 10 seconds without hints.
 
 CRITERIA  
-We are right if 80% of students locate the button quickly and describe it as “obvious” or “easy to find.”
+We are right if 80% of students locate the button quickly and describe it as “clear,” “visible,” or “easy to find.”
 
 INTERVIEW QUESTIONS
 
-“You’re on your Blackboard dashboard. Show me where you would go if you needed help.”
+“You’re on your Blackboard dashboard. Where would you go if you needed help or support?”
 
-“What do you expect this Support button to do when you click it?”
+“What do you expect to happen when you click Support & Well-being?”
 
-“Is the placement clear or would you expect it somewhere else?”
+“Is this where you would expect mental health or wellbeing support to live?”
 
-Test Card 2: Landing Page Clarity & First Impressions
+## Test Card 2: Landing Page Clarity & First Impressions
 STATUS: New
 
 HYPOTHESIS  
-We believe students will immediately understand the purpose of the wellbeing platform upon landing on the homepage.
+We believe students will immediately understand the purpose of the landing page (“Read Community Stories,” “Chat with Someone,” “Emergency Resources”) without needing explanation.
 
 TEST  
-To confirm that, we will observe students’ first reactions when they open the landing page.
+To confirm that, we will observe students’ first impressions when they arrive on the landing page.
 
 METRIC  
-Measure how many students can correctly describe the platform’s purpose in one sentence.
+Measure how many students can correctly describe the purpose of the page in one sentence.
 
 CRITERIA  
-We are right if 70% of students can articulate the platform’s purpose without confusion.
+We are right if 70% of students can articulate the purpose without confusion.
 
 INTERVIEW QUESTIONS
 
 “What do you think this page is for?”
 
-“Where would you click next, and why?”
+“Which option would you click first, and why?”
 
 “Is anything unclear or unexpected here?”
 
-Test Card 3: Anonymous Forum Engagement
+## Test Card 3: Anonymous Community Engagement
 STATUS: New
 
 HYPOTHESIS  
-We believe students will feel comfortable browsing and posting in an anonymous peer forum before seeking professional help.
+We believe students will feel comfortable browsing the Anonymous Community and will find value in reading peer stories even if they do not post.
 
 TEST  
-To confirm that, we will ask students to navigate to the forum, read a post, and create a new post or reply.
+To confirm that, we will ask students to navigate to the Community page, browse posts, and interpret the purpose of the read‑only format.
 
 METRIC  
-Measure the percentage of students who describe the forum as safe, relatable, or low‑pressure.
+Measure the percentage of students who describe the community as safe, relatable, or helpful.
 
 CRITERIA  
-We are right if 60% of students say they would use the forum to read or share experiences.
+We are right if 60% of students say they would use the community to read or understand others’ experiences.
 
 INTERVIEW QUESTIONS
 
-“How comfortable do you feel reading or posting here?”
+“How comfortable do you feel reading these anonymous posts?”
 
-“Would you use this more as a reader or as someone who posts? Why?”
+“Does the read‑only format make this feel safer or more limiting?”
 
-“Does anonymity make this feel safer or less safe for you?”
+“Would you come here to see if others are going through similar things?”
 
-Test Card 4: Private Chat Accessibility
+## Test Card 4: Create Post Flow (Peer Support Community)
 STATUS: New
 
 HYPOTHESIS  
-We believe students will prefer a private chat option over booking formal counselling appointments because it feels faster and less intimidating.
+We believe students will find the Create a Post interface intuitive, especially the topic tags and the “Post Anonymously” toggle.
 
 TEST  
-To confirm that, we will ask students to locate and open the private chat feature.
+To confirm that, we will ask students to create a post using the title field, text field, topic tags, and anonymity toggle.
 
 METRIC  
-Measure the percentage of students who describe the chat as easy to find and less formal than traditional counselling.
+Measure how many students complete the task without needing clarification.
+
+CRITERIA  
+We are right if 75% of students can create a post smoothly and understand the anonymity feature.
+
+INTERVIEW QUESTIONS
+
+“How easy or difficult was it to create a post?”
+
+“Did the topic tags make sense to you?”
+
+“How do you feel about the ‘Post Anonymously’ option?”
+
+“Would you actually post something here? Why or why not?”
+
+## Test Card 5: Private Chat Accessibility
+STATUS: New
+
+HYPOTHESIS  
+We believe students will perceive the Chat feature as approachable, safe, and less intimidating than formal counselling.
+
+TEST  
+To confirm that, we will ask students to open the Chat page and interpret the conversation with the peer mentor.
+
+METRIC  
+Measure the percentage of students who describe the chat as easy to find, comforting, or less formal.
 
 CRITERIA  
 We are right if 70% of students say they would use the chat when stressed.
 
 INTERVIEW QUESTIONS
 
-“How easy was it to find the private chat?”
+“How easy was it to find the chat feature?”
 
-“Would you use this instead of booking an appointment?”
+“How does this chat feel compared to booking a counselling appointment?”
 
-“What would make you more likely to start a chat?”
+“Does the peer mentor introduction make you feel safe?”
 
-Test Card 5: Emergency Resources Visibility
+“Would you use this chat in a real moment of stress?”
+
+## Test Card 6: Emergency Resources Visibility
 STATUS: New
 
 HYPOTHESIS  
-We believe students will be able to quickly locate emergency resources when needed, even under stress.
+We believe students will be able to quickly locate Emergency Resources when needed, even under stress.
 
 TEST  
-To confirm that, we will ask students to find the emergency resources page during the usability test.
+To confirm that, we will ask students to find the emergency resources from the landing page and within the Resource Directory.
 
 METRIC  
 Measure the time it takes for students to locate the emergency section.
@@ -115,27 +142,4 @@ INTERVIEW QUESTIONS
 
 “Is the wording clear enough for emergencies?”
 
-Test Card 6: Overall Platform Effortlessness
-STATUS: New
-
-HYPOTHESIS  
-We believe students will perceive the entire platform as low‑effort, reducing the friction that normally stops them from seeking help.
-
-TEST  
-To confirm that, we will observe students completing all tasks (Support button → Landing page → Forum → Chat → Emergency resources).
-
-METRIC  
-Measure the number of steps students describe as “effortless,” “quick,” or “simple.”
-
-CRITERIA  
-We are right if 75% of students report that the platform feels easier than existing UQ support systems.
-
-INTERVIEW QUESTIONS
-
-“Which part of this platform felt easiest to use?”
-
-“Which part felt like effort?”
-
-“Would this reduce the friction you normally feel when seeking help?”
-
-“What would make this even more effortless for you?”
+“Would you trust these resources?”
