@@ -1,4 +1,4 @@
-# Learning Cards – Iteration 2
+# Learning Cards
 
 ---
 
@@ -89,7 +89,6 @@ We will implement a Support button within Blackboard that provides:
 - immediate access to peer or professional chat  
 - links to relevant wellbeing resources  
 - optional anonymous forum access  
-- a clear triage pathway for different types of support  
 
 ---
 
@@ -129,5 +128,4 @@ This hypothesis is accepted with refinement.
 We will:
 - prioritise peer-led, moderated forums as a supplementary feature  
 - include anonymity options to increase psychological safety  
-- maintain real-time human chat (peer or professional) as the primary support channel  
 - design forums to support passive engagement while enabling safe participation  
