@@ -4,13 +4,15 @@
 
 **Customer Segments**
 
-- University students who avoid formal wellbeing services due to friction and booking barriers. This was supported by [Hypothesis 4 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
+- University students who avoid formal wellbeing services due to friction and booking barriers. This was supported by [Hypothesis 4 – accepted](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-4-self-coping-vs-low-effort-intervention)  
 
-- University students who prefer peer-based, relatable support over clinical environments. This was supported by:  [Hypothesis 6 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
+- University students who prefer peer-based, relatable support over clinical environments. This was supported by:  [Hypothesis 6 – accepted](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-6-community-vs-automation-refined-from-anonymity-hypothesis)  
 
-- University students who need immediate, low-effort emotional support during stress. This was supported by [Hypothesis 4 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)  
+- University students who need immediate, low-effort emotional support during stress. This was supported by [Hypothesis 4 – accepted](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-4-self-coping-vs-low-effort-intervention)  
 
-- University students unaware of existing wellbeing services and require integrated access. This was supported by [Hypothesis 5 – accepted](https://vscode.dev/github/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%201/test_cards.md#L64-L65)
+- University students unaware of existing wellbeing services and require integrated access. This was supported by [Hypothesis 5 – accepted](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-5-integrated-access-refined-from-centralization)
+
+- University students who will only seek help if support is instant, booking‑free, and zero‑friction. This was supported by [Hypothesis 7 – accepted](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-7-zero-friction-intervention)
 
 ---
 
@@ -39,19 +41,18 @@
   - Encourages continued use over self-coping alternatives  
   - Validated by Hypothesis 4 (accepted)
 
+- **Zero‑friction, booking‑free support access**
+  - Removes the biggest barrier preventing students from seeking help
+  - Enables immediate engagement during moments of stress
+  - Validated by Hypothesis 7 (accepted)
 ---
 
 ## 3. Channels
 
-**Primary Channels**
-- Blackboard integration (main entry point, validated by Hypothesis 5)
-- UQ Student Hub / Discord community space
-
-**Secondary Channels**
+- Blackboard integration (main entry point)
 - Social media (Instagram, TikTok, Facebook student groups)
-- University email newsletters
-- Campus posters and digital screens
-- Word of mouth via student clubs and societies
+- Email marketing/newsletters
+- University and campus partnerships (UQUnions etc.)
 
 ---
 
