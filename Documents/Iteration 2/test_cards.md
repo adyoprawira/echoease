@@ -145,4 +145,24 @@ We are right if ≥60% choose peer forum.
 2. Why do you think a (a trained professional/a peer) is better in catering to your problems/ answering you? 
 3. If you are reading on the community forum that fellow peers are having the same situation as you, how would you feel? 
 
+## Test Card 7: Zero-Friction Intervention
+
+**HYPOTHESIS**
+We believe students will only swap self-coping habits for professional help if the intervention requires zero prior booking or onboarding effort.
+
+**TEST**
+To confirm that, we will interview students about their last stress episode and ask: "If a peer moderator had been available for an instant 5-minute chat with no forms or booking, would you have used it instead of [Gym/Gaming/Music]?"
+
+**METRIC**
+And measure the percentage of students who say the lack of an appointment process would have changed their decision.
+**CRITERIA**
+We are right if 80% of students confirm that "booking/forms" was the main barrier.
+
+### Interview questions
+1. If we provide this service without requiring you to make a booking (zero effort), do you still want to cope with your problem by yourself or would you talk through it with someone?  
+
+        What is the maximum amount of time you would be willing to wait for a response before you went back to your usual coping habits?
+
+2. What would an ideal effortless support experience look like for you? 
+
 ---
