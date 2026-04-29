@@ -118,7 +118,7 @@ We believed that students would expect emergency resources to be highly visible 
 Students consistently expected emergency help to be at the top of the page, fixed, or always visible.
 They preferred red colour cues, bold text, and simple, direct wording.
 Students trusted UQ to provide correct emergency contacts but did not want to search for them during stress.
-Emotional reassurance was important — wording needed to feel supportive, not clinical.
+Emotional reassurance was important; wording needed to feel supportive, not clinical.
 
 **LEARNING AND INSIGHTS**  
 Crisis navigation must be zero‑friction.
