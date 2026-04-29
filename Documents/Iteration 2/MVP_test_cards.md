@@ -3,16 +3,17 @@
 ## Test Card 1: Support Button Discoverability
 
 **HYPOTHESIS**
-We believe students will easily notice and understand the Support & Well-being button inside Blackboard and recognise it as the entry point to the UQ Wellness platform.
+We believe students already have an internal expectation of where a Support & Well‑being button should appear on Blackboard, and they will describe a consistent location.
 
-**TEST**  
-To confirm that, we will ask students to locate the Support & Well-being button on the Blackboard dashboard during a usability test.
+**TEST**
+Ask students where they would expect such a button to be located and what they think it would do.
 
-**METRIC**  
-Measure the percentage of students who find the button within 10 seconds without hints.
+**METRIC**
+Identify common patterns in expected placement and purpose (e.g., navigation bar, sidebar, top menu).
 
-**CRITERIA**  
-We are right if 80% of students locate the button quickly and describe it as “clear,” “visible,” or “easy to find.”
+**CRITERIA**
+We are right if at least 70% of students can describe the expected location and can articulate a clear purpose for the button.
+
 
 **INTERVIEW QUESTIONS**
 1. Imagine you’re on your usual Blackboard dashboard. If there was a button called Support & Well‑being, where would you expect it to be located?
@@ -22,36 +23,36 @@ We are right if 80% of students locate the button quickly and describe it as “
 ## Test Card 2: Landing Page Clarity & First Impressions
 
 **HYPOTHESIS**  
-We believe students will immediately understand the purpose of the landing page (“Read Community Stories,” “Chat with Someone,” “Emergency Resources”) without needing explanation.
+We believe students can infer the purpose of a wellbeing landing page based solely on the three option labels, even without seeing the interface.
 
 **TEST**  
-To confirm that, we will observe students’ first impressions when they arrive on the landing page.
+To confirm that, ask students what they think the page is for and how they interpret the three options.
 
 **METRIC**  
-Measure how many students can correctly describe the purpose of the page in one sentence.
+Measure how many students correctly infer that the page provides wellbeing support and different types of help.
 
 **CRITERIA**
-We are right if 70% of students can articulate the purpose without confusion.
+We are right if 70% of students describe the page as a wellbeing support hub and can explain the meaning of each option.
+
 
 **INTERVIEW QUESTIONS**
-
 1. Imagine you click a support button and land on a page with three options: Read Community Stories, Chat with Someone, and Emergency Resources. What would you think this page is for?
 2. Which of those three options would you be most likely to click first, and why?
 3. Does that kind of layout feel clear to you, or would you expect something different?
 
 ## Test Card 3: Anonymous Community Engagement
 
-**HYPOTHESIS**  
-We believe students will feel comfortable browsing the Anonymous Community and will find value in reading peer stories even if they do not post.
+**HYPOTHESIS**
+We believe students will perceive an anonymous, read‑only community as a safe and low‑pressure way to understand others’ experiences.
 
-**TEST**  
-To confirm that, we will ask students to navigate to the Community page, browse posts, and interpret the purpose of the read‑only format.
+**TEST**
+Ask students how comfortable they feel with the idea of reading anonymous posts and whether they find value in it.
 
-**METRIC**  
+**METRIC**
 Measure the percentage of students who describe the community as safe, relatable, or helpful.
 
-**CRITERIA**  
-We are right if 60% of students say they would use the community to read or understand others’ experiences.
+**CRITERIA**
+We are right if 60% of students say they would read posts or find value in seeing others’ experiences.
 
 **INTERVIEW QUESTIONS**
 1. Imagine there’s an anonymous community where students share short posts about stress, loneliness, exams, or finances. How comfortable would you feel reading posts like that?
@@ -61,19 +62,18 @@ We are right if 60% of students say they would use the community to read or unde
 ## Test Card 4: Create Post Flow (Peer Support Community)
 
 **HYPOTHESIS**  
-We believe students will find the Create a Post interface intuitive, especially the topic tags and the “Post Anonymously” toggle.
+We believe students will find the idea of posting anonymously appealing and will understand the usefulness of topic tags even without seeing the interface.
 
-**TEST**  
-To confirm that, we will ask students to create a post using the title field, text field, topic tags, and anonymity toggle.
+**TEST**
+Ask students how easy they think it would be to share something, how they feel about tags, and how important anonymity is.
 
-**METRIC**  
-Measure how many students complete the task without needing clarification.
+**METRIC**
+Measure how many students express comfort with anonymous posting and see tags as helpful.
 
-**CRITERIA**  
-We are right if 75% of students can create a post smoothly and understand the anonymity feature.
+**CRITERIA**
+We are right if 75% of students say anonymity increases their willingness to post or that tags help them express their situation.
 
 **INTERVIEW QUESTIONS**
-
 1. Imagine you could write an anonymous post about something you’re struggling with. How easy or difficult do you think it would be to share something in that space?
 2. If you could choose up to three topic tags (like Stress, Anxiety, Sleep, Relationships), would that help you express what you’re going through?
 3. How important is the option to post anonymously for you?
@@ -82,19 +82,18 @@ We are right if 75% of students can create a post smoothly and understand the an
 ## Test Card 5: Private Chat Accessibility
 
 **HYPOTHESIS**
-We believe students will perceive the Chat feature as approachable, safe, and less intimidating than formal counselling.
+We believe students will perceive a casual, no‑booking chat with a peer mentor as more approachable than formal counselling.
 
 **TEST**
-To confirm that, we will ask students to open the Chat page and interpret the conversation with the peer mentor.
+Ask students how likely they would be to use such a chat and what makes it feel safe or unsafe.
 
-**METRIC** 
-Measure the percentage of students who describe the chat as easy to find, comforting, or less formal.
+**METRIC**
+Measure the percentage of students who describe the chat concept as approachable, comforting, or less intimidating.
 
-**CRITERIA**  
-We are right if 70% of students say they would use the chat when stressed.
+**CRITERIA**
+We are right if 70% of students say they would use the chat, especially during stress or after hours.
 
 **INTERVIEW QUESTIONS**
-
 1. Imagine there’s a private chat where you can talk to a peer mentor or counsellor without booking anything. How likely are you to use something like that?
 2. Would chatting with a peer mentor feel less intimidating than booking a formal counselling appointment?
 3. What would make you feel safe or unsafe about using a chat feature for support?
@@ -103,19 +102,18 @@ We are right if 70% of students say they would use the chat when stressed.
 ## Test Card 6: Emergency Resources Visibility
 
 **HYPOTHESIS**  
-We believe students will be able to quickly locate Emergency Resources when needed, even under stress.
+We believe students have clear expectations about where emergency resources should be located and what wording makes them trustworthy.
 
-**TEST**  
-To confirm that, we will ask students to find the emergency resources from the landing page and within the Resource Directory.
+**TEST**
+Ask students where they expect emergency resources to appear and how they would recognise them quickly.
 
-**METRIC**  
-Measure the time it takes for students to locate the emergency section.
+**METRIC**
+Measure the consistency of expected placement and clarity of wording students prefer.
 
-**CRITERIA**  
-We are right if 90% of students find it within 15 seconds.
+**CRITERIA**
+We are right if 90% of students describe a location or label that aligns with standard emergency UX patterns (e.g., top of page, bold, red, clearly labelled).
 
 **INTERVIEW QUESTIONS**
-
 1. Imagine there’s a clearly labelled Emergency Resources section inside a wellbeing platform. Where would you expect to find it?
 2. What wording would make emergency resources feel clear and trustworthy to you?
 3. If you were in a stressful situation, what would help you quickly recognise where urgent help is located?
