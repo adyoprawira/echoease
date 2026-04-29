@@ -122,3 +122,25 @@ Forums are better as a secondary feature rather than a primary solution.
 
 **DECISIONS AND ACTIONS**  
 Therefore, we will accept this hypothesis with refinement by combining peer forums with real-time human support.
+
+## Hypothesis 7: Zero‑Friction Intervention Increases Help‑Seeking
+[TestCard7](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-7-zero-friction-intervention)
+
+**HYPOTHESIS**  
+We believed that students will only shift from self‑coping to seeking support if the intervention requires zero effort, no booking, no forms, and instant access.
+
+**OBSERVATIONS**  
+16 out of 20 students (80%) said they would seek help if no booking or forms were required.
+17 out of 20 students (85%) identified booking and formality as major barriers.
+18 out of 20 students (90%) said instant access would increase their likelihood of using support.
+10 out of 20 students (50%) required a response within one hour to stay engaged.
+18 out of 20 students (90%) required a response within the same day before reverting to self‑coping.
+
+**LEARNING AND INSIGHTS**  
+Students avoid support because of friction, not because they dislike help.
+Even small barriers; searching, filling forms, waiting, push them back to self‑coping habits.
+Zero‑friction access is the minimum requirement for behaviour change, especially during moments of stress when motivation is low.
+
+**DECISIONS AND ACTIONS**  
+Therefore, we will accept this hypothesis and design a zero‑friction support entry point with instant access, no booking, no forms, fast response times, and short, low‑pressure interactions.
+This will be integrated directly into Blackboard to align with students’ daily routines and reduce psychological barriers.
