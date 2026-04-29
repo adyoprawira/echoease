@@ -54,7 +54,6 @@ Therefore, we will partially accept this hypothesis and investigate a new hypoth
 
 ## **Hypothesis 4: Self-Coping vs Low-Effort Intervention**
 [TestCard4](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-4-self-coping-vs-low-effort-intervention)
-**STATUS:** Accepted
 
 ### **HYPOTHESIS**
 We believed that students prefer self-coping unless an intervention is extremely low-effort.
@@ -105,7 +104,6 @@ We will design a support system that:
 
 ## **Hypothesis 5: Integrated Access via Blackboard**
 [TestCard5](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-5-integrated-access-refined-from-centralization)
-**STATUS:** Accepted
 
 ### **HYPOTHESIS**
 We believed students are more likely to access support when it is embedded directly into Blackboard, a platform they already use daily, rather than through separate university websites.
@@ -147,7 +145,6 @@ We will implement a Support button within Blackboard that provides:
 ## **Hypothesis 6: Community vs Automation**
 [TestCard6](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-6-community-vs-automation-refined-from-anonymity-hypothesis)
 
-**STATUS:** Accepted (with nuance)
 
 ### **HYPOTHESIS**
 We believed students are more likely to engage with vetted peer-to-peer forums than automated tools because they value shared experiences over data-driven advice.
