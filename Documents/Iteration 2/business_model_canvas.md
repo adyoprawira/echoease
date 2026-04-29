@@ -57,22 +57,8 @@
 ---
 
 ## 4. Customer Relationships
-
-- **Automated but supportive interactions**
-  - Instant acknowledgement messages
-  - Emotionally aware system responses
-
-- **Human-centred support structure**
-  - Peer listeners for relatable conversations
-  - Professional counsellors for escalation cases
-  - Moderated anonymous forums for safe discussion
-
-- **Smart routing system**
-  - Directs students to peer or professional support based on need
-
-- **Feedback loops**
-  - In-app ratings for support quality
-  - Optional wellbeing check-ins to monitor engagement
+  - Facilitates student-to-student connections to provide relatable guidance and community-based assistance.
+  - Directs students to qualified experts or staff members for specialized advice and formal interventions.
 
 Validated by:
 - Theme: Human-centred interaction preference
@@ -114,10 +100,5 @@ Validated by:
 
 ## 8. Key Activities
 
-- Develop instant chat support system  
-- Integrate “Support” feature into Blackboard  
-- Train peer supporters and moderators  
-- Maintain anonymous forums and community spaces  
-- Ensure fast response times through system optimisation  
-- Collect feedback and continuously improve features  
-- Promote platform through campus and social media channels  
+- Collect student feedback to improve the app
+- Promote the app through social media and campus partnerships
