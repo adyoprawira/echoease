@@ -86,4 +86,8 @@ The following table outlines the assigned responsibilities for each team member,
 ---
 
 ## 📝 Notes
-- 
+- Each member must contribute their idea about the set of questions.
+- Each member is responsible for conducting interviews independently.
+- Ensure that all interviews are completed before the deadline.
+- Key insights from interviews should be documented and shared with the team.
+- Maintain clear and consistent communication throughout the process.
