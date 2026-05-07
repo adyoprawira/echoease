@@ -91,3 +91,28 @@ The following table outlines the assigned responsibilities for each team member,
 - Ensure that all interviews are completed before the deadline.
 - Key insights from interviews should be documented and shared with the team.
 - Maintain clear and consistent communication throughout the process.
+
+---
+## 📋 Task Allocation For Week 10
+
+The following table outlines the assigned responsibilities for each team member, including their tasks and deadlines.
+
+| Team Member | Task                                                   | Deadline          |
+|-------------|--------------------------------------------------------|-------------------|
+| Putri       | Community forum page (3 section)                       | Wednesday(Week11) |
+| Darren      |Private Chat and Queue Confirmation Feedback            | Wednesday(Week11) |
+| Farisha     | Resource page (2 section)                              | Wednesday(Week11) |
+| Dyo         | Landing page, Professional selection, Entry point page | Wednesday(Week11) |
+| ALL         | Plan for fifth interview       `                       | Thursday (Week11) |
+| ALL         | Get the interview done                                 | End of Week11     |
+| ALL         | Create a learning card                                 | Wednesday (Week12)|
+
+---
+
+## 📝 Notes
+- Each member have to work on the MVP section and settle the core pages before making the interviews.
+- Each member must contribute their idea about the set of questions.
+- Each member is responsible for conducting interviews independently.
+- Ensure that all interviews are completed before the deadline.
+- Key insights from interviews should be documented and shared with the team.
+- Maintain clear and consistent communication throughout the process.
