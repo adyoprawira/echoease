@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="chat-page">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand-top">UQ Student Well-being</div>
+      <div class="hub">
+        <div class="hub-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 17.2 7.9 13a2.6 2.6 0 0 1 3.7-3.7L12 9.7l.4-.4a2.6 2.6 0 1 1 3.7 3.7z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="hub-title">Well-being Hub</div>
+          <div class="hub-sub">Student Support</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary sections">
+        <button class="nav-link-btn inline-feature-btn" type="button" data-feature-note="Home is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span><span>Home</span></button>
+        <button class="nav-link-btn inline-feature-btn" type="button" data-feature-note="Community is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span><span>Community</span></button>
+        <button class="nav-link-btn active inline-feature-btn" type="button" data-feature-note="You are already in the private chat view."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span><span>Chat</span></button>
+        <button class="nav-link-btn inline-feature-btn" type="button" data-feature-note="Resources is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span><span>Resources</span></button>
+      </nav>
+      <button
+        class="support-btn support-icon-btn inline-feature-btn"
+        type="button"
+        data-feature-note="Support directory is not included in this chat-only MVP."
+      >
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 13a8 8 0 0 1 16 0"></path>
+            <path d="M5 13v4a2 2 0 0 0 2 2h1v-7H7a2 2 0 0 0-2 2z"></path>
+            <path d="M19 13v4a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 2z"></path>
+            <path d="M13 21h-2"></path>
+          </svg>
+        </span>
+        <span>Support &amp; Well-being</span>
+      </button>
+      <div class="bottom-nav" aria-label="Quick actions">
+        <button class="bottom-link-btn inline-feature-btn" type="button" data-feature-note="Settings are not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1a1 1 0 1 1-1.4 1.4l-.1-.1a1.8 1.8 0 0 0-2-.4 1.8 1.8 0 0 0-1.1 1.7V20a1 1 0 1 1-2 0v-.2a1.8 1.8 0 0 0-1.1-1.7 1.8 1.8 0 0 0-2 .4l-.1.1a1 1 0 1 1-1.4-1.4l.1-.1a1.8 1.8 0 0 0 .4-2 1.8 1.8 0 0 0-1.7-1.1H4a1 1 0 1 1 0-2h.2a1.8 1.8 0 0 0 1.7-1.1 1.8 1.8 0 0 0-.4-2l-.1-.1a1 1 0 1 1 1.4-1.4l.1.1a1.8 1.8 0 0 0 2 .4 1.8 1.8 0 0 0 1.1-1.7V4a1 1 0 1 1 2 0v.2a1.8 1.8 0 0 0 1.1 1.7 1.8 1.8 0 0 0 2-.4l.1-.1a1 1 0 1 1 1.4 1.4l-.1.1a1.8 1.8 0 0 0-.4 2 1.8 1.8 0 0 0 1.7 1.1H20a1 1 0 1 1 0 2h-.2a1.8 1.8 0 0 0-1.7 1.1z"></path></svg></span><span>Settings</span></button>
+        <button class="bottom-link-btn inline-feature-btn" type="button" data-feature-note="Help center is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.2 9a3 3 0 1 1 5.5 1.7c-.8 1.1-1.7 1.4-1.7 2.8"></path><path d="M12 17h.01"></path></svg></span><span>Help</span></button>
+      </div>
+    </aside>
+
+    <main class="main chat-main">
+      <header class="topbar">
+        <button class="quick" id="quickExitTop" type="button" aria-label="Quick Exit to Google">Quick Exit</button>
+        <button
+          class="top-icon-btn"
+          id="notificationButton"
+          type="button"
+          aria-label="Open notifications"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="notificationPanel"
+        >
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 10a6 6 0 1 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path><path d="M14 21a2 2 0 0 1-4 0"></path></svg></span>
+          <span class="notification-badge" id="notificationBadge" hidden aria-hidden="true"></span>
+        </button>
+        <button
+          class="avatar avatar-btn"
+          id="profileButton"
+          type="button"
+          aria-label="Open student profile"
+          aria-haspopup="dialog"
+          aria-controls="profileModal"
+        >
+          DM
+        </button>
+      </header>
+      <section class="notification-panel" id="notificationPanel" hidden aria-label="Notifications">
+        <div class="notification-panel-head">
+          <h2>Notifications</h2>
+          <button class="panel-close-inline" id="closeNotificationPanelBtn" type="button" aria-label="Close notifications">Close</button>
+        </div>
+        <ul class="notification-list" id="notificationList"></ul>
+        <button class="mvp-modal-btn" id="clearNotificationsBtn" type="button">Clear notifications</button>
+      </section>
+
+      <section class="chat-shell" aria-label="Private chat with support officer">
+        <div class="chat-header">
+          <button
+            class="mentor mentor-trigger"
+            id="mentorProfileBtn"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="mentorProfileModal"
+            aria-label="Open support officer profile"
+          >
+            <img
+              id="mentorPhoto"
+              class="small-photo"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop"
+              alt="Dr. Sarah Jenkins"
+            >
+            <span>
+              <span class="mentor-name" id="mentorName">Dr. Sarah Jenkins</span>
+              <span class="online">
+                <span class="availability-dot" style="background:#0abe70"></span>
+                <span id="mentorRole">Peer Support Officer</span>
+              </span>
+              <span class="professional-status" id="professionalStatus">Available now</span>
+              <span class="session-status" id="chatSessionStatusLabel">Session: Active</span>
+              <span class="referral-count" id="referralCountLabel">Resources suggested: 0</span>
+            </span>
+          </button>
+
+          <div class="chat-header-actions">
+            <button
+              class="safe safe-trigger"
+              id="privacyInfoBtn"
+              type="button"
+              aria-controls="privacyPanel"
+              aria-expanded="false"
+              aria-label="View privacy information"
+            >
+              Safe &amp; Confidential
+            </button>
+            <div class="safety-buttons">
+              <button
+                class="action-ghost"
+                id="emergencyResourcesBtn"
+                type="button"
+                aria-controls="emergencyPanel"
+                aria-expanded="false"
+              >
+                Emergency Resources
+              </button>
+              <button
+                class="action-ghost danger"
+                id="endChatBtn"
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="endChatModal"
+              >
+                End Chat
+              </button>
+              <button class="action-ghost quick-exit-mini" id="quickExitInline" type="button" aria-label="Quick Exit to Google">
+                Quick Exit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-panel" id="emergencyPanel" hidden role="region" aria-label="Emergency resources panel">
+          <div class="panel-head">
+            <h2>Emergency Resources</h2>
+            <button class="panel-close" id="closeEmergencyPanelBtn" type="button" aria-label="Close emergency resources">Close</button>
+          </div>
+          <ul>
+            <li>Call <strong>000</strong> for immediate danger.</li>
+            <li>Lifeline <strong>13 11 14</strong>.</li>
+            <li>UQ Student Services <strong>07 3365 1704</strong>.</li>
+          </ul>
+          <p class="panel-note">This chat is not a replacement for emergency help.</p>
+        </div>
+
+        <div class="info-panel" id="privacyPanel" hidden role="region" aria-label="Privacy information panel">
+          <div class="panel-head">
+            <h2>Privacy Information</h2>
+            <button class="panel-close" id="closePrivacyPanelBtn" type="button" aria-label="Close privacy information">Close</button>
+          </div>
+          <ul>
+            <li>Messages are private within this MVP demo.</li>
+            <li>The page uses simulated support responses.</li>
+            <li>No real backend or database is connected.</li>
+            <li>In a real system, privacy, moderation, and professional escalation would need official university approval.</li>
+          </ul>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="day">TODAY</div>
+          <div class="empty-state" id="chatWelcome">
+            <h2>Welcome to private student support</h2>
+            <p>
+              You can talk about exams, money stress, loneliness, accessibility, health, or urgent safety concerns.
+              Share what feels hardest right now and we will guide you to the right support.
+            </p>
+          </div>
+          <div class="private-note">
+            This chat is private. Only you and your support officer can see these messages.
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <div class="chips" role="group" aria-label="Starter prompts">
+            <button class="chip prompt-btn" type="button" data-concern="study" data-prompt="I feel stressed about exams and study pressure.">
+              Study stress
+            </button>
+            <button class="chip prompt-btn" type="button" data-concern="financial" data-prompt="I am worried about money, rent, and costs this semester.">
+              Money stress
+            </button>
+            <button class="chip prompt-btn" type="button" data-concern="counselling" data-prompt="I need someone to talk to and support my wellbeing.">
+              Need someone to talk to
+            </button>
+            <button class="chip prompt-btn" type="button" data-concern="crisis" data-prompt="I need emergency help and feel unsafe right now.">
+              Emergency help
+            </button>
+          </div>
+
+          <div class="handoff-banner" id="handoffBanner" hidden>
+            Resource handoff prepared. You can continue chatting or open the recommended support page.
+          </div>
+
+          <div class="input-row">
+            <label class="sr-only" for="chatMessageInput">Type your message</label>
+            <input
+              id="chatMessageInput"
+              type="text"
+              placeholder="Message Dr. Sarah Jenkins..."
+              autocomplete="off"
+              maxlength="500"
+              aria-describedby="charCounter"
+            >
+            <button class="send" id="sendButton" type="button" aria-label="Send message">Send</button>
+          </div>
+          <div class="input-meta">
+            <span class="char-counter" id="charCounter" aria-live="polite">0/500</span>
+          </div>
+          <div class="safety">
+            Your safety is our priority. If you are in immediate danger, use Emergency Resources or call Emergency Services.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-tabs" aria-label="Mobile sections">
+    <button class="mobile-tab-btn inline-feature-btn" type="button" data-feature-note="Home is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span><span>Home</span></button>
+    <button class="mobile-tab-btn inline-feature-btn" type="button" data-feature-note="Community is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span><span>Community</span></button>
+    <button class="mobile-tab-btn active inline-feature-btn" type="button" data-feature-note="You are already in the private chat view."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span><span>Chat</span></button>
+    <button class="mobile-tab-btn inline-feature-btn" type="button" data-feature-note="Resources is not included in this chat-only MVP."><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span><span>Resources</span></button>
+  </nav>
+
+  <div class="modal-backdrop" id="endChatModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="endChatTitle">
+      <button class="modal-close" id="closeEndChatModalBtn" type="button" aria-label="Close end chat confirmation">Close</button>
+      <h2 id="endChatTitle">Are you sure you want to end this chat?</h2>
+      <div class="modal-actions">
+        <button class="modal-btn" id="cancelEndChatBtn" type="button">Cancel</button>
+        <button class="modal-btn danger" id="confirmEndChatBtn" type="button">End Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="mentorProfileModal" hidden>
+    <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <button class="modal-close" id="closeMentorProfileModalBtn" type="button" aria-label="Close profile">Close</button>
+      <h2 id="profileTitle">Support Officer Profile</h2>
+      <p><strong>Name:</strong> <span id="profileOfficerName">Dr. Sarah Jenkins</span></p>
+      <p><strong>Role:</strong> <span id="profileOfficerRole">Peer Support Officer</span></p>
+      <p><strong>Status:</strong> <span id="profileOfficerStatus">Available now</span></p>
+      <p><strong>Specialties:</strong> <span id="profileOfficerSpecialties">academic stress, anxiety, study burnout</span></p>
+      <p class="modal-note">This is a simulated support officer for MVP testing.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="resourceDetailsModal" hidden>
+    <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="resourceDetailsTitle">
+      <button class="modal-close" id="closeResourceDetailsModalBtn" type="button" aria-label="Close resource details">Close</button>
+      <h2 id="resourceDetailsTitle">Recommended Resource</h2>
+      <span class="resource-details-urgency" id="resourceDetailsUrgency">Medium priority</span>
+      <p id="resourceDetailsDescription">Resource details for this concern will appear here.</p>
+      <p><strong>When to use it:</strong> <span id="resourceDetailsWhenToUse">When this concern is affecting your studies or wellbeing.</span></p>
+      <p><strong>Next step:</strong> <span id="resourceDetailsNextStep">Open the recommended support pathway or continue chatting for more guidance.</span></p>
+      <p class="modal-note" id="resourceDetailsNote">This recommendation is based on your message in this MVP chat.</p>
+      <div class="modal-actions">
+        <button class="modal-btn" id="openResourcePageBtn" type="button">Open Resources Page</button>
+        <button class="modal-btn" id="closeResourceDetailsActionBtn" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="openResourceConfirmModal" hidden>
+    <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="openResourceConfirmTitle">
+      <button class="modal-close" id="closeOpenResourceConfirmModalBtn" type="button" aria-label="Close resource confirmation">Close</button>
+      <h2 id="openResourceConfirmTitle">Open recommended resource?</h2>
+      <p id="openResourceConfirmText">Open this support resource now?</p>
+      <div class="modal-actions">
+        <button class="modal-btn" id="continueChattingBtn" type="button">Continue Chatting</button>
+        <button class="modal-btn primary" id="confirmOpenResourceBtn" type="button">Open Resource</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="endChatSummaryModal" hidden>
+    <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="endChatSummaryTitle">
+      <button class="modal-close" id="closeEndSummaryModalBtn" type="button" aria-label="Close chat summary">Close</button>
+      <h2 id="endChatSummaryTitle">Chat Summary</h2>
+      <p><strong>Professional:</strong> <span id="summaryProfessional">Dr. Sarah Jenkins</span></p>
+      <p><strong>Session status:</strong> <span id="summarySessionStatus">Active</span></p>
+      <p><strong>Main concerns detected:</strong> <span id="summaryConcern">General wellbeing support</span></p>
+      <p><strong>Resources suggested:</strong> <span id="summaryResources">None yet</span></p>
+      <p><strong>Saved resources:</strong> <span id="summarySavedResources">0</span></p>
+      <p><strong>Next recommended step:</strong> <span id="summaryNextStep">Continue with university support pathways.</span></p>
+      <div class="modal-actions">
+        <button class="modal-btn" id="saveChatSummaryBtn" type="button">Save chat summary</button>
+        <button class="modal-btn" id="continueAfterSummaryBtn" type="button">Continue Chatting</button>
+        <button class="modal-btn danger" id="returnToSelectionBtn" type="button">Return to Professional Selection</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="profileModal" hidden>
+    <div class="mvp-modal-card profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+      <button class="mvp-modal-close" id="closeProfileModalBtn" type="button" aria-label="Close profile modal">Close</button>
+      <div class="profile-modal-header">
+        <div class="profile-avatar-large" aria-hidden="true">DM</div>
+        <div>
+          <h2 id="profileModalTitle">Darren Marcello</h2>
+          <p class="profile-modal-role">Student</p>
+        </div>
+      </div>
+      <div class="profile-modal-grid">
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span><div><span class="profile-info-label">Email</span><span class="profile-info-value">darrenms7120@gmail.com</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span><div><span class="profile-info-label">Student ID</span><span class="profile-info-value">s4980052</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-6 9 6"></path><path d="M5 10v9h14v-9"></path><path d="M9 19v-5h6v5"></path></svg></span><div><span class="profile-info-label">University</span><span class="profile-info-value">University of Queensland</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></span><div><span class="profile-info-label">Program</span><span class="profile-info-value">Student Support MVP Demo</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></svg></span><div><span class="profile-info-label">Status</span><span class="profile-info-value">Active student</span></div></div>
+      </div>
+      <p class="profile-privacy-note">This is static demo profile data for the MVP.</p>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="copyProfileEmailBtn" type="button">Copy Email</button>
+        <button class="mvp-modal-btn" id="copyStudentIdBtn" type="button">Copy Student ID</button>
+        <button class="mvp-modal-btn primary" type="button" id="profileCloseActionBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/chat.js"></script>
+</body>
+</html>
