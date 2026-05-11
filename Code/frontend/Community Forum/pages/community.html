@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Forum</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1 class="brand">UQ Student Well-being</h1>
+      <div class="top-actions">
+        <button class="icon-btn" aria-label="Notifications">🔔</button>
+        <div class="avatar" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo-mark"></div>
+        <div>
+          <p class="logo-title">Well-being Hub</p>
+          <p class="logo-sub">STUDENT SUPPORT</p>
+        </div>
+      </div>
+
+      <nav class="nav" id="leftNav">
+        <a href="#" data-nav="home"><span>Home</span></a>
+        <a href="#" class="active" data-nav="community"><span>Community</span></a>
+        <a href="../../Chat/pages/professional-selection.html" data-nav="saved"><span>Chat</span></a>
+        <a href="#" data-nav="resources"><span>Resources</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a class="nav-link" href="#">Settings</a>
+        <a class="nav-link" href="#">Help</a>
+      </div>
+
+      <button class="sidebar-cta">Start New Discussion</button>
+    </aside>
+
+    <main class="main">
+      <div class="content">
+        <section>
+          <h2 class="title">Anonymous Community</h2>
+          <p class="subtitle">
+            A safe place to ask questions, share lived experiences, and support one another.
+            Browse by topic using the filters below.
+          </p>
+
+          <div class="chips" id="topicFilters">
+            <button class="chip active" data-filter="all">All Topics</button>
+            <button class="chip" data-filter="work">Work Pressure</button>
+            <button class="chip" data-filter="study">Study Stress</button>
+            <button class="chip" data-filter="anxiety">Anxiety</button>
+            <button class="chip" data-filter="selfcare">Self-care</button>
+          </div>
+        </section>
+
+        <section class="grid-feed" id="feedGrid">
+          <article class="card" data-topic="study">
+            <div class="meta"><span class="tag green">Study Advice</span><span>2h ago</span></div>
+            <h3>How do you recover after academic burnout?</h3>
+            <p>I feel exhausted and behind. Looking for realistic routines that helped others regain focus without guilt.</p>
+            <div class="stats"><span>💬 12</span><span>👁 48</span></div>
+          </article>
+
+          <article class="card featured" data-topic="work">
+            <div class="card-image" aria-hidden="true"></div>
+            <div class="featured-body">
+              <div class="meta"><span class="tag teal">Featured Story</span><span>1h ago</span></div>
+              <h3>Setting boundaries when your manager expects 24/7 replies</h3>
+              <p>
+                I started using “availability windows” and shared expectations with my team.
+                It felt scary at first, but stress dropped significantly.
+              </p>
+              <div class="stats"><span>💬 9</span><span>👁 71</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-topic="anxiety">
+            <div class="meta"><span class="tag red">Anxiety</span><span>5h ago</span></div>
+            <h3>Panic before presentations</h3>
+            <p>My heart races before speaking in class. Any grounding techniques that actually work in the moment?</p>
+            <div class="stats"><span>💬 7</span><span>👁 32</span></div>
+          </article>
+
+          <article class="card" data-topic="selfcare">
+            <div class="meta"><span class="tag purple">Self-care</span><span>8h ago</span></div>
+            <h3>Small rituals that improved your week?</h3>
+            <p>I’m collecting tiny habits that are easy to sustain even during busy days.</p>
+            <div class="stats"><span>💬 14</span><span>👁 55</span></div>
+          </article>
+
+          <article class="card" data-topic="study">
+            <div class="meta"><span class="tag green">Study Advice</span><span>1d ago</span></div>
+            <h3>Balancing deadlines and sleep</h3>
+            <p>Share tips for managing assignments without sacrificing rest every night.</p>
+            <div class="stats"><span>💬 10</span><span>👁 44</span></div>
+          </article>
+        </section>
+
+        <section class="activity">
+          <div class="activity-card left">
+            <h4>Community Activity</h4>
+            <ul class="activity-list">
+              <li class="activity-item"><span class="dot"></span><div><strong>Hana</strong><br><small>Started a thread on work stress</small></div></li>
+              <li class="activity-item"><span class="dot"></span><div><strong>Putri</strong><br><small>Replied in Study Advice</small></div></li>
+            </ul>
+          </div>
+
+          <div class="activity-card right">
+            <h4>Need immediate support?</h4>
+            <p>If this feels urgent, please contact a trusted person or a local mental health helpline.</p>
+            <button class="support-btn">View support options</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="fab-wrap">
+    <div class="fab-label" id="fabLabel">Create post</div>
+    <button class="fab" id="fab" aria-label="Create post">+</button>
+  </div>
+
+  <script src="../scripts/forum.js"></script>
+</body>
+</html>
