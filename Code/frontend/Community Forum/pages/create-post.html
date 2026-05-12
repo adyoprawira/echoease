@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Post - PUTRI</title>
+  <!-- Link to your external style.css -->
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
+
+  <style>
+    /* Specific styles for the Create Post form */
+    .form-container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .field { margin-bottom: 24px; }
+    .field label { 
+      display: block; 
+      margin-bottom: 8px; 
+      font-weight: 600; 
+      color: var(--fg);
+    }
+
+    .input, .textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--fg);
+    }
+
+    .textarea { min-height: 160px; resize: vertical; }
+
+    /* Topic Buttons */
+    .topics { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+      color: var(--muted-fg);
+      transition: 0.2s;
+    }
+    .topic-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Custom Toggle Switch */
+    .anon-toggle {
+      background: var(--muted);
+      padding: 20px 24px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .switch {
+      width: 48px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--primary);
+      position: relative;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .switch::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: white;
+      top: 3px;
+      left: 25px;
+      transition: 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .switch.off {
+      background: #cbd5e1;
+    }
+
+    .switch.off::after {
+      left: 3px;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- TOPBAR: Inherits styles from style.css -->
+    <header class="topbar">
+      <h1 class="brand">UQ Student Well-being</h1>
+      <div class="top-actions">
+        <button class="btn-quick-exit">Quick Exit</button>
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="icon icon-bell"></i>
+          <span class="dot"></span>
+        </button>
+        <div class="avatar">DM</div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-square"><i class="icon icon-heart"></i></div>
+        <div>
+          <p class="logo-title">Well-being Hub</p>
+          <p class="logo-sub">STUDENT SUPPORT</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item"><i class="icon icon-home"></i> Home</a>
+        <a href="../pages/community.html" class="nav-item active"><i class="icon icon-users"></i> Community</a>
+        <a href="../../Chat/pages/professional-selection.html" class="nav-item"><i class="icon icon-message-square"></i> Chat</a>
+        <a href="#" class="nav-item"><i class="icon icon-book-open"></i> Resources</a>
+      </nav>
+
+      <button class="btn-support">
+        <i class="icon icon-headphones"></i> Support &amp; Well-being
+      </button>
+
+      <div class="sidebar-foot">
+        <a href="#" class="nav-item small"><i class="icon icon-settings"></i> Settings</a>
+        <a href="#" class="nav-item small"><i class="icon icon-help-circle"></i> Help</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <div class="form-container">
+        <header style="margin-bottom: 32px;">
+          <span class="tag tag-accent">Safe Space</span>
+          <h2 style="font-size: 32px; font-weight: 800; color: var(--primary-dark); margin-top: 8px;">Create New Post</h2>
+          <p style="color: var(--muted-fg); margin-top: 4px;">Share your journey with the student community.</p>
+        </header>
+
+        <div class="field">
+          <label for="postTitle">Title</label>
+          <input id="postTitle" class="input" type="text" placeholder="What's on your mind?" maxlength="120" />
+        </div>
+
+        <div class="field">
+          <label>Select Topic</label>
+          <div class="topics" id="topicList">
+            <button class="topic-btn">Stress</button>
+            <button class="topic-btn active">Academic Pressure</button>
+            <button class="topic-btn">Loneliness</button>
+            <button class="topic-btn">Sleep</button>
+            <button class="topic-btn">Other</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="postContent">Content</label>
+          <textarea id="postContent" class="textarea" placeholder="Tell us more... (Posts are moderated for safety)"></textarea>
+        </div>
+
+        <div class="anon-toggle">
+          <div class="anon-text">
+            <h4 style="margin: 0; color: var(--fg);">Post Anonymously</h4>
+            <p style="margin: 4px 0 0; color: var(--muted-fg); font-size: 14px;">Your identity will remain hidden</p>
+          </div>
+          <button id="anonSwitch" class="switch" aria-pressed="true"></button>
+        </div>
+
+        <div class="form-footer">
+          <button class="btn-support" style="background: transparent; color: var(--muted-fg);" onclick="window.history.back()">Cancel</button>
+          <button id="publishBtn" class="btn-new-post">Publish Post</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle Logic
+    const anonSwitch = document.getElementById('anonSwitch');
+    anonSwitch.addEventListener('click', () => {
+      anonSwitch.classList.toggle('off');
+    });
+
+    // Topic Selection Logic
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    topicButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        topicButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Publish and Redirect
+    document.getElementById("publishBtn").addEventListener("click", () => {
+      // Small delay could be added here for a 'loading' feel if desired
+      window.location.href = "post-published.html";
+    });
+  </script>
+</body>
+</html>

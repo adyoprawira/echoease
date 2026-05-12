@@ -23,8 +23,8 @@
         <div class="avatar">DM</div>
       </div>
     </header>
-
-    <!-- Sidebar -->
+    
+   <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <div class="logo-square"><i class="icon icon-heart"></i></div>
@@ -51,51 +51,46 @@
       </div>
     </aside>
 
-    <!-- Main -->
-    <main class="main">
-      <div class="forum">
-        <section class="forum-main">
-          <div class="forum-head">
-            <div>
-              <h2>Community Forum</h2>
-              <p>A safe, anonymous space to share experiences, ask for support, and connect with other students.</p>
-            </div>
-            <a class="btn-new-post" href="../pages/create-post.html">
-              <i class="icon icon-plus"></i> New Post
-            </a>
-          </div>
+  <main class="main">
+    <section class="success-layout">
+      <div>
+        <article class="success-main-card">
+          <div class="success-icon">✓</div>
+          <h1 class="success-heading">Post published!</h1>
+          <p class="success-copy">
+            Thanks for sharing. Your post is now live in the community feed. Small steps like this can help others feel less alone.
+          </p>
 
-          <div class="search">
-            <i class="icon icon-search"></i>
-            <input type="search" placeholder="Search posts, tags, or topics..." />
+          <div class="success-actions">
+            <button class="success-btn-primary" id="backToForumBtn" type="button">Back to Forum</button>
+            <button class="success-btn-secondary" id="viewPostBtn" type="button">View your post</button>
           </div>
+        </article>
 
-          <div class="posts" id="posts"></div>
+        <section class="success-bento">
+          <article class="success-mini-card">
+            <h3 class="success-mini-title">Community Impact</h3>
+            <p class="success-mini-copy">Sharing helps others feel less alone in their journey.</p>
+          </article>
+          <article class="success-mini-card">
+            <h3 class="success-mini-title">Need to talk?</h3>
+            <p class="success-mini-copy">Support peers are online and ready to listen.</p>
+          </article>
         </section>
-
-        <aside class="forum-side">
-          <div class="card">
-            <h3>Categories</h3>
-            <ul class="categories" id="categories"></ul>
-          </div>
-
-          <div class="card">
-            <div class="trending-head">
-              <i class="icon icon-trending-up"></i>
-              <h3>Trending Tags</h3>
-            </div>
-            <div class="tags" id="trending"></div>
-          </div>
-
-          <div class="card card-primary">
-            <h3>Community Guidelines</h3>
-            <p>Be kind. Stay anonymous. Support each other. Reports are reviewed within 24 hours.</p>
-          </div>
-        </aside>
       </div>
-    </main>
-  </div>
 
-<script src="../scripts/forum.js"></script>
-</body>
-</html>
+      <aside class="success-side-hero">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop" alt="Calming sunset" />
+        <p class="success-quote">“In sharing our stories, we find our strength.”</p>
+      </aside>
+    </section>
+
+    <div class="glass-toast" id="publishToast" role="status" aria-live="polite">
+      <span class="ok">✓</span>
+      <span class="msg">Your post was published successfully.</span>
+      <button class="close" id="toastCloseBtn" type="button" aria-label="Dismiss">×</button>
+    </div>
+  </main>
+</div>
+
+<script src="../scripts/post-published.js"></script>
