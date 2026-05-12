@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Post - PUTRI</title>
-  <!-- Link to your external style.css -->
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
 
   <style>
-    /* Specific styles for the Create Post form */
     .form-container {
       max-width: 680px;
       margin: 0 auto;
@@ -39,7 +37,6 @@
 
     .textarea { min-height: 160px; resize: vertical; }
 
-    /* Topic Buttons */
     .topics { display: flex; gap: 8px; flex-wrap: wrap; }
     .topic-btn {
       border: 1px solid var(--border);
@@ -56,7 +53,6 @@
       border-color: var(--primary);
     }
 
-    /* Custom Toggle Switch */
     .anon-toggle {
       background: var(--muted);
       padding: 20px 24px;
@@ -109,7 +105,6 @@
 </head>
 <body>
   <div class="app">
-    <!-- TOPBAR: Inherits styles from style.css -->
     <header class="topbar">
       <h1 class="brand">UQ Student Well-being</h1>
       <div class="top-actions">
@@ -189,7 +184,7 @@
 
         <div class="form-footer">
           <button class="btn-support" style="background: transparent; color: var(--muted-fg);" onclick="window.history.back()">Cancel</button>
-          <button id="publishBtn" class="btn-new-post">Publish Post</button>
+          <button class="btn-pill-primary" id="publishPostBtn" type="button">Publish Post</button>
         </div>
       </div>
     </main>
@@ -211,9 +206,7 @@
       });
     });
 
-    // Publish and Redirect
-    document.getElementById("publishBtn").addEventListener("click", () => {
-      // Small delay could be added here for a 'loading' feel if desired
+    document.getElementById("publishPostBtn").addEventListener("click", () => {
       window.location.href = "post-published.html";
     });
   </script>

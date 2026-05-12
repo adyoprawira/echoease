@@ -351,22 +351,26 @@ button {
 }
 
 .btn-new-post {
-  background: var(--primary);
-  color: var(--primary-fg);
-
-  padding: 12px 24px;
-
-  border-radius: 999px;
-
-  font-weight: 700;
-
-  display: inline-flex;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000; 
+  
+  display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.btn-new-post:hover {
-  opacity: 0.9;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  
+  background-color: #51247a; /* UQ Purple */
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(81, 36, 122, 0.3);
+  
+  /* Smooth Hover Effects */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* =========================
