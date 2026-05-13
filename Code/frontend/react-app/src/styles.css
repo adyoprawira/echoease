@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-shell: #f8f7f4;
+  --color-paper: #ffffff;
+  --color-ink: #2b2a2e;
+  --color-line: #ece6ef;
+  --color-brand: #4b0f74;
+  --color-brand-strong: #3d0b60;
+  --color-brand-soft: #f1eafa;
+  --color-mint: #9ddfd9;
+  --color-alert: #f8d4d4;
+  --shadow-card: 0 12px 32px rgba(43, 24, 63, 0.08);
+}
+
+:root {
+  font-family: "Sora", "Nunito Sans", "Segoe UI", sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f8f7f4;
+}
