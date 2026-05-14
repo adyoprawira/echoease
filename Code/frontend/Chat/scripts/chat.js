@@ -1,6 +1,6 @@
 (function () {
   const MAX_MESSAGE_LENGTH = 500;
-  const RESOURCE_PAGE_PATH = "../../resources/pages/resources.html";
+  const RESOURCE_PAGE_PATH = "../../Resources/pages/resources.html";
 
   const SESSION_STATUS = {
     ACTIVE: "Active",

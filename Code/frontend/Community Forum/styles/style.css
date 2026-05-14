@@ -293,6 +293,10 @@ button {
   gap: 4px;
 }
 
+.mobile-tabs {
+  display: none;
+}
+
 /* =========================
    MAIN CONTENT
 ========================= */
@@ -896,6 +900,10 @@ button {
   padding: 0 28px;
   font-size: 20px;
   font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .success-btn-primary {
@@ -1052,6 +1060,36 @@ button {
   .main {
     height: auto;
     overflow: visible;
+    padding-bottom: 96px;
+  }
+
+  .mobile-tabs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    border-top: 1px solid var(--border);
+    z-index: 180;
+  }
+
+  .mobile-tabs a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--muted-fg);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .mobile-tabs a.active {
+    color: var(--primary);
+    background: var(--sidebar-active);
   }
 
   .forum {

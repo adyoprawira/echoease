@@ -1,16 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener("DOMContentLoaded", () => {
+  const quickExitButton = document.querySelector(".btn-quick-exit");
+  const viewPostButton = document.getElementById("viewPostBtn");
+  const toast = document.getElementById("publishToast");
+  const toastCloseButton = document.getElementById("toastCloseBtn");
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Remove active class from all links
-      navLinks.forEach(l => l.classList.remove('active'));
-      
-      // Add active class to clicked link
-      link.classList.add('active');
-      
-      // Optional: Prevent default if you're using JS routing
-      // e.preventDefault();
-    });
+  quickExitButton?.addEventListener("click", () => {
+    window.location.href = "https://www.google.com";
+  });
+
+  viewPostButton?.addEventListener("click", () => {
+    window.location.href = "community.html";
+  });
+
+  toast?.classList.add("show");
+
+  toastCloseButton?.addEventListener("click", () => {
+    toast?.classList.remove("show");
   });
 });

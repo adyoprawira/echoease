@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UQ Student Well-being — Community Forum</title>
+  <title>Post Published - UQ Student Well-being</title>
   <link rel="stylesheet" href="../../Chat/styles/styles.css" />
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
@@ -35,19 +35,19 @@
       </div>
 
       <nav class="nav">
-        <a href="#" class="nav-item"><i class="icon icon-home"></i> Home</a>
+        <a href="../../Chat/pages/professional-selection.html" class="nav-item"><i class="icon icon-home"></i> Home</a>
         <a href="../pages/community.html" class="nav-item active"><i class="icon icon-users"></i> Community</a>
         <a href="../../Chat/pages/professional-selection.html" class="nav-item"><i class="icon icon-message-square"></i> Chat</a>
-        <a href="#" class="nav-item"><i class="icon icon-book-open"></i> Resources</a>
+        <a href="../../Resources/pages/resources.html" class="nav-item"><i class="icon icon-book-open"></i> Resources</a>
       </nav>
 
-      <button class="btn-support">
+      <a class="btn-support" href="../../Resources/pages/resources.html">
         <i class="icon icon-headphones"></i> Support &amp; Well-being
-      </button>
+      </a>
 
       <div class="sidebar-foot">
-        <a href="#" class="nav-item small"><i class="icon icon-settings"></i> Settings</a>
-        <a href="#" class="nav-item small"><i class="icon icon-help-circle"></i> Help</a>
+        <a href="../../Resources/pages/resources.html" class="nav-item small"><i class="icon icon-settings"></i> Settings</a>
+        <a href="../../Resources/pages/resources.html" class="nav-item small"><i class="icon icon-help-circle"></i> Help</a>
       </div>
     </aside>
 
@@ -55,16 +55,14 @@
     <section class="success-layout">
       <div>
         <article class="success-main-card">
-          <div class="success-icon">✓</div>
+          <div class="success-icon">&check;</div>
           <h1 class="success-heading">Post published!</h1>
           <p class="success-copy">
             Thanks for sharing. Your post is now live in the community feed. Small steps like this can help others feel less alone.
           </p>
 
           <div class="success-actions">
-            <a href="../pages/community.html" style="text-decoration: none;">
-            <button class="success-btn-primary" id="backToForumBtn" type="button">Back to Forum</button>
-            </a>
+            <a class="success-btn-primary" id="backToForumBtn" href="../pages/community.html">Back to Forum</a>
             <button class="success-btn-secondary" id="viewPostBtn" type="button">View your post</button>
           </div>
         </article>
@@ -83,16 +81,25 @@
 
       <aside class="success-side-hero">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop" alt="Calming sunset" />
-        <p class="success-quote">“In sharing our stories, we find our strength.”</p>
+        <p class="success-quote">&quot;In sharing our stories, we find our strength.&quot;</p>
       </aside>
     </section>
 
     <div class="glass-toast" id="publishToast" role="status" aria-live="polite">
-      <span class="ok">✓</span>
+      <span class="ok">&check;</span>
       <span class="msg">Your post was published successfully.</span>
-      <button class="close" id="toastCloseBtn" type="button" aria-label="Dismiss">×</button>
+      <button class="close" id="toastCloseBtn" type="button" aria-label="Dismiss">&times;</button>
     </div>
   </main>
 </div>
 
+<nav class="mobile-tabs" aria-label="Mobile sections">
+  <a href="../../Chat/pages/professional-selection.html"><i class="icon icon-home"></i><span>Home</span></a>
+  <a href="../pages/community.html" class="active" aria-current="page"><i class="icon icon-users"></i><span>Community</span></a>
+  <a href="../../Chat/pages/professional-selection.html"><i class="icon icon-message-square"></i><span>Chat</span></a>
+  <a href="../../Resources/pages/resources.html"><i class="icon icon-book-open"></i><span>Resources</span></a>
+</nav>
+
 <script src="../scripts/post-published.js"></script>
+</body>
+</html>

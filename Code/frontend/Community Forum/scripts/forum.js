@@ -11,7 +11,7 @@ const trending = ["#Exams", "#Anxiety", "#Mindfulness", "#StudyTips", "#SelfCare
 const posts = [
   {
     pinned: true,
-    title: "Welcome to the Well-being Community 💜",
+    title: "Welcome to the Well-being Community",
     author: "Moderator", initials: "MO", time: "Pinned",
     excerpt: "A safe, anonymous space to share, support, and grow. Please read our community guidelines before posting.",
     tags: ["#Announcement", "#Guidelines"], replies: 24, likes: 132,
@@ -43,7 +43,7 @@ function renderPosts() {
       <div style="flex:1;min-width:0">
         <div class="post-meta">
           ${p.pinned ? '<i class="icon icon-pin pin"></i>' : ''}
-          <span class="author">${p.author}</span><span>•</span><span>${p.time}</span>
+          <span class="author">${p.author}</span><span>&bull;</span><span>${p.time}</span>
         </div>
         <h3>${p.title}</h3>
         <p class="post-excerpt">${p.excerpt}</p>
@@ -73,3 +73,7 @@ function renderTrending() {
 renderPosts();
 renderCategories();
 renderTrending();
+
+document.querySelector(".btn-quick-exit")?.addEventListener("click", () => {
+  window.location.href = "https://www.google.com";
+});
