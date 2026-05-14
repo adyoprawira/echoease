@@ -554,7 +554,7 @@
 
   quickExitButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      window.location.href = "https://www.google.com";
+      window.location.href = "../../Landing%20Page/blackboard.html";
     });
   });
 

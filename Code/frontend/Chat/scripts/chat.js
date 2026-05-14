@@ -1350,7 +1350,7 @@
     }
 
     if (action === "quick-exit") {
-      window.location.href = "https://www.google.com";
+      window.location.href = "../../Landing%20Page/blackboard.html";
     }
   }
 
