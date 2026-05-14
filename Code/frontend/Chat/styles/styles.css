@@ -57,37 +57,6 @@
 }
 
 /* Chat MVP interactive controls */
-.chat-page .nav-link-btn,
-.chat-page .bottom-link-btn,
-.chat-page .mobile-tab-btn{
-  font:inherit;
-  color:inherit;
-  border:0;
-  background:transparent;
-  cursor:pointer;
-}
-.chat-page .nav-link-btn{
-  width:100%;
-  text-align:left;
-  padding:13px 12px;
-  border-radius:10px;
-  color:#52677d;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:15px;
-  transition:.2s ease;
-}
-.chat-page .nav-link-btn:hover{background:#faf5ff;color:var(--purple);transform:translateX(2px)}
-.chat-page .nav-link-btn.active{background:var(--purple-light);color:var(--purple);font-weight:900}
-.chat-page .bottom-link-btn{
-  width:100%;
-  text-align:left;
-  padding:10px 12px;
-  color:#52677d;
-  border-radius:9px;
-}
-.chat-page .bottom-link-btn:hover{background:#f7f2fa}
 .chat-page .mentor-trigger{
   border:0;
   background:transparent;
@@ -171,18 +140,6 @@
 .chat-page .char-counter.limit{color:#a8231d;font-weight:900}
 
 @media(max-width:900px){
-  .chat-page .mobile-tab-btn{
-    display:grid;
-    place-items:center;
-    color:#52677d;
-    font-size:12px;
-    width:100%;
-    height:100%;
-    border:0;
-    background:transparent;
-    line-height:1.1;
-  }
-  .chat-page .mobile-tab-btn.active{color:var(--purple);font-weight:900;background:#fbf5ff}
   .chat-page .info-panel{
     left:12px;
     right:12px;
@@ -792,8 +749,7 @@
   transition:.2s ease;
 }
 .top-icon-btn:hover{background:#efe1f7;transform:translateY(-1px)}
-.mobile-tabs .mobile-tab-item,
-.mobile-tabs .mobile-tab-btn{
+.mobile-tabs .mobile-tab-item{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -801,13 +757,10 @@
   gap:2px;
   line-height:1.1;
 }
-.mobile-tabs .mobile-tab-item span:last-child,
-.mobile-tabs .mobile-tab-btn span:last-child{font-size:12px}
-.chat-page .bottom-link-btn{display:flex;align-items:center;gap:10px}
+.mobile-tabs .mobile-tab-item span:last-child{font-size:12px}
 
 @media(max-width:900px){
-  .mobile-tabs .mobile-tab-item .icon,
-  .mobile-tabs .mobile-tab-btn .icon{width:17px;height:17px}
+  .mobile-tabs .mobile-tab-item .icon{width:17px;height:17px}
   .top-icon-btn{width:32px;height:32px}
 }
 

@@ -44,8 +44,7 @@
   const quickExitButtons = [
     document.getElementById("quickExitTop"),
     document.getElementById("quickExitInline"),
-    document.getElementById("emergencyExitBtn"),
-    document.getElementById("queueQuickExit")
+    document.getElementById("emergencyExitBtn")
   ].filter(Boolean);
 
   let toastStack = document.getElementById("toastStack");

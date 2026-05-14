@@ -21,26 +21,38 @@ const posts = [
     author: "Anonymous Koala", initials: "AK", time: "2h ago",
     excerpt: "I've been studying 10+ hours a day and I just hit a wall. How do you all stay motivated when nothing seems to work anymore?",
     tags: ["#StudyBurnout", "#Exams"], replies: 18, likes: 47,
+    image: {
+      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=640&h=460&fit=crop&auto=format&q=80",
+      alt: "Laptop and notes on a quiet study desk"
+    },
   },
   {
     title: "Mindfulness practice that actually helped me",
     author: "Quiet River", initials: "QR", time: "5h ago",
     excerpt: "Sharing a 5-minute breathing exercise that genuinely reduced my anxiety before a big presentation last week.",
     tags: ["#Mindfulness", "#Anxiety"], replies: 32, likes: 89,
+    image: {
+      src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&h=460&fit=crop&auto=format&q=80",
+      alt: "Calm morning light for mindfulness practice"
+    },
   },
   {
     title: "Finding it hard to make friends in second year",
     author: "Anonymous Wombat", initials: "AW", time: "1d ago",
     excerpt: "Everyone seems to already have their groups. Any advice on putting yourself out there without it feeling forced?",
     tags: ["#Relationships", "#Loneliness"], replies: 41, likes: 73,
+    image: {
+      src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=640&h=460&fit=crop&auto=format&q=80",
+      alt: "Students talking together on campus"
+    },
   },
 ];
 
 function renderPosts() {
   document.getElementById("posts").innerHTML = posts.map(p => `
-    <article class="post">
+    <article class="post ${p.image ? "post-with-media" : ""}">
       <div class="avatar-circle">${p.initials}</div>
-      <div style="flex:1;min-width:0">
+      <div class="post-body">
         <div class="post-meta">
           ${p.pinned ? '<i class="icon icon-pin pin"></i>' : ''}
           <span class="author">${p.author}</span><span>&bull;</span><span>${p.time}</span>
@@ -53,6 +65,11 @@ function renderPosts() {
           <span><i class="icon icon-heart"></i> ${p.likes} likes</span>
         </div>
       </div>
+      ${p.image ? `
+        <figure class="post-media">
+          <img src="${p.image.src}" alt="${p.image.alt}" loading="lazy">
+        </figure>
+      ` : ""}
     </article>
   `).join("");
 }
@@ -73,7 +90,3 @@ function renderTrending() {
 renderPosts();
 renderCategories();
 renderTrending();
-
-document.querySelector(".btn-quick-exit")?.addEventListener("click", () => {
-  window.location.href = "https://www.google.com";
-});

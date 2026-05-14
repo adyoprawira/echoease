@@ -61,8 +61,7 @@
   transition:.2s ease;
 }
 .top-icon-btn:hover{background:#efe1f7;transform:translateY(-1px)}
-.mobile-tabs .mobile-tab-item,
-.mobile-tabs .mobile-tab-btn{
+.mobile-tabs .mobile-tab-item{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -70,14 +69,160 @@
   gap:2px;
   line-height:1.1;
 }
-.mobile-tabs .mobile-tab-item span:last-child,
-.mobile-tabs .mobile-tab-btn span:last-child{font-size:12px}
-.chat-page .bottom-link-btn{display:flex;align-items:center;gap:10px}
+.mobile-tabs .mobile-tab-item span:last-child{font-size:12px}
 
 @media(max-width:900px){
-  .mobile-tabs .mobile-tab-item .icon,
-  .mobile-tabs .mobile-tab-btn .icon{width:17px;height:17px}
+  .mobile-tabs .mobile-tab-item .icon{width:17px;height:17px}
   .top-icon-btn{width:32px;height:32px}
+}
+
+/* Shared MVP modal, toast, and profile components */
+.mvp-modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(41,36,45,.48);
+  display:grid;
+  place-items:center;
+  padding:18px;
+  z-index:130;
+}
+.mvp-modal-backdrop[hidden]{display:none}
+.mvp-modal-card{
+  width:min(520px,100%);
+  max-height:min(86vh,720px);
+  overflow:auto;
+  background:white;
+  border-radius:16px;
+  box-shadow:var(--shadow-strong);
+  padding:18px;
+}
+.mvp-modal-card h2{margin:0 0 12px;color:var(--purple);font-size:26px}
+.mvp-modal-card p{margin:0 0 10px;color:#5d5763;line-height:1.45}
+.mvp-modal-close{
+  margin-left:auto;
+  display:block;
+  border-radius:8px;
+  background:#f3ecf8;
+  color:var(--purple);
+  font-size:12px;
+  font-weight:900;
+  padding:7px 10px;
+}
+.mvp-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
+.mvp-modal-btn{
+  border-radius:10px;
+  background:#efe8f5;
+  color:var(--purple);
+  padding:10px 14px;
+  font-size:14px;
+  font-weight:900;
+}
+.mvp-modal-btn.primary{background:var(--purple);color:white}
+.mvp-modal-btn.primary:hover{background:var(--purple-3)}
+.mvp-toast-stack{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:180;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.mvp-toast{
+  background:#2f2141;
+  color:white;
+  border-radius:12px;
+  padding:10px 14px;
+  font-size:13px;
+  font-weight:800;
+  opacity:0;
+  transform:translateY(8px);
+  transition:.22s ease;
+  box-shadow:var(--shadow);
+}
+.mvp-toast.show{opacity:1;transform:translateY(0)}
+.avatar-btn{
+  border:0;
+  color:white;
+  font-weight:900;
+  transition:.2s ease;
+}
+.avatar-btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(75,15,116,.2)}
+.profile-modal-card{width:min(560px,100%)}
+.profile-modal-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.profile-avatar-large{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:18px;
+  font-weight:900;
+  background:linear-gradient(140deg,var(--purple),#8352ad);
+  box-shadow:0 8px 18px rgba(75,15,116,.22);
+  flex:0 0 auto;
+}
+.profile-modal-header h2{margin:0 0 4px;color:var(--purple);font-size:24px}
+.profile-modal-role{margin:0;color:#6b6172;font-size:13px;font-weight:800}
+.profile-modal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+.profile-info-item{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  border:1px solid #ece3f4;
+  border-radius:10px;
+  background:#fcfaff;
+  padding:9px 10px;
+}
+.profile-info-item .icon{color:var(--purple);margin-top:2px}
+.profile-info-item .icon svg{width:16px;height:16px;stroke-width:2}
+.profile-info-label{
+  display:block;
+  color:#746b7f;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.profile-info-value{
+  display:block;
+  color:#3a3345;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.3;
+  margin-top:1px;
+}
+.profile-privacy-note{
+  margin:10px 0 2px;
+  color:#6c6373;
+  font-size:12px;
+  font-weight:700;
+}
+
+@media(max-width:900px){
+  .mvp-modal-card{width:min(540px,100%);padding:14px}
+  .mvp-modal-card h2{font-size:22px}
+  .mvp-toast-stack{
+    left:50%;
+    right:auto;
+    bottom:76px;
+    transform:translateX(-50%);
+    align-items:center;
+  }
+  .mvp-toast{width:min(92vw,360px);text-align:center}
+  .profile-modal-grid{grid-template-columns:1fr}
+  .profile-modal-header h2{font-size:20px}
+  .profile-avatar-large{width:52px;height:52px;font-size:16px}
 }
 
 /* Professional topbar notification panel */
