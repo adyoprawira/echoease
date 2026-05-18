@@ -10,7 +10,7 @@ const categories = [
 
 const trending = ["#Exams", "#Anxiety", "#Mindfulness", "#StudyTips", "#SelfCare", "#Sleep"];
 
-const posts = [
+const basePosts = [
   {
     id: "welcome-guidelines",
     pinned: true,
@@ -128,6 +128,16 @@ const posts = [
   },
 ];
 
+function getAllPosts() {
+  const pinned = basePosts.filter(post => post.pinned);
+  const staticPosts = basePosts.filter(post => !post.pinned);
+  const userPosts = typeof loadUserPosts === "function" ? loadUserPosts() : [];
+  return [...pinned, ...userPosts, ...staticPosts];
+}
+
+let posts = getAllPosts();
+let focusPostId = getLatestPostId();
+
 const postsEl = document.getElementById("posts");
 const expandedPostIds = new Set();
 let savedRepliesByPost = loadSavedReplies();
@@ -228,11 +238,17 @@ function renderReplyThread(post, replies) {
 }
 
 function renderPosts() {
+  posts = getAllPosts();
   postsEl.innerHTML = posts.map(post => {
     const replies = getReplies(post);
+    const isFocused = focusPostId === post.id;
 
     return `
-      <article class="post ${post.image ? "post-with-media" : ""}">
+      <article
+        class="post ${post.image ? "post-with-media" : ""} ${isFocused ? "post-highlight" : ""}"
+        id="post-${escapeHtml(post.id)}"
+        data-post-id="${escapeHtml(post.id)}"
+      >
         <div class="avatar-circle">${escapeHtml(post.initials)}</div>
         <div class="post-body">
           <div class="post-meta">
@@ -326,3 +342,25 @@ postsEl.addEventListener("submit", event => {
 renderPosts();
 renderCategories();
 renderTrending();
+
+function focusPublishedPost() {
+  if (!focusPostId) {
+    return;
+  }
+
+  const targetId = focusPostId;
+  focusPostId = null;
+
+  const postElement = document.getElementById(`post-${targetId}`);
+  if (!postElement) {
+    return;
+  }
+
+  postElement.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  window.setTimeout(() => {
+    postElement.classList.remove("post-highlight");
+  }, 3200);
+}
+
+requestAnimationFrame(focusPublishedPost);

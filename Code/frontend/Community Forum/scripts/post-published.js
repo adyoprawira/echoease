@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const toastCloseButton = document.getElementById("toastCloseBtn");
 
   viewPostButton?.addEventListener("click", () => {
-    window.location.href = "community.html";
+    const postId = getLatestPostId();
+    const target = postId
+      ? `community.html?post=${encodeURIComponent(postId)}`
+      : "community.html";
+    window.location.href = target;
   });
 
   toast?.classList.add("show");

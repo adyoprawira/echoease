@@ -264,23 +264,44 @@
   </nav>
 
   <script src="../../Chat/scripts/app.js"></script>
+  <script src="../scripts/community-posts.js"></script>
   <script>
-    // Toggle Logic
-    const anonSwitch = document.getElementById('anonSwitch');
-    anonSwitch.addEventListener('click', () => {
-      anonSwitch.classList.toggle('off');
+    const anonSwitch = document.getElementById("anonSwitch");
+    anonSwitch.addEventListener("click", () => {
+      anonSwitch.classList.toggle("off");
     });
 
-    // Topic Selection Logic
-    const topicButtons = document.querySelectorAll('.topic-btn');
+    const topicButtons = document.querySelectorAll(".topic-btn");
     topicButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        topicButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+      btn.addEventListener("click", () => {
+        topicButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
       });
     });
 
     document.getElementById("publishPostBtn").addEventListener("click", () => {
+      const titleInput = document.getElementById("postTitle");
+      const contentInput = document.getElementById("postContent");
+      const title = titleInput.value.trim();
+      const content = contentInput.value.trim();
+
+      if (!title) {
+        alert("Please add a post title.");
+        titleInput.focus();
+        return;
+      }
+
+      if (!content) {
+        alert("Please add post content.");
+        contentInput.focus();
+        return;
+      }
+
+      const topic = document.querySelector(".topic-btn.active")?.textContent.trim() || "Other";
+      const anonymous = !anonSwitch.classList.contains("off");
+      const post = buildForumPost({ title, content, topic, anonymous });
+
+      saveUserPost(post);
       window.location.href = "post-published.html";
     });
   </script>

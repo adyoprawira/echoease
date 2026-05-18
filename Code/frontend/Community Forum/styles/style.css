@@ -417,6 +417,13 @@ button {
   margin-top: 24px;
 }
 
+.post-highlight {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 18%, transparent);
+  transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .post {
   background: var(--card);
 
