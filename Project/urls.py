@@ -7,7 +7,7 @@ from django.views.static import serve
 frontend_root = settings.BASE_DIR / 'Code' / 'frontend'
 
 urlpatterns = [
-    path('', serve, {'path': 'wellbeing-landing.html', 'document_root': str(frontend_root / 'Landing Page')}),
+    path('', serve, {'path': 'blackboard.html', 'document_root': str(frontend_root / 'Landing Page')}),
     path('admin/', admin.site.urls),
     path('chat/', serve, {'path': 'chat.html', 'document_root': str(frontend_root / 'Chat' / 'pages')}),
     path('styles/<path:path>', serve, {'document_root': str(frontend_root / 'Chat' / 'styles')}),
