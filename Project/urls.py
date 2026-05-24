@@ -8,6 +8,8 @@ frontend_root = settings.BASE_DIR / 'Code' / 'frontend'
 
 urlpatterns = [
     path('', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
+    path('react-app/', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
+    path('react-app/index.html', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
     path('admin/', admin.site.urls),
     re_path(r'^(?P<path>.+)$', serve, {'document_root': str(frontend_root)}),
 ]
