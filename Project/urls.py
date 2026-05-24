@@ -11,6 +11,7 @@ blackboard_url = '/Landing%20Page/blackboard.html'
 urlpatterns = [
     path('', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
     path('chat.html', lambda request: redirect(blackboard_url, permanent=False)),
+    path('wellbeing-landing.html', lambda request: redirect('/Landing%20Page/wellbeing-landing.html', permanent=False)),
     path('react-app/', lambda request: redirect(blackboard_url, permanent=False)),
     path('react-app/index.html', lambda request: redirect(blackboard_url, permanent=False)),
     path('Landing Page/blackboard.html', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
