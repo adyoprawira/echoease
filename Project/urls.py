@@ -9,7 +9,7 @@ frontend_root = settings.BASE_DIR / 'Code' / 'frontend'
 blackboard_url = '/Landing%20Page/blackboard.html'
 
 urlpatterns = [
-    path('', lambda request: redirect(blackboard_url, permanent=False)),
+    path('', serve, {'path': 'Landing Page/blackboard.html', 'document_root': str(frontend_root)}),
     path('chat.html', lambda request: redirect(blackboard_url, permanent=False)),
     path('react-app/', lambda request: redirect(blackboard_url, permanent=False)),
     path('react-app/index.html', lambda request: redirect(blackboard_url, permanent=False)),
