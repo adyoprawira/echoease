@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   viewPostButton?.addEventListener("click", () => {
     const postId = getLatestPostId();
     const target = postId
-      ? `community.html?post=${encodeURIComponent(postId)}`
+      ? `view-post.html?post=${encodeURIComponent(postId)}`
       : "community.html";
     window.location.href = target;
   });

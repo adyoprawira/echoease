@@ -17,7 +17,9 @@
   const DEMO_STAGE_MIN_SECONDS = 8;
   const DEMO_STAGE_MAX_SECONDS = 12;
   const ACTIVE_POSITION_NOTE =
-    "This is an estimated queue position and may change based on support officer availability.";
+    "This is a simulated queue position for the prototype preview.";
+  const DEMO_WAIT_NOTE =
+    "Accelerated demo countdown, not real wait time.";
 
   const JOURNAL_KEY = "uq_queue_journal_entry";
   const BREATH_PHASES = ["Breathe in", "Hold", "Breathe out", "Hold"];
@@ -81,13 +83,15 @@
   const cancelJournalBtn = document.getElementById("cancelJournalBtn");
   const saveJournalBtn = document.getElementById("saveJournalBtn");
   const journalInput = document.getElementById("journalInput");
+  const journalStorageStatus = document.getElementById("journalStorageStatus");
+  const journalSaveConsent = document.getElementById("journalSaveConsent");
+  const loadJournalBtn = document.getElementById("loadJournalBtn");
+  const clearJournalBtn = document.getElementById("clearJournalBtn");
 
   const leaveQueueModal = document.getElementById("leaveQueueModal");
   const closeLeaveQueueModalBtn = document.getElementById("closeLeaveQueueModalBtn");
   const cancelLeaveQueueBtn = document.getElementById("cancelLeaveQueueBtn");
   const confirmLeaveQueueBtn = document.getElementById("confirmLeaveQueueBtn");
-
-  const enableSoundBtn = document.getElementById("enableSoundBtn");
 
   const focusAudioCard = document.getElementById("focusAudioCard");
   const focusAudioToggleBtn = document.getElementById("focusAudioToggleBtn");
@@ -150,37 +154,37 @@
 
   function getProfessionalName(key) {
     const map = {
-      marcus: "Marcus Thompson",
-      sarah: "Dr. Sarah Jenkins"
+      marcus: "Simulated Support Guide B",
+      sarah: "Simulated Support Guide A"
     };
 
-    return map[key] || "a support officer";
+    return map[key] || "Simulated Support Guide";
   }
 
   function getProfessionalLabel(key) {
     if (!key) {
-      return "Waiting for a student support officer";
+      return "Previewing a simulated support wait";
     }
 
     const map = {
-      marcus: "Waiting for Marcus Thompson",
-      sarah: "Waiting for Dr. Sarah Jenkins"
+      marcus: "Previewing a simulated wait for Support Guide B",
+      sarah: "Previewing a simulated wait for Support Guide A"
     };
 
-    return map[key] || "Waiting for a student support officer";
+    return map[key] || "Previewing a simulated support wait";
   }
 
   function getReadyNotificationMessage(key) {
     if (key === "marcus") {
-      return "Marcus Thompson is ready to chat with you.";
+      return "The simulated chat with Support Guide B is ready to preview.";
     }
 
     const name = getProfessionalName(key);
     if (name !== "a support officer") {
-      return name + " is ready to chat with you.";
+      return "The simulated chat with " + name + " is ready to preview.";
     }
 
-    return "A support officer is ready for you.";
+    return "The simulated support chat is ready to preview.";
   }
 
   function getChatHref(key) {
@@ -538,7 +542,7 @@
     }
 
     const professionalName = getProfessionalName(queueState.professional);
-    addNotification("You joined the queue for " + professionalName + ".", "queue");
+    addNotification("You started the simulated queue preview for " + professionalName + ".", "queue");
     sessionStorage.setItem(STORAGE_KEYS.joinNotice, "1");
   }
 
@@ -549,7 +553,7 @@
     );
 
     if (newPosition < previousNotified) {
-      addNotification("Your queue position changed to " + newPosition + ".", "queue");
+      addNotification("Your simulated queue position changed to " + newPosition + ".", "queue");
     }
 
     sessionStorage.setItem(STORAGE_KEYS.lastPositionNotice, String(newPosition));
@@ -558,7 +562,7 @@
   function startQueueProgress(queueState) {
     queueProfessionalLabel.textContent = getProfessionalLabel(queueState.professional);
     queuePositionNote.textContent = ACTIVE_POSITION_NOTE;
-    queueWaitMeta.textContent = "Wait time is approximate.";
+    queueWaitMeta.textContent = DEMO_WAIT_NOTE;
     startChatWhenReady.href = getChatHref(queueState.professional);
 
     notifyQueueJoin(queueState);
@@ -580,10 +584,10 @@
       }
 
       if (stageIndex >= 4) {
-        queueTitle.textContent = "You're next";
+        queueTitle.textContent = "Your demo chat is ready";
         queueWaitTime.textContent = "Ready";
-        queueWaitMeta.textContent = "Wait time is approximate.";
-        queuePositionNote.textContent = "Support officer is ready";
+        queueWaitMeta.textContent = DEMO_WAIT_NOTE;
+        queuePositionNote.textContent = "Simulated support chat is ready";
         startChatWhenReady.hidden = false;
 
         if (sessionStorage.getItem(STORAGE_KEYS.readyNotice) !== "1") {
@@ -598,9 +602,9 @@
         return;
       }
 
-      queueTitle.textContent = "You're in the queue";
+      queueTitle.textContent = "You're in the demo queue";
       queueWaitTime.textContent = estimateLabels[stageIndex];
-      queueWaitMeta.textContent = "Wait time is approximate.";
+      queueWaitMeta.textContent = DEMO_WAIT_NOTE;
       queuePositionNote.textContent = ACTIVE_POSITION_NOTE;
       startChatWhenReady.hidden = true;
     }
@@ -896,7 +900,11 @@
   breathingResetBtn.addEventListener("click", resetBreathing);
 
   openJournalBtn.addEventListener("click", function () {
-    journalInput.value = localStorage.getItem(JOURNAL_KEY) || "";
+    journalSaveConsent.checked = false;
+    saveJournalBtn.disabled = true;
+    journalStorageStatus.textContent = localStorage.getItem(JOURNAL_KEY)
+      ? "A saved entry exists on this device. Select Load Saved Entry to view it."
+      : "Not saved on this device.";
     openModal(journalModal, openJournalBtn);
   });
 
@@ -908,9 +916,39 @@
     closeModal(true);
   });
 
+  journalSaveConsent.addEventListener("change", function () {
+    saveJournalBtn.disabled = !journalSaveConsent.checked;
+  });
+
+  loadJournalBtn.addEventListener("click", function () {
+    const savedEntry = localStorage.getItem(JOURNAL_KEY);
+    if (!savedEntry) {
+      journalStorageStatus.textContent = "No saved entry exists on this device.";
+      return;
+    }
+
+    journalInput.value = savedEntry;
+    journalStorageStatus.textContent = "Saved entry loaded from this device. Delete it when no longer needed.";
+  });
+
+  clearJournalBtn.addEventListener("click", function () {
+    localStorage.removeItem(JOURNAL_KEY);
+    journalInput.value = "";
+    journalSaveConsent.checked = false;
+    saveJournalBtn.disabled = true;
+    journalStorageStatus.textContent = "Saved entry deleted from this device.";
+    showToast("Saved journal entry deleted from this device.");
+  });
+
   saveJournalBtn.addEventListener("click", function () {
+    if (!journalSaveConsent.checked) {
+      journalStorageStatus.textContent = "Select consent before saving an entry on this device.";
+      return;
+    }
+
     localStorage.setItem(JOURNAL_KEY, journalInput.value);
-    showToast("Journal entry saved for this session.");
+    journalStorageStatus.textContent = "Entry saved in this browser on this device.";
+    showToast("Journal entry saved on this device. You can delete it from this window.");
   });
 
   leaveQueueButton.addEventListener("click", function () {
@@ -990,16 +1028,6 @@
   });
   audioPlayer.addEventListener("ended", function () {
     changeTrack(1);
-  });
-
-  enableSoundBtn.addEventListener("click", function () {
-    if (enableSoundBtn.disabled) {
-      return;
-    }
-
-    enableSoundBtn.textContent = "Enabled";
-    enableSoundBtn.disabled = true;
-    showToast("Sound notifications enabled.");
   });
 
   [breathingModal, journalModal, leaveQueueModal].forEach(function (modalEl) {

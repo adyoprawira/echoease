@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Code.backend',
+    'EchoEase.backend.apps.BackendConfig',
 ]
 
 MIDDLEWARE = [
@@ -35,7 +35,7 @@ ROOT_URLCONF = 'Project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Code' / 'frontend'],
+        'DIRS': [BASE_DIR / 'EchoEase' / 'frontend'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,5 +74,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
  
 # Serve frontend templates/static during development
 STATICFILES_DIRS = [
-    BASE_DIR / 'Code' / 'frontend',
+    BASE_DIR / 'EchoEase' / 'frontend',
 ]

@@ -5,7 +5,7 @@ from django.urls import path, re_path
 from django.shortcuts import redirect
 from django.views.static import serve
 
-frontend_root = settings.BASE_DIR / 'Code' / 'frontend'
+frontend_root = settings.BASE_DIR / 'EchoEase' / 'frontend'
 blackboard_url = '/Landing%20Page/blackboard.html'
 
 urlpatterns = [
