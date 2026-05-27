@@ -16,14 +16,14 @@ const basePosts = [
     pinned: true,
     title: "Welcome to the Well-being Community",
     author: "Moderator", initials: "MO", time: "Pinned",
-    excerpt: "A safe, anonymous space to share, support, and grow. Please read our community guidelines before posting.",
+    excerpt: "This prototype feed demonstrates sharing and support. Posts created here remain in this browser.",
     tags: ["#Announcement", "#Guidelines"], likes: 132,
     replies: [
       {
         author: "Peer Support Team",
         initials: "PS",
         time: "Pinned",
-        text: "Thanks for helping keep this space supportive. Reports and urgent safety concerns are reviewed by the team."
+        text: "This is example content. Moderation and urgent-safety review are not active in this prototype."
       },
       {
         author: "Anonymous Student",

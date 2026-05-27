@@ -15,7 +15,7 @@ function getAuthorInfo(anonymous) {
     return { author: "Anonymous Student", initials: "AS" };
   }
 
-  return { author: "Darren Marcello", initials: "DM" };
+  return { author: "Alex Example", initials: "AX" };
 }
 
 function buildForumPost({ title, content, topic, anonymous }) {

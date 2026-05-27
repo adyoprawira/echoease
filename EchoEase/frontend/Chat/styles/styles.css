@@ -981,3 +981,34 @@
   .chat-page .resource-card-actions{flex-direction:column}
   .chat-page .resource-card-btn{width:100%;text-align:center}
 }
+
+/* Shared navigation and journey clarity additions for the static prototype. */
+.bottom-nav .bottom-item[aria-disabled="true"]{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:9px;
+  color:#8b858f;
+  cursor:not-allowed;
+}
+.flow-back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--purple);
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+.flow-back-link:hover{text-decoration:underline}
+.landing-crisis{margin-bottom:26px}
+.landing-crisis-actions{display:flex;gap:8px;flex-wrap:wrap}
+.inline-contact-link{text-decoration:underline;font-weight:900}
+.chat-page .chat-header-start{display:flex;align-items:center;gap:18px}
+.chat-page .chat-header-start .flow-back-link{margin-bottom:0;white-space:nowrap}
+@media(max-width:900px){
+  .chat-page .chat-header-start{align-items:flex-start;flex-direction:column;gap:6px}
+  .chat-page .chat-shell{grid-template-rows:auto 1fr auto}
+  .landing-crisis{padding:22px;margin-bottom:20px}
+}

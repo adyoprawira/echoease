@@ -17,7 +17,7 @@
   const DEMO_STAGE_MIN_SECONDS = 8;
   const DEMO_STAGE_MAX_SECONDS = 12;
   const ACTIVE_POSITION_NOTE =
-    "This is an estimated queue position and may change based on support officer availability.";
+    "This is a simulated queue position for the prototype preview.";
 
   const JOURNAL_KEY = "uq_queue_journal_entry";
   const BREATH_PHASES = ["Breathe in", "Hold", "Breathe out", "Hold"];
@@ -159,28 +159,28 @@
 
   function getProfessionalLabel(key) {
     if (!key) {
-      return "Waiting for a student support officer";
+      return "Previewing a simulated support wait";
     }
 
     const map = {
-      marcus: "Waiting for Marcus Thompson",
-      sarah: "Waiting for Dr. Sarah Jenkins"
+      marcus: "Previewing a simulated wait for Marcus Thompson",
+      sarah: "Previewing a simulated wait for Dr. Sarah Jenkins"
     };
 
-    return map[key] || "Waiting for a student support officer";
+    return map[key] || "Previewing a simulated support wait";
   }
 
   function getReadyNotificationMessage(key) {
     if (key === "marcus") {
-      return "Marcus Thompson is ready to chat with you.";
+      return "The simulated chat with Marcus Thompson is ready to preview.";
     }
 
     const name = getProfessionalName(key);
     if (name !== "a support officer") {
-      return name + " is ready to chat with you.";
+      return "The simulated chat with " + name + " is ready to preview.";
     }
 
-    return "A support officer is ready for you.";
+    return "The simulated support chat is ready to preview.";
   }
 
   function getChatHref(key) {
@@ -538,7 +538,7 @@
     }
 
     const professionalName = getProfessionalName(queueState.professional);
-    addNotification("You joined the queue for " + professionalName + ".", "queue");
+    addNotification("You started the simulated queue preview for " + professionalName + ".", "queue");
     sessionStorage.setItem(STORAGE_KEYS.joinNotice, "1");
   }
 
@@ -549,7 +549,7 @@
     );
 
     if (newPosition < previousNotified) {
-      addNotification("Your queue position changed to " + newPosition + ".", "queue");
+      addNotification("Your simulated queue position changed to " + newPosition + ".", "queue");
     }
 
     sessionStorage.setItem(STORAGE_KEYS.lastPositionNotice, String(newPosition));
@@ -580,10 +580,10 @@
       }
 
       if (stageIndex >= 4) {
-        queueTitle.textContent = "You're next";
+        queueTitle.textContent = "Your demo chat is ready";
         queueWaitTime.textContent = "Ready";
         queueWaitMeta.textContent = "Wait time is approximate.";
-        queuePositionNote.textContent = "Support officer is ready";
+        queuePositionNote.textContent = "Simulated support chat is ready";
         startChatWhenReady.hidden = false;
 
         if (sessionStorage.getItem(STORAGE_KEYS.readyNotice) !== "1") {
@@ -598,7 +598,7 @@
         return;
       }
 
-      queueTitle.textContent = "You're in the queue";
+      queueTitle.textContent = "You're in the demo queue";
       queueWaitTime.textContent = estimateLabels[stageIndex];
       queueWaitMeta.textContent = "Wait time is approximate.";
       queuePositionNote.textContent = ACTIVE_POSITION_NOTE;
@@ -910,7 +910,7 @@
 
   saveJournalBtn.addEventListener("click", function () {
     localStorage.setItem(JOURNAL_KEY, journalInput.value);
-    showToast("Journal entry saved for this session.");
+    showToast("Journal entry saved in this browser for this prototype.");
   });
 
   leaveQueueButton.addEventListener("click", function () {

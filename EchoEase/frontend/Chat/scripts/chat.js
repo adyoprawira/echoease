@@ -99,7 +99,7 @@
     sarah: {
       name: "Dr. Sarah Jenkins",
       role: "Peer Support Officer",
-      status: "Available now",
+      status: "Demo status: available",
       specialties: "academic stress, anxiety, study burnout",
       photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop",
       placeholder: "Message Dr. Sarah Jenkins..."
@@ -107,7 +107,7 @@
     marcus: {
       name: "Marcus Thompson",
       role: "Mental Health Counsellor",
-      status: "Available now",
+      status: "Demo status: available",
       specialties: "relationship issues, mindfulness, emotional wellbeing",
       photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop",
       placeholder: "Message Marcus Thompson..."
@@ -348,7 +348,7 @@
       return;
     }
 
-    chatSessionStatusLabelEl.textContent = "Session: " + state.sessionStatus;
+    chatSessionStatusLabelEl.textContent = "Demo session: " + state.sessionStatus;
     chatSessionStatusLabelEl.classList.remove("active", "escalated", "ended");
 
     if (state.sessionStatus === SESSION_STATUS.ESCALATED) {
@@ -455,11 +455,7 @@
   function createUserTimeEl(timestamp) {
     const timeEl = document.createElement("div");
     timeEl.className = "time me-time message-delivery";
-    timeEl.textContent = timestamp + " - Sent";
-
-    window.setTimeout(function () {
-      timeEl.textContent = timestamp + " - Seen";
-    }, 800);
+    timeEl.textContent = timestamp + " - Added to demo";
 
     return timeEl;
   }
@@ -957,7 +953,7 @@
     localStorage.setItem(STORAGE_KEYS.savedResources, JSON.stringify(saved));
     state.savedResourceCategories.add(category);
     state.savedResourceCount += 1;
-    showToast("Resource saved.");
+    showToast("Resource saved in this browser for this prototype.");
   }
 
   function dismissResource(buttonEl, category) {
@@ -1250,7 +1246,7 @@
     const saved = parseStoredArray(localStorage.getItem(STORAGE_KEYS.savedSummaries));
     saved.push(summary);
     localStorage.setItem(STORAGE_KEYS.savedSummaries, JSON.stringify(saved));
-    showToast("Chat summary saved.");
+    showToast("Chat summary saved in this browser for this prototype.");
   }
 
   function returnToProfessionalSelection() {
@@ -1334,22 +1330,36 @@
     }
 
     if (action === "call-000") {
-      window.location.href = "tel:000";
+      const emergencyNumber =
+        window.EchoEaseSafety && window.EchoEaseSafety.contacts
+          ? window.EchoEaseSafety.contacts.emergency.dial
+          : "000";
+      window.location.href = "tel:" + emergencyNumber;
       return;
     }
 
     if (action === "copy-lifeline") {
-      copyText("131114")
+      const lifelineNumber =
+        window.EchoEaseSafety && window.EchoEaseSafety.contacts
+          ? window.EchoEaseSafety.contacts.lifeline.dial
+          : "131114";
+
+      copyText(lifelineNumber)
         .then(function () {
           showToast("Lifeline number copied.");
         })
         .catch(function () {
-          showToast("Could not copy automatically. Please copy: 131114");
+          showToast("Could not copy automatically. Please copy: " + lifelineNumber);
         });
       return;
     }
 
     if (action === "quick-exit") {
+      if (window.EchoEaseSafety && typeof window.EchoEaseSafety.quickExit === "function") {
+        window.EchoEaseSafety.quickExit();
+        return;
+      }
+
       window.location.href = "../../Landing%20Page/blackboard.html";
     }
   }
