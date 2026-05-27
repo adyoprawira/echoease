@@ -5,8 +5,7 @@
 Many students experience stress related to academics, finances, loneliness, or mental health, but existing university support services are often difficult to access.
 
 Common barriers identified through interviews include:
-
-- Students do not know where support services are located  
+  
 - Searching multiple websites feels tiring  
 - Booking appointments feels formal and stressful  
 - Many students prefer coping alone  
