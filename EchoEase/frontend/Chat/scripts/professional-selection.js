@@ -105,7 +105,7 @@
     }
 
     const bookingMessage =
-      "Session booked with Dr. Elena Rodriguez for " + selectedSlot.value + ".";
+      "Demo session slot selected for Dr. Elena Rodriguez: " + selectedSlot.value + ".";
 
     closeModal(true);
     if (window.mvpApp && typeof window.mvpApp.addNotification === "function") {
@@ -129,12 +129,17 @@
   });
 
   copyLifelineBtn.addEventListener("click", function () {
-    copyText("131114")
+    const lifelineNumber =
+      window.EchoEaseSafety && window.EchoEaseSafety.contacts
+        ? window.EchoEaseSafety.contacts.lifeline.dial
+        : "131114";
+
+    copyText(lifelineNumber)
       .then(function () {
         showToast("Lifeline number copied.");
       })
       .catch(function () {
-        showToast("Could not copy automatically. Please copy: 131114");
+        showToast("Could not copy automatically. Please copy: " + lifelineNumber);
       });
   });
 
