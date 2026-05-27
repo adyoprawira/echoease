@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Well-being Hub</title>
+  <link rel="stylesheet" href="../Chat/styles/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand-top">UQ Student Well-being</div>
+      <div class="hub">
+        <div class="hub-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 17.2 7.9 13a2.6 2.6 0 0 1 3.7-3.7L12 9.7l.4-.4a2.6 2.6 0 1 1 3.7 3.7z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="hub-title">Well-being Hub</div>
+          <div class="hub-sub">Student Support</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary sections">
+        <a class="active" href="wellbeing-landing.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span><span>Home</span></a>
+        <a href="../Community Forum/pages/community.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span><span>Community</span></a>
+        <a href="../Chat/pages/professional-selection.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span><span>Chat</span></a>
+        <a href="../Resources/pages/resources.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span><span>Resources</span></a>
+      </nav>
+      <a class="support-btn support-icon-btn" href="../Resources/pages/resources.html">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 13a8 8 0 0 1 16 0"></path>
+            <path d="M5 13v4a2 2 0 0 0 2 2h1v-7H7a2 2 0 0 0-2 2z"></path>
+            <path d="M19 13v4a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 2z"></path>
+            <path d="M13 21h-2"></path>
+          </svg>
+        </span>
+        <span>Support & Well-being</span>
+      </a>
+      <div class="bottom-nav" aria-label="Quick actions">
+        <span class="bottom-item" aria-disabled="true" title="Settings are unavailable in this prototype"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1a1 1 0 1 1-1.4 1.4l-.1-.1a1.8 1.8 0 0 0-2-.4 1.8 1.8 0 0 0-1.1 1.7V20a1 1 0 1 1-2 0v-.2a1.8 1.8 0 0 0-1.1-1.7 1.8 1.8 0 0 0-2 .4l-.1.1a1 1 0 1 1-1.4-1.4l.1-.1a1.8 1.8 0 0 0 .4-2 1.8 1.8 0 0 0-1.7-1.1H4a1 1 0 1 1 0-2h.2a1.8 1.8 0 0 0 1.7-1.1 1.8 1.8 0 0 0-.4-2l-.1-.1a1 1 0 1 1 1.4-1.4l.1.1a1.8 1.8 0 0 0 2 .4 1.8 1.8 0 0 0 1.1-1.7V4a1 1 0 1 1 2 0v.2a1.8 1.8 0 0 0 1.1 1.7 1.8 1.8 0 0 0 2-.4l.1-.1a1 1 0 1 1 1.4 1.4l-.1.1a1.8 1.8 0 0 0-.4 2 1.8 1.8 0 0 0 1.7 1.1H20a1 1 0 1 1 0 2h-.2a1.8 1.8 0 0 0-1.7 1.1z"></path></svg></span><span>Settings (unavailable)</span></span>
+        <a class="bottom-item" href="../Resources/pages/resources.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.2 9a3 3 0 1 1 5.5 1.7c-.8 1.1-1.7 1.4-1.7 2.8"></path><path d="M12 17h.01"></path></svg></span><span>Help resources</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="quick" id="quickExitTop" type="button" aria-label="Quick Exit to Blackboard">Quick Exit</button>
+        <button
+          class="top-icon-btn"
+          id="notificationButton"
+          type="button"
+          aria-label="Open notifications"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="notificationPanel"
+        >
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 10a6 6 0 1 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path><path d="M14 21a2 2 0 0 1-4 0"></path></svg></span>
+          <span class="notification-badge" id="notificationBadge" hidden aria-hidden="true"></span>
+        </button>
+        <button
+          class="avatar avatar-btn"
+          id="profileButton"
+          type="button"
+          aria-label="Open student profile"
+          aria-haspopup="dialog"
+          aria-controls="profileModal"
+        >
+          AX
+        </button>
+      </header>
+      <section class="notification-panel" id="notificationPanel" hidden aria-label="Notifications">
+        <div class="notification-panel-head">
+          <h2>Notifications</h2>
+          <button class="panel-close-inline" id="closeNotificationPanelBtn" type="button" aria-label="Close notifications">Close</button>
+        </div>
+        <ul class="notification-list" id="notificationList"></ul>
+        <button class="mvp-modal-btn" id="clearNotificationsBtn" type="button">Clear notifications</button>
+      </section>
+
+      <section class="content">
+        <h1 class="title">Welcome, Alex</h1>
+        <p class="subtitle">It's okay to just look around. Explore resources, connect with others, or preview a simulated support chat.</p>
+
+        <article class="crisis landing-crisis" aria-label="Emergency help">
+          <h2 style="margin: 0 0 8px; font-size: 22px; color: #d8a4ee;">Emergency Help</h2>
+          <p style="margin: 0 0 14px; color: #d8bddf; font-size: 14px; line-height: 1.4;">If you are in immediate danger, call emergency services. These contacts are verified support pathways.</p>
+          <div class="landing-crisis-actions">
+            <a class="white-btn" data-safety-call="emergency" data-safety-call-label="true" href="tel:000" style="background: white; color: var(--purple); font-size: 13px; padding: 10px 14px;">Call Emergency services: 000</a>
+            <a class="white-btn" data-safety-call="lifeline" data-safety-call-label="true" href="tel:131114" style="background: white; color: var(--purple); font-size: 13px; padding: 10px 14px;">Call Lifeline: 13 11 14</a>
+            <a class="white-btn" data-safety-call="uqCrisis" data-safety-call-label="true" href="tel:1300851998" style="background: white; color: var(--purple); font-size: 13px; padding: 10px 14px;">Call UQ Counselling and Crisis Line: 1300 851 998</a>
+          </div>
+        </article>
+
+        <div class="layout-2">
+          <div>
+            <!-- Community Stories Card -->
+            <article class="side-card" style="background: linear-gradient(135deg, var(--mint), #a8ede6); color: var(--teal);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <span class="icon" aria-hidden="true" style="width: 32px; height: 32px; flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 100%; height: 100%;">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"></path>
+                  </svg>
+                </span>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Community Stories</h2>
+              </div>
+              <p style="color: inherit; margin: 0 0 16px; line-height: 1.45;">Read experiences from other students and share your journey in our supportive community forum.</p>
+              <a href="../Community Forum/pages/community.html" class="white-btn" style="background: white; color: var(--teal); display: inline-block;">Explore Stories</a>
+            </article>
+
+            <!-- Chat with Someone Card -->
+            <article class="side-card" style="background: linear-gradient(135deg, var(--purple), #7644a1); color: white;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <span class="icon" aria-hidden="true" style="width: 32px; height: 32px; flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; color: white;">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"></path>
+                  </svg>
+                </span>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Chat with Someone</h2>
+              </div>
+              <p style="color: rgba(255,255,255,0.9); margin: 0 0 16px; line-height: 1.45;">Explore a simulated support chat in this MVP demo. It is not a live counselling service.</p>
+              <a href="../Chat/pages/professional-selection.html" class="white-btn" style="background: white; color: var(--purple); display: inline-block;">Start Chat</a>
+            </article>
+
+            <!-- Resources Card -->
+            <article class="side-card" style="background: linear-gradient(135deg, #f5eafa, #f0e6f8); color: var(--purple);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <span class="icon" aria-hidden="true" style="width: 32px; height: 32px; flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; color: var(--purple);">
+                    <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                    <path d="M8 7h8" stroke="currentColor" stroke-width="2"></path>
+                    <path d="M8 11h8" stroke="currentColor" stroke-width="2"></path>
+                    <path d="M8 15h6" stroke="currentColor" stroke-width="2"></path>
+                  </svg>
+                </span>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Resources & Support</h2>
+              </div>
+              <p style="color: var(--muted); margin: 0 0 16px; line-height: 1.45;">Access helpful articles, self-care tips, and resources to support your well-being journey.</p>
+              <a href="../Resources/pages/resources.html" class="white-btn" style="background: var(--purple); color: white; display: inline-block;">Browse Resources</a>
+            </article>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="right-sticky">
+            <!-- Mindfulness Pulse -->
+            <article class="side-card">
+              <h2 style="color: var(--teal); font-size: 22px; margin: 0 0 12px;">Mindfulness Pulse (Demo)</h2>
+              <p style="color: #59545f; font-size: 13px; margin: 0 0 16px; line-height: 1.4;">Example progress shown for prototype preview only.</p>
+              <div style="width: 100%; height: 80px; border-radius: 12px; background: linear-gradient(135deg, var(--mint), #a8ede6); display: grid; place-items: center; color: var(--teal); font-weight: 950; font-size: 28px;">
+                Demo +8%
+              </div>
+              <p style="color: #77809a; font-size: 12px; margin: 12px 0 0; text-align: center;">Example well-being score</p>
+            </article>
+
+            <!-- Events/Activities -->
+            <article class="side-card">
+              <h2 style="color: var(--teal); font-size: 22px; margin: 0 0 12px;">Upcoming Events (Demo)</h2>
+              <div style="border-left: 3px solid var(--purple); padding-left: 12px; margin-bottom: 12px;">
+                <p style="margin: 0; font-weight: 900; color: var(--text); font-size: 14px;">Stress Management Workshop</p>
+                <p style="margin: 4px 0 0; color: #77809a; font-size: 12px;">Example time: Friday, 2:00 PM</p>
+              </div>
+              <div style="border-left: 3px solid #78b78f; padding-left: 12px;">
+                <p style="margin: 0; font-weight: 900; color: var(--text); font-size: 14px;">Meditation Circle</p>
+                <p style="margin: 4px 0 0; color: #77809a; font-size: 12px;">Example time: Tuesday, 5:30 PM</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile Bottom Tabs -->
+      <nav class="mobile-tabs" aria-label="Navigation">
+        <a href="wellbeing-landing.html" class="active">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span>
+          <span>Home</span>
+        </a>
+        <a href="../Community Forum/pages/community.html">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span>
+          <span>Community</span>
+        </a>
+        <a href="../Chat/pages/professional-selection.html">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span>
+          <span>Chat</span>
+        </a>
+        <a href="../Resources/pages/resources.html">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span>
+          <span>Resources</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="profileModal" hidden>
+    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <button class="mvp-modal-close" id="closeProfileModalBtn" type="button" aria-label="Close profile modal">Close</button>
+      <h2 id="profileTitle">Student Profile</h2>
+      <p><strong>Name:</strong> Alex Example (fictional demo profile)</p>
+      <p><strong>Program:</strong> Prototype Preview</p>
+      <p><strong>Status:</strong> Demo only</p>
+      <p><strong>Support preference:</strong> Prototype settings only</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px;">
+        <a class="mvp-modal-btn" href="../Resources/pages/resources.html" style="text-decoration: none;">Browse Support Resources</a>
+        <a class="mvp-modal-btn" href="blackboard.html" style="text-decoration: none;">Go to Blackboard</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../Chat/scripts/safety-config.js"></script>
+  <script>
+    // Quick Exit functionality
+    document.getElementById('quickExitTop').addEventListener('click', () => {
+      window.EchoEaseSafety.quickExit();
+    });
+
+    // Notification panel and profile interactions
+    const notificationButton = document.getElementById('notificationButton');
+    const notificationPanel = document.getElementById('notificationPanel');
+    const notificationBadge = document.getElementById('notificationBadge');
+    const notificationList = document.getElementById('notificationList');
+    const clearNotificationsBtn = document.getElementById('clearNotificationsBtn');
+    const closeNotificationPanelBtn = document.getElementById('closeNotificationPanelBtn');
+    const profileButton = document.getElementById('profileButton');
+    const profileModal = document.getElementById('profileModal');
+    const closeProfileModalBtn = document.getElementById('closeProfileModalBtn');
+
+    const notifications = [
+      { title: 'New Community Reply', detail: 'Someone responded to your support post.' },
+      { title: 'Mindfulness Reminder', detail: 'Take a 3 minute breathing break today.' },
+      { title: 'Workshop Tomorrow', detail: 'Stress Management starts at 2:00 PM.' }
+    ];
+
+    function renderNotifications() {
+      if (!notificationList || !notificationBadge) {
+        return;
+      }
+
+      notificationList.innerHTML = '';
+
+      if (notifications.length === 0) {
+        const empty = document.createElement('li');
+        empty.textContent = 'No notifications right now.';
+        notificationList.appendChild(empty);
+        notificationBadge.hidden = true;
+        return;
+      }
+
+      notifications.forEach((item) => {
+        const row = document.createElement('li');
+        row.innerHTML = '<strong>' + item.title + '</strong><br><span>' + item.detail + '</span>';
+        notificationList.appendChild(row);
+      });
+
+      notificationBadge.hidden = false;
+      notificationBadge.textContent = String(notifications.length);
+    }
+
+    renderNotifications();
+
+    if (notificationButton && notificationPanel) {
+      notificationButton.addEventListener('click', () => {
+        const isHidden = notificationPanel.hidden;
+        notificationPanel.hidden = !isHidden;
+        notificationButton.setAttribute('aria-expanded', !isHidden);
+      });
+
+      if (closeNotificationPanelBtn) {
+        closeNotificationPanelBtn.addEventListener('click', () => {
+          notificationPanel.hidden = true;
+          notificationButton.setAttribute('aria-expanded', false);
+        });
+      }
+
+      if (clearNotificationsBtn) {
+        clearNotificationsBtn.addEventListener('click', () => {
+          notifications.length = 0;
+          renderNotifications();
+        });
+      }
+    }
+
+    if (profileButton && profileModal && closeProfileModalBtn) {
+      profileButton.addEventListener('click', () => {
+        profileModal.hidden = false;
+      });
+
+      closeProfileModalBtn.addEventListener('click', () => {
+        profileModal.hidden = true;
+      });
+
+      profileModal.addEventListener('click', (event) => {
+        if (event.target === profileModal) {
+          profileModal.hidden = true;
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        if (profileModal) {
+          profileModal.hidden = true;
+        }
+        if (notificationPanel && notificationButton) {
+          notificationPanel.hidden = true;
+          notificationButton.setAttribute('aria-expanded', false);
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

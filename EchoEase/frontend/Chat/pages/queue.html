@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queue</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand-top">UQ Student Well-being</div>
+      <div class="hub">
+        <div class="hub-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 17.2 7.9 13a2.6 2.6 0 0 1 3.7-3.7L12 9.7l.4-.4a2.6 2.6 0 1 1 3.7 3.7z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="hub-title">Well-being Hub</div>
+          <div class="hub-sub">Student Support</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary sections">
+        <a href="../../Landing Page/wellbeing-landing.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span><span>Home</span></a>
+        <a href="../../Community Forum/pages/community.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span><span>Community</span></a>
+        <a class="active" href="professional-selection.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span><span>Chat</span></a>
+        <a href="../../Resources/pages/resources.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span><span>Resources</span></a>
+      </nav>
+      <a class="support-btn support-icon-btn" href="../../Resources/pages/resources.html">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 13a8 8 0 0 1 16 0"></path>
+            <path d="M5 13v4a2 2 0 0 0 2 2h1v-7H7a2 2 0 0 0-2 2z"></path>
+            <path d="M19 13v4a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 2z"></path>
+            <path d="M13 21h-2"></path>
+          </svg>
+        </span>
+        <span>Support &amp; Well-being</span>
+      </a>
+      <div class="bottom-nav" aria-label="Quick actions">
+        <span class="bottom-item" aria-disabled="true" title="Settings are unavailable in this prototype"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1a1 1 0 1 1-1.4 1.4l-.1-.1a1.8 1.8 0 0 0-2-.4 1.8 1.8 0 0 0-1.1 1.7V20a1 1 0 1 1-2 0v-.2a1.8 1.8 0 0 0-1.1-1.7 1.8 1.8 0 0 0-2 .4l-.1.1a1 1 0 1 1-1.4-1.4l.1-.1a1.8 1.8 0 0 0 .4-2 1.8 1.8 0 0 0-1.7-1.1H4a1 1 0 1 1 0-2h.2a1.8 1.8 0 0 0 1.7-1.1 1.8 1.8 0 0 0-.4-2l-.1-.1a1 1 0 1 1 1.4-1.4l.1.1a1.8 1.8 0 0 0 2 .4 1.8 1.8 0 0 0 1.1-1.7V4a1 1 0 1 1 2 0v.2a1.8 1.8 0 0 0 1.1 1.7 1.8 1.8 0 0 0 2-.4l.1-.1a1 1 0 1 1 1.4 1.4l-.1.1a1.8 1.8 0 0 0-.4 2 1.8 1.8 0 0 0 1.7 1.1H20a1 1 0 1 1 0 2h-.2a1.8 1.8 0 0 0-1.7 1.1z"></path></svg></span><span>Settings (unavailable)</span></span>
+        <a class="bottom-item" href="../../Resources/pages/resources.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.2 9a3 3 0 1 1 5.5 1.7c-.8 1.1-1.7 1.4-1.7 2.8"></path><path d="M12 17h.01"></path></svg></span><span>Help resources</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="quick" id="quickExitTop" type="button" aria-label="Quick Exit to Blackboard">Quick Exit</button>
+        <button
+          class="top-icon-btn"
+          id="notificationButton"
+          type="button"
+          aria-label="Open notifications"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="notificationPanel"
+        >
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 10a6 6 0 1 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path><path d="M14 21a2 2 0 0 1-4 0"></path></svg></span>
+          <span class="notification-badge" id="notificationBadge" hidden aria-hidden="true"></span>
+        </button>
+        <button
+          class="avatar avatar-btn"
+          id="profileButton"
+          type="button"
+          aria-label="Open student profile"
+          aria-haspopup="dialog"
+          aria-controls="profileModal"
+        >
+          AX
+        </button>
+      </header>
+      <section class="notification-panel" id="notificationPanel" hidden aria-label="Notifications">
+        <div class="notification-panel-head">
+          <h2>Notifications</h2>
+          <button class="panel-close-inline" id="closeNotificationPanelBtn" type="button" aria-label="Close notifications">Close</button>
+        </div>
+        <ul class="notification-list" id="notificationList"></ul>
+        <button class="mvp-modal-btn" id="clearNotificationsBtn" type="button">Clear notifications</button>
+      </section>
+
+      <section class="content">
+        <div class="queue-content">
+          <a class="flow-back-link" href="professional-selection.html">&larr; Back to support options</a>
+          <div class="check">&#10003;</div>
+          <h1 class="queue-title" id="queueTitle">You're in the demo queue</h1>
+          <p class="subtitle queue-professional-label" id="queueProfessionalLabel">Previewing a simulated support wait</p>
+          <p class="subtitle" style="font-size:14px">This is a prototype preview. The displayed wait is accelerated for demonstration and is not a real service queue.</p>
+          <a class="action primary queue-ready-btn" id="startChatWhenReady" href="chat.html" hidden>Start Chat</a>
+          <button class="action outline queue-leave-btn" id="leaveQueueButton" type="button" aria-haspopup="dialog" aria-controls="leaveQueueModal">Leave Queue</button>
+
+          <aside class="queue-emergency" aria-label="Urgent help while waiting">
+            <strong>Need urgent help now?</strong>
+            <span>This simulated queue is not emergency assistance.</span>
+            <a data-safety-call="emergency" href="tel:000">Call 000</a>
+            <a data-safety-call="lifeline" href="tel:131114">Lifeline: <span data-safety-number="lifeline">13 11 14</span></a>
+            <a data-safety-call="uqCrisis" href="tel:1300851998">UQ Crisis Line: <span data-safety-number="uqCrisis">1300 851 998</span></a>
+          </aside>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">DEMO POSITION</div>
+              <div class="stat-num" id="queuePosition">03</div>
+              <div class="queue-position-note" id="queuePositionNote">This is a simulated queue position for the prototype preview.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">DEMO WAIT TIME</div>
+              <div class="stat-num" id="queueWaitTime">~4 minutes</div>
+              <div id="queueWaitMeta">Accelerated demo countdown, not real wait time.</div>
+            </div>
+          </div>
+
+          <div class="sound">
+            <div>
+              <b>Sound notifications unavailable</b><br>
+              <span style="color:#777">This prototype does not play an alert when the demo timer reaches ready.</span><br>
+              <span class="sound-helper">Keep this tab visible to follow the simulated countdown.</span>
+            </div>
+            <button class="enable" id="enableSoundBtn" type="button" disabled>Unavailable</button>
+          </div>
+
+          <h2 class="wait-title">While you wait...</h2>
+          <div class="wait-grid">
+            <div class="breath">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em">Mindfulness Activity</div>
+              <h2>Box Breathing</h2>
+              <p>An optional paced breathing prompt to try during this simulated wait.</p>
+              <button class="start" id="startExerciseBtn" type="button" aria-haspopup="dialog" aria-controls="breathingModal">Start Exercise</button>
+            </div>
+
+            <div class="side-wait">
+              <div class="mini-card">
+                <div style="font-size:28px">&#9728;</div>
+                <h3>Quick Journal</h3>
+                <p>Drafts are not saved by default. You may explicitly save an entry on this device and delete it later.</p>
+                <button class="inline-link-btn" id="openJournalBtn" type="button" aria-haspopup="dialog" aria-controls="journalModal">Open Journal &rarr;</button>
+              </div>
+
+              <div class="mini-card audio audio-player-card" id="focusAudioCard">
+                <div class="audio-player-head">
+                  <div class="audio-cover-circle" aria-hidden="true">
+                    <span class="audio-cover-note">&#9835;</span>
+                    <div class="audio-equalizer" id="audioEqualizer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="audio-head-copy">
+                    <div class="audio-head-kicker">Focus Audio</div>
+                    <div class="audio-track-title" id="audioTrackTitle">Lofi Focus</div>
+                    <div class="audio-category-label" id="audioCategoryLabel">Lofi</div>
+                  </div>
+                </div>
+                <div class="audio-category-row" role="tablist" aria-label="Focus audio categories">
+                  <button class="audio-category-btn active" id="audioCategoryLofi" type="button" data-audio-category="lofi">Lofi</button>
+                  <button class="audio-category-btn" id="audioCategoryPiano" type="button" data-audio-category="piano">Piano</button>
+                  <button class="audio-category-btn" id="audioCategoryNature" type="button" data-audio-category="nature">Nature</button>
+                </div>
+                <div class="audio-controls">
+                  <button class="audio-control-btn" id="audioBackBtn" type="button" aria-label="Previous track">Previous</button>
+                  <button class="audio-control-btn play" id="focusAudioToggleBtn" type="button" aria-label="Play or pause">Play</button>
+                  <button class="audio-control-btn" id="audioNextBtn" type="button" aria-label="Next track">Next</button>
+                </div>
+                <div class="audio-time-row">
+                  <span class="audio-time-label" id="audioCurrentTime">0:00</span>
+                  <span class="audio-time-label" id="audioDuration">0:00</span>
+                </div>
+                <label class="sr-only" for="audioSeekBar">Track progress</label>
+                <input
+                  id="audioSeekBar"
+                  class="audio-seek-slider"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  step="1"
+                  value="0"
+                  aria-label="Audio progress slider"
+                >
+                <div class="audio-player-meta">
+                  <label class="audio-volume-label" for="audioVolume">Volume</label>
+                  <input id="audioVolume" class="audio-volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Focus audio volume">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-tabs" aria-label="Mobile sections">
+    <a class="mobile-tab-item" href="../../Landing Page/wellbeing-landing.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-5h6v5"></path></svg></span><span>Home</span></a>
+    <a class="mobile-tab-item" href="../../Community Forum/pages/community.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 19a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M14.5 19a5 5 0 0 1 6.5-4.7"></path></svg></span><span>Community</span></a>
+    <a class="mobile-tab-item active" href="professional-selection.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span><span>Chat</span></a>
+    <a class="mobile-tab-item" href="../../Resources/pages/resources.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path><path d="M8 15h6"></path></svg></span><span>Resources</span></a>
+  </nav>
+
+  <div class="mvp-modal-backdrop" id="breathingModal" hidden>
+    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="breathingTitle">
+      <button class="mvp-modal-close" id="closeBreathingModalBtn" type="button" aria-label="Close breathing exercise">Close</button>
+      <h2 id="breathingTitle">Box Breathing Exercise</h2>
+      <div class="breathing-visual-wrap">
+        <div class="breathing-circle" id="breathingCircle" data-phase="in"></div>
+        <div class="breathing-phase" id="breathingPhaseText">Breathe in</div>
+        <div class="breathing-timer" id="breathingTimerText">4s</div>
+      </div>
+      <div class="mvp-modal-actions left">
+        <button class="mvp-modal-btn" id="breathingStartBtn" type="button">Start</button>
+        <button class="mvp-modal-btn" id="breathingPauseBtn" type="button">Pause</button>
+        <button class="mvp-modal-btn" id="breathingResetBtn" type="button">Reset</button>
+        <button class="mvp-modal-btn" id="breathingCloseBtn" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="journalModal" hidden>
+    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="journalTitle">
+      <button class="mvp-modal-close" id="closeJournalModalBtn" type="button" aria-label="Close journal">Close</button>
+      <h2 id="journalTitle">Quick Journal</h2>
+      <p>Your draft remains only on this open page unless you opt in below. Avoid sensitive personal information.</p>
+      <label class="sr-only" for="journalInput">Journal draft</label>
+      <textarea id="journalInput" class="journal-input" rows="7" placeholder="Write a private draft..."></textarea>
+      <p class="journal-storage-status" id="journalStorageStatus" aria-live="polite">Not saved on this device.</p>
+      <label class="queue-storage-consent"><input id="journalSaveConsent" type="checkbox"> I consent to save this journal entry in this browser on this device.</label>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="loadJournalBtn" type="button">Load Saved Entry</button>
+        <button class="mvp-modal-btn" id="clearJournalBtn" type="button">Delete Saved Entry</button>
+        <button class="mvp-modal-btn" id="cancelJournalBtn" type="button">Close</button>
+        <button class="mvp-modal-btn primary" id="saveJournalBtn" type="button" disabled>Save on This Device</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="leaveQueueModal" hidden>
+    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="leaveQueueTitle">
+      <button class="mvp-modal-close" id="closeLeaveQueueModalBtn" type="button" aria-label="Close leave queue confirmation">Close</button>
+      <h2 id="leaveQueueTitle">Leave queue?</h2>
+      <p>You will end this simulated queue preview and reset its demo position.</p>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="cancelLeaveQueueBtn" type="button">Cancel</button>
+        <button class="mvp-modal-btn" id="confirmLeaveQueueBtn" type="button">Leave Queue</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="profileModal" hidden>
+    <div class="mvp-modal-card profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+      <button class="mvp-modal-close" id="closeProfileModalBtn" type="button" aria-label="Close profile modal">Close</button>
+      <div class="profile-modal-header">
+        <div class="profile-avatar-large" aria-hidden="true">AX</div>
+        <div>
+          <h2 id="profileModalTitle">Alex Example</h2>
+          <p class="profile-modal-role">Fictional Demo Profile</p>
+        </div>
+      </div>
+      <div class="profile-modal-grid">
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span><div><span class="profile-info-label">Email</span><span class="profile-info-value">alex.example@demo.invalid</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span><div><span class="profile-info-label">Student ID</span><span class="profile-info-value">demo-student-001</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-6 9 6"></path><path d="M5 10v9h14v-9"></path><path d="M9 19v-5h6v5"></path></svg></span><div><span class="profile-info-label">University</span><span class="profile-info-value">Demo University Profile</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></span><div><span class="profile-info-label">Program</span><span class="profile-info-value">Prototype Preview</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></svg></span><div><span class="profile-info-label">Status</span><span class="profile-info-value">Demo only</span></div></div>
+      </div>
+      <p class="profile-privacy-note">This is fictional profile data shown only for prototype interaction.</p>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="copyProfileEmailBtn" type="button">Copy Email</button>
+        <button class="mvp-modal-btn" id="copyStudentIdBtn" type="button">Copy Student ID</button>
+        <button class="mvp-modal-btn primary" type="button" id="profileCloseActionBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mvp-toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../scripts/safety-config.js"></script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/queue.js"></script>
+</body>
+</html>
+
