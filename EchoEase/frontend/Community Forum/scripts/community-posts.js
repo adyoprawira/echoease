@@ -58,6 +58,40 @@ function saveUserPost(post) {
   return post.id;
 }
 
+function updateUserPost(postId, updates) {
+  const posts = loadUserPosts();
+  const index = posts.findIndex(post => post.id === postId);
+
+  if (index < 0) {
+    return false;
+  }
+
+  posts[index] = { ...posts[index], ...updates };
+
+  try {
+    localStorage.setItem(COMMUNITY_POSTS_STORAGE_KEY, JSON.stringify(posts));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function deleteUserPost(postId) {
+  const posts = loadUserPosts();
+  const nextPosts = posts.filter(post => post.id !== postId);
+
+  if (posts.length === nextPosts.length) {
+    return false;
+  }
+
+  try {
+    localStorage.setItem(COMMUNITY_POSTS_STORAGE_KEY, JSON.stringify(nextPosts));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function getLatestPostId() {
   return (
     new URLSearchParams(window.location.search).get("post") ||

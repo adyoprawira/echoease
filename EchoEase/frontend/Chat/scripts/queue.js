@@ -18,6 +18,8 @@
   const DEMO_STAGE_MAX_SECONDS = 12;
   const ACTIVE_POSITION_NOTE =
     "This is a simulated queue position for the prototype preview.";
+  const DEMO_WAIT_NOTE =
+    "Accelerated demo countdown, not real wait time.";
 
   const JOURNAL_KEY = "uq_queue_journal_entry";
   const BREATH_PHASES = ["Breathe in", "Hold", "Breathe out", "Hold"];
@@ -81,13 +83,15 @@
   const cancelJournalBtn = document.getElementById("cancelJournalBtn");
   const saveJournalBtn = document.getElementById("saveJournalBtn");
   const journalInput = document.getElementById("journalInput");
+  const journalStorageStatus = document.getElementById("journalStorageStatus");
+  const journalSaveConsent = document.getElementById("journalSaveConsent");
+  const loadJournalBtn = document.getElementById("loadJournalBtn");
+  const clearJournalBtn = document.getElementById("clearJournalBtn");
 
   const leaveQueueModal = document.getElementById("leaveQueueModal");
   const closeLeaveQueueModalBtn = document.getElementById("closeLeaveQueueModalBtn");
   const cancelLeaveQueueBtn = document.getElementById("cancelLeaveQueueBtn");
   const confirmLeaveQueueBtn = document.getElementById("confirmLeaveQueueBtn");
-
-  const enableSoundBtn = document.getElementById("enableSoundBtn");
 
   const focusAudioCard = document.getElementById("focusAudioCard");
   const focusAudioToggleBtn = document.getElementById("focusAudioToggleBtn");
@@ -150,11 +154,11 @@
 
   function getProfessionalName(key) {
     const map = {
-      marcus: "Marcus Thompson",
-      sarah: "Dr. Sarah Jenkins"
+      marcus: "Simulated Support Guide B",
+      sarah: "Simulated Support Guide A"
     };
 
-    return map[key] || "a support officer";
+    return map[key] || "Simulated Support Guide";
   }
 
   function getProfessionalLabel(key) {
@@ -163,8 +167,8 @@
     }
 
     const map = {
-      marcus: "Previewing a simulated wait for Marcus Thompson",
-      sarah: "Previewing a simulated wait for Dr. Sarah Jenkins"
+      marcus: "Previewing a simulated wait for Support Guide B",
+      sarah: "Previewing a simulated wait for Support Guide A"
     };
 
     return map[key] || "Previewing a simulated support wait";
@@ -172,7 +176,7 @@
 
   function getReadyNotificationMessage(key) {
     if (key === "marcus") {
-      return "The simulated chat with Marcus Thompson is ready to preview.";
+      return "The simulated chat with Support Guide B is ready to preview.";
     }
 
     const name = getProfessionalName(key);
@@ -558,7 +562,7 @@
   function startQueueProgress(queueState) {
     queueProfessionalLabel.textContent = getProfessionalLabel(queueState.professional);
     queuePositionNote.textContent = ACTIVE_POSITION_NOTE;
-    queueWaitMeta.textContent = "Wait time is approximate.";
+    queueWaitMeta.textContent = DEMO_WAIT_NOTE;
     startChatWhenReady.href = getChatHref(queueState.professional);
 
     notifyQueueJoin(queueState);
@@ -582,7 +586,7 @@
       if (stageIndex >= 4) {
         queueTitle.textContent = "Your demo chat is ready";
         queueWaitTime.textContent = "Ready";
-        queueWaitMeta.textContent = "Wait time is approximate.";
+        queueWaitMeta.textContent = DEMO_WAIT_NOTE;
         queuePositionNote.textContent = "Simulated support chat is ready";
         startChatWhenReady.hidden = false;
 
@@ -600,7 +604,7 @@
 
       queueTitle.textContent = "You're in the demo queue";
       queueWaitTime.textContent = estimateLabels[stageIndex];
-      queueWaitMeta.textContent = "Wait time is approximate.";
+      queueWaitMeta.textContent = DEMO_WAIT_NOTE;
       queuePositionNote.textContent = ACTIVE_POSITION_NOTE;
       startChatWhenReady.hidden = true;
     }
@@ -896,7 +900,11 @@
   breathingResetBtn.addEventListener("click", resetBreathing);
 
   openJournalBtn.addEventListener("click", function () {
-    journalInput.value = localStorage.getItem(JOURNAL_KEY) || "";
+    journalSaveConsent.checked = false;
+    saveJournalBtn.disabled = true;
+    journalStorageStatus.textContent = localStorage.getItem(JOURNAL_KEY)
+      ? "A saved entry exists on this device. Select Load Saved Entry to view it."
+      : "Not saved on this device.";
     openModal(journalModal, openJournalBtn);
   });
 
@@ -908,9 +916,39 @@
     closeModal(true);
   });
 
+  journalSaveConsent.addEventListener("change", function () {
+    saveJournalBtn.disabled = !journalSaveConsent.checked;
+  });
+
+  loadJournalBtn.addEventListener("click", function () {
+    const savedEntry = localStorage.getItem(JOURNAL_KEY);
+    if (!savedEntry) {
+      journalStorageStatus.textContent = "No saved entry exists on this device.";
+      return;
+    }
+
+    journalInput.value = savedEntry;
+    journalStorageStatus.textContent = "Saved entry loaded from this device. Delete it when no longer needed.";
+  });
+
+  clearJournalBtn.addEventListener("click", function () {
+    localStorage.removeItem(JOURNAL_KEY);
+    journalInput.value = "";
+    journalSaveConsent.checked = false;
+    saveJournalBtn.disabled = true;
+    journalStorageStatus.textContent = "Saved entry deleted from this device.";
+    showToast("Saved journal entry deleted from this device.");
+  });
+
   saveJournalBtn.addEventListener("click", function () {
+    if (!journalSaveConsent.checked) {
+      journalStorageStatus.textContent = "Select consent before saving an entry on this device.";
+      return;
+    }
+
     localStorage.setItem(JOURNAL_KEY, journalInput.value);
-    showToast("Journal entry saved in this browser for this prototype.");
+    journalStorageStatus.textContent = "Entry saved in this browser on this device.";
+    showToast("Journal entry saved on this device. You can delete it from this window.");
   });
 
   leaveQueueButton.addEventListener("click", function () {
@@ -990,16 +1028,6 @@
   });
   audioPlayer.addEventListener("ended", function () {
     changeTrack(1);
-  });
-
-  enableSoundBtn.addEventListener("click", function () {
-    if (enableSoundBtn.disabled) {
-      return;
-    }
-
-    enableSoundBtn.textContent = "Enabled";
-    enableSoundBtn.disabled = true;
-    showToast("Sound notifications enabled.");
   });
 
   [breathingModal, journalModal, leaveQueueModal].forEach(function (modalEl) {

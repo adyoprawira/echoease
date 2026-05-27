@@ -405,6 +405,14 @@ button {
   outline-offset: 2px;
 }
 
+.filter-status {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: var(--muted-fg);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 /* =========================
    POSTS
 ========================= */
@@ -520,6 +528,15 @@ button {
   color: var(--primary);
 }
 
+button.tag-accent {
+  border: 1px solid transparent;
+}
+
+button.tag-accent.active {
+  border-color: var(--primary);
+  font-weight: 800;
+}
+
 .post-actions {
   margin-top: 16px;
 
@@ -535,6 +552,68 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+.post-action-btn,
+.reply-report-btn {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.post-management {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.demo-report-status {
+  margin: 10px 0 0;
+  color: #5e5967;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.edit-post-form {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.edit-post-form input,
+.edit-post-form textarea {
+  width: 100%;
+  border: 1px solid rgba(96, 54, 131, 0.2);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.inline-error {
+  color: #aa2822;
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.posts-empty {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  color: var(--muted-fg);
+  box-shadow: var(--shadow);
 }
 
 .reply-toggle {
@@ -629,6 +708,11 @@ button {
 .reply-meta span:first-child {
   color: var(--fg);
   font-weight: 700;
+}
+
+.reply-report-btn {
+  margin-left: auto;
+  font-size: 12px;
 }
 
 .reply-content p {

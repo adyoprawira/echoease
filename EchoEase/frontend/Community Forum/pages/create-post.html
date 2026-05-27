@@ -102,6 +102,25 @@
       gap: 16px;
       margin-top: 32px;
     }
+
+    .field-error {
+      margin: 7px 0 0;
+      color: #ab2c26;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .field [aria-invalid="true"] {
+      border-color: #ab2c26;
+    }
+
+    .anon-state {
+      display: block;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body>
@@ -195,40 +214,55 @@
 
         <div class="field">
           <label for="postTitle">Title</label>
-          <input id="postTitle" class="input" type="text" placeholder="What's on your mind?" maxlength="120" />
+          <input id="postTitle" class="input" type="text" placeholder="What's on your mind?" maxlength="120" aria-describedby="postTitleError" />
+          <p class="field-error" id="postTitleError" role="alert" hidden>Please add a post title.</p>
         </div>
 
         <div class="field">
           <label>Select Topic</label>
           <div class="topics" id="topicList">
-            <button class="topic-btn">Stress</button>
-            <button class="topic-btn active">Academic Pressure</button>
-            <button class="topic-btn">Loneliness</button>
-            <button class="topic-btn">Sleep</button>
-            <button class="topic-btn">Other</button>
+            <button class="topic-btn" type="button">Stress</button>
+            <button class="topic-btn active" type="button">Academic Pressure</button>
+            <button class="topic-btn" type="button">Loneliness</button>
+            <button class="topic-btn" type="button">Sleep</button>
+            <button class="topic-btn" type="button">Other</button>
           </div>
         </div>
 
         <div class="field">
           <label for="postContent">Content</label>
-          <textarea id="postContent" class="textarea" placeholder="Tell us more... (Avoid personal identifying details in this prototype)"></textarea>
+          <textarea id="postContent" class="textarea" placeholder="Tell us more... (Avoid personal identifying details in this prototype)" aria-describedby="postContentError"></textarea>
+          <p class="field-error" id="postContentError" role="alert" hidden>Please add post content.</p>
         </div>
 
         <div class="anon-toggle">
           <div class="anon-text">
             <h4 style="margin: 0; color: var(--fg);">Post Anonymously</h4>
-            <p style="margin: 4px 0 0; color: var(--muted-fg); font-size: 14px;">Shown as Anonymous Student in this browser demo; not a privacy guarantee.</p>
+            <p style="margin: 4px 0 0; color: var(--muted-fg); font-size: 14px;">Anonymous only changes the displayed author to Anonymous Student. Your post is stored on this device in this browser; this is not a privacy guarantee or a backend submission.</p>
+            <span class="anon-state" id="anonState" aria-live="polite">Display name: Anonymous Student</span>
           </div>
-          <button id="anonSwitch" class="switch" aria-pressed="true"></button>
+          <button id="anonSwitch" class="switch" type="button" role="switch" aria-pressed="true" aria-checked="true" aria-label="Post anonymously: on"></button>
         </div>
 
         <div class="form-footer">
           <a class="btn-support" style="background: transparent; color: var(--muted-fg);" href="../pages/community.html">Cancel</a>
-          <button class="btn-pill-primary" id="publishPostBtn" type="button">Publish Post</button>
+          <button class="btn-pill-primary" id="publishPostBtn" type="button">Save Demo Post</button>
         </div>
         </div>
       </section>
     </main>
+  </div>
+
+  <div class="mvp-modal-backdrop" id="identityConfirmModal" hidden>
+    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="identityConfirmTitle">
+      <button class="mvp-modal-close" id="closeIdentityConfirmBtn" type="button" aria-label="Close publish confirmation">Close</button>
+      <h2 id="identityConfirmTitle">Save with a visible demo name?</h2>
+      <p>This post will display <strong>Alex Example</strong> as its author and will be stored only in this browser. It is not sent to a backend or reviewed by moderators.</p>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="cancelIdentityConfirmBtn" type="button">Cancel</button>
+        <button class="mvp-modal-btn primary" id="confirmIdentityPostBtn" type="button">Save with Demo Name</button>
+      </div>
+    </div>
   </div>
 
   <div class="mvp-modal-backdrop" id="profileModal" hidden>
@@ -269,8 +303,34 @@
   <script src="../scripts/community-posts.js"></script>
   <script>
     const anonSwitch = document.getElementById("anonSwitch");
+    const anonState = document.getElementById("anonState");
+    const titleInput = document.getElementById("postTitle");
+    const contentInput = document.getElementById("postContent");
+    const titleError = document.getElementById("postTitleError");
+    const contentError = document.getElementById("postContentError");
+    const identityConfirmModal = document.getElementById("identityConfirmModal");
+    const confirmIdentityPostBtn = document.getElementById("confirmIdentityPostBtn");
+    const closeIdentityConfirmBtn = document.getElementById("closeIdentityConfirmBtn");
+    const cancelIdentityConfirmBtn = document.getElementById("cancelIdentityConfirmBtn");
+    let pendingPost = null;
+
+    function isAnonymous() {
+      return !anonSwitch.classList.contains("off");
+    }
+
+    function updateAnonymousState() {
+      const anonymous = isAnonymous();
+      anonSwitch.setAttribute("aria-pressed", String(anonymous));
+      anonSwitch.setAttribute("aria-checked", String(anonymous));
+      anonSwitch.setAttribute("aria-label", `Post anonymously: ${anonymous ? "on" : "off"}`);
+      anonState.textContent = anonymous
+        ? "Display name: Anonymous Student"
+        : "Display name: Alex Example (fictional demo profile)";
+    }
+
     anonSwitch.addEventListener("click", () => {
       anonSwitch.classList.toggle("off");
+      updateAnonymousState();
     });
 
     const topicButtons = document.querySelectorAll(".topic-btn");
@@ -281,31 +341,65 @@
       });
     });
 
-    document.getElementById("publishPostBtn").addEventListener("click", () => {
-      const titleInput = document.getElementById("postTitle");
-      const contentInput = document.getElementById("postContent");
+    function setFieldError(input, error, invalid) {
+      input.setAttribute("aria-invalid", String(invalid));
+      error.hidden = !invalid;
+    }
+
+    function validatePost() {
       const title = titleInput.value.trim();
       const content = contentInput.value.trim();
-
-      if (!title) {
-        alert("Please add a post title.");
-        titleInput.focus();
-        return;
-      }
-
-      if (!content) {
-        alert("Please add post content.");
-        contentInput.focus();
-        return;
+      setFieldError(titleInput, titleError, !title);
+      setFieldError(contentInput, contentError, !content);
+      if (!title || !content) {
+        (!title ? titleInput : contentInput).focus();
+        return null;
       }
 
       const topic = document.querySelector(".topic-btn.active")?.textContent.trim() || "Other";
-      const anonymous = !anonSwitch.classList.contains("off");
-      const post = buildForumPost({ title, content, topic, anonymous });
+      return buildForumPost({ title, content, topic, anonymous: isAnonymous() });
+    }
 
+    function storePost(post) {
       saveUserPost(post);
       window.location.href = "post-published.html";
+    }
+
+    function closeIdentityConfirmation() {
+      identityConfirmModal.hidden = true;
+      pendingPost = null;
+      document.getElementById("publishPostBtn").focus();
+    }
+
+    document.getElementById("publishPostBtn").addEventListener("click", () => {
+      const post = validatePost();
+      if (!post) return;
+      if (isAnonymous()) {
+        storePost(post);
+        return;
+      }
+      pendingPost = post;
+      identityConfirmModal.hidden = false;
+      closeIdentityConfirmBtn.focus();
     });
+
+    [titleInput, contentInput].forEach(input => input.addEventListener("input", () => {
+      if (input === titleInput) setFieldError(titleInput, titleError, false);
+      if (input === contentInput) setFieldError(contentInput, contentError, false);
+    }));
+
+    confirmIdentityPostBtn.addEventListener("click", () => {
+      if (pendingPost) storePost(pendingPost);
+    });
+    closeIdentityConfirmBtn.addEventListener("click", closeIdentityConfirmation);
+    cancelIdentityConfirmBtn.addEventListener("click", closeIdentityConfirmation);
+    identityConfirmModal.addEventListener("click", event => {
+      if (event.target === identityConfirmModal) closeIdentityConfirmation();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !identityConfirmModal.hidden) closeIdentityConfirmation();
+    });
+    updateAnonymousState();
   </script>
 </body>
 </html>

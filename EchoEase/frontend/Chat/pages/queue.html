@@ -86,9 +86,17 @@
           <div class="check">&#10003;</div>
           <h1 class="queue-title" id="queueTitle">You're in the demo queue</h1>
           <p class="subtitle queue-professional-label" id="queueProfessionalLabel">Previewing a simulated support wait</p>
-          <p class="subtitle" style="font-size:14px">This is a prototype preview. A simulated support chat<br>will become available shortly.</p>
+          <p class="subtitle" style="font-size:14px">This is a prototype preview. The displayed wait is accelerated for demonstration and is not a real service queue.</p>
           <a class="action primary queue-ready-btn" id="startChatWhenReady" href="chat.html" hidden>Start Chat</a>
           <button class="action outline queue-leave-btn" id="leaveQueueButton" type="button" aria-haspopup="dialog" aria-controls="leaveQueueModal">Leave Queue</button>
+
+          <aside class="queue-emergency" aria-label="Urgent help while waiting">
+            <strong>Need urgent help now?</strong>
+            <span>This simulated queue is not emergency assistance.</span>
+            <a data-safety-call="emergency" href="tel:000">Call 000</a>
+            <a data-safety-call="lifeline" href="tel:131114">Lifeline: <span data-safety-number="lifeline">13 11 14</span></a>
+            <a data-safety-call="uqCrisis" href="tel:1300851998">UQ Crisis Line: <span data-safety-number="uqCrisis">1300 851 998</span></a>
+          </aside>
 
           <div class="stats">
             <div class="stat">
@@ -99,17 +107,17 @@
             <div class="stat">
               <div class="stat-label">DEMO WAIT TIME</div>
               <div class="stat-num" id="queueWaitTime">~4 minutes</div>
-              <div id="queueWaitMeta">Wait time is approximate.</div>
+              <div id="queueWaitMeta">Accelerated demo countdown, not real wait time.</div>
             </div>
           </div>
 
           <div class="sound">
             <div>
-              <b>Enable sound notifications?</b><br>
-              <span style="color:#777">We'll alert you when the simulated chat is ready.</span><br>
-              <span class="sound-helper">You can keep this page open while waiting.</span>
+              <b>Sound notifications unavailable</b><br>
+              <span style="color:#777">This prototype does not play an alert when the demo timer reaches ready.</span><br>
+              <span class="sound-helper">Keep this tab visible to follow the simulated countdown.</span>
             </div>
-            <button class="enable" id="enableSoundBtn" type="button">Enable</button>
+            <button class="enable" id="enableSoundBtn" type="button" disabled>Unavailable</button>
           </div>
 
           <h2 class="wait-title">While you wait...</h2>
@@ -117,7 +125,7 @@
             <div class="breath">
               <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em">Mindfulness Activity</div>
               <h2>Box Breathing</h2>
-              <p>A simple technique to calm your nervous system<br>and reduce anxiety in under 2 minutes.</p>
+              <p>An optional paced breathing prompt to try during this simulated wait.</p>
               <button class="start" id="startExerciseBtn" type="button" aria-haspopup="dialog" aria-controls="breathingModal">Start Exercise</button>
             </div>
 
@@ -125,7 +133,7 @@
               <div class="mini-card">
                 <div style="font-size:28px">&#9728;</div>
                 <h3>Quick Journal</h3>
-                <p>Optional demo journal. Entries you save stay in this browser on this device.</p>
+                <p>Drafts are not saved by default. You may explicitly save an entry on this device and delete it later.</p>
                 <button class="inline-link-btn" id="openJournalBtn" type="button" aria-haspopup="dialog" aria-controls="journalModal">Open Journal &rarr;</button>
               </div>
 
@@ -213,11 +221,16 @@
     <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="journalTitle">
       <button class="mvp-modal-close" id="closeJournalModalBtn" type="button" aria-label="Close journal">Close</button>
       <h2 id="journalTitle">Quick Journal</h2>
-      <p>Saved entries remain in this browser for the prototype. Do not enter sensitive personal information.</p>
-      <textarea id="journalInput" class="journal-input" rows="7" placeholder="Write what is on your mind..."></textarea>
+      <p>Your draft remains only on this open page unless you opt in below. Avoid sensitive personal information.</p>
+      <label class="sr-only" for="journalInput">Journal draft</label>
+      <textarea id="journalInput" class="journal-input" rows="7" placeholder="Write a private draft..."></textarea>
+      <p class="journal-storage-status" id="journalStorageStatus" aria-live="polite">Not saved on this device.</p>
+      <label class="queue-storage-consent"><input id="journalSaveConsent" type="checkbox"> I consent to save this journal entry in this browser on this device.</label>
       <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="loadJournalBtn" type="button">Load Saved Entry</button>
+        <button class="mvp-modal-btn" id="clearJournalBtn" type="button">Delete Saved Entry</button>
         <button class="mvp-modal-btn" id="cancelJournalBtn" type="button">Close</button>
-        <button class="mvp-modal-btn primary" id="saveJournalBtn" type="button">Save Entry</button>
+        <button class="mvp-modal-btn primary" id="saveJournalBtn" type="button" disabled>Save on This Device</button>
       </div>
     </div>
   </div>
@@ -226,7 +239,7 @@
     <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="leaveQueueTitle">
       <button class="mvp-modal-close" id="closeLeaveQueueModalBtn" type="button" aria-label="Close leave queue confirmation">Close</button>
       <h2 id="leaveQueueTitle">Leave queue?</h2>
-      <p>You will lose your current queue position.</p>
+      <p>You will end this simulated queue preview and reset its demo position.</p>
       <div class="mvp-modal-actions">
         <button class="mvp-modal-btn" id="cancelLeaveQueueBtn" type="button">Cancel</button>
         <button class="mvp-modal-btn" id="confirmLeaveQueueBtn" type="button">Leave Queue</button>

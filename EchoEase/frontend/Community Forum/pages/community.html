@@ -104,8 +104,10 @@
 
           <div class="search">
             <i class="icon icon-search"></i>
-            <input type="search" placeholder="Search posts, tags, or topics..." />
+            <label class="sr-only" for="forumSearch">Search demo posts</label>
+            <input id="forumSearch" type="search" placeholder="Search posts, tags, or topics..." />
           </div>
+          <p class="filter-status" id="filterStatus" aria-live="polite"></p>
 
           <div class="posts" id="posts"></div>
         </section>
@@ -135,7 +137,7 @@
 
           <div class="card card-primary">
             <h3>Community Guidelines</h3>
-            <p>Be kind and do not share identifying details. Moderation and reporting are not active in this prototype.</p>
+            <p>Be kind and do not share identifying details. Report actions are demo-only acknowledgements; no moderation team is notified.</p>
           </div>
         </aside>
         </div>

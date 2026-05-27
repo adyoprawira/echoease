@@ -79,21 +79,21 @@
             type="button"
             aria-haspopup="dialog"
             aria-controls="mentorProfileModal"
-            aria-label="Open support officer profile"
+            aria-label="Open simulated guide information"
           >
             <img
               id="mentorPhoto"
               class="small-photo"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop"
-              alt="Dr. Sarah Jenkins"
+              alt="Simulated support guide"
             >
             <span>
-              <span class="mentor-name" id="mentorName">Dr. Sarah Jenkins</span>
+              <span class="mentor-name" id="mentorName">Simulated Support Guide</span>
               <span class="online">
                 <span class="availability-dot" style="background:#0abe70"></span>
-                <span id="mentorRole">Peer Support Officer</span>
+                <span id="mentorRole">Automated demo responses</span>
               </span>
-              <span class="professional-status" id="professionalStatus">Demo status: available</span>
+              <span class="professional-status" id="professionalStatus">Prototype simulation</span>
               <span class="session-status" id="chatSessionStatusLabel">Demo session: Active</span>
               <span class="referral-count" id="referralCountLabel">Resources suggested: 0</span>
             </span>
@@ -137,6 +137,10 @@
           </div>
         </div>
 
+        <div class="simulation-notice" role="status">
+          Prototype simulation only: no live counsellor is connected and this is not emergency assistance. For immediate danger, call <a class="inline-contact-link" data-safety-call="emergency" href="tel:000"><span data-safety-number="emergency">000</span></a>.
+        </div>
+
         <div class="info-panel" id="emergencyPanel" hidden role="region" aria-label="Emergency resources panel">
           <div class="panel-head">
             <h2>Emergency Resources</h2>
@@ -158,9 +162,10 @@
           <ul>
             <li>This prototype uses simulated support responses and is not a live counselling service.</li>
             <li>Do not enter sensitive personal information.</li>
-            <li>Saved resources and chat summaries are stored locally in this browser for the demo.</li>
+            <li>Nothing is sent to a counselling service. A summary or resource is stored locally only if you explicitly choose to save it.</li>
             <li>No secure messaging backend or real support officer is connected.</li>
           </ul>
+          <button class="resource-card-btn" id="clearStoredChatDataBtn" type="button">Delete saved chat data on this device</button>
         </div>
 
         <div class="messages" id="messages" aria-live="polite">
@@ -172,29 +177,26 @@
               Share a demo concern to preview relevant support pathways and resources.
             </p>
           </div>
-          <div class="private-note">
-            Prototype notice: responses are simulated. Saved resources or summaries remain in this browser.
-          </div>
         </div>
 
         <div class="chat-input">
           <div class="chips" role="group" aria-label="Starter prompts">
-            <button class="chip prompt-btn" type="button" data-concern="study" data-prompt="I feel stressed about exams and study pressure.">
-              Study stress
+            <button class="chip prompt-btn" type="button" data-concern="study" data-prompt="Please show study stress support resources.">
+              Study resources
             </button>
-            <button class="chip prompt-btn" type="button" data-concern="financial" data-prompt="I am worried about money, rent, and costs this semester.">
-              Money stress
+            <button class="chip prompt-btn" type="button" data-concern="financial" data-prompt="Please show financial support resources.">
+              Financial resources
             </button>
-            <button class="chip prompt-btn" type="button" data-concern="counselling" data-prompt="I need someone to talk to and support my wellbeing.">
-              Need someone to talk to
+            <button class="chip prompt-btn" type="button" data-concern="counselling" data-prompt="Please show wellbeing support resources.">
+              Wellbeing resources
             </button>
-            <button class="chip prompt-btn" type="button" data-concern="crisis" data-prompt="I need emergency help and feel unsafe right now.">
-              Emergency help
+            <button class="chip urgent-help-btn" id="urgentHelpBtn" type="button" aria-controls="emergencyPanel" aria-expanded="false">
+              Urgent help options
             </button>
           </div>
 
           <div class="handoff-banner" id="handoffBanner" hidden>
-            Resource handoff prepared. You can continue chatting or open the recommended support page.
+            Suggested resource selected. You can keep exploring this demo or open the resource page.
           </div>
 
           <div class="input-row">
@@ -202,7 +204,7 @@
             <input
               id="chatMessageInput"
               type="text"
-              placeholder="Message Dr. Sarah Jenkins..."
+              placeholder="Enter text to preview resource suggestions..."
               autocomplete="off"
               maxlength="500"
               aria-describedby="charCounter"
@@ -241,12 +243,12 @@
   <div class="modal-backdrop" id="mentorProfileModal" hidden>
     <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
       <button class="modal-close" id="closeMentorProfileModalBtn" type="button" aria-label="Close profile">Close</button>
-      <h2 id="profileTitle">Support Officer Profile</h2>
-      <p><strong>Name:</strong> <span id="profileOfficerName">Dr. Sarah Jenkins</span></p>
-      <p><strong>Role:</strong> <span id="profileOfficerRole">Peer Support Officer</span></p>
-      <p><strong>Status:</strong> <span id="profileOfficerStatus">Demo status: available</span></p>
-      <p><strong>Specialties:</strong> <span id="profileOfficerSpecialties">academic stress, anxiety, study burnout</span></p>
-      <p class="modal-note">This is a simulated support officer for MVP testing.</p>
+      <h2 id="profileTitle">Simulated Guide Information</h2>
+      <p><strong>Name:</strong> <span id="profileOfficerName">Simulated Support Guide</span></p>
+      <p><strong>Role:</strong> <span id="profileOfficerRole">Automated demo responses</span></p>
+      <p><strong>Status:</strong> <span id="profileOfficerStatus">Prototype simulation</span></p>
+      <p><strong>Topics:</strong> <span id="profileOfficerSpecialties">study, financial, and wellbeing resources</span></p>
+      <p class="modal-note">This is a scripted prototype guide, not a professional or live service.</p>
     </div>
   </div>
 
@@ -282,14 +284,16 @@
     <div class="modal-card modal-card-small" role="dialog" aria-modal="true" aria-labelledby="endChatSummaryTitle">
       <button class="modal-close" id="closeEndSummaryModalBtn" type="button" aria-label="Close chat summary">Close</button>
       <h2 id="endChatSummaryTitle">Chat Summary</h2>
-      <p><strong>Professional:</strong> <span id="summaryProfessional">Dr. Sarah Jenkins</span></p>
+      <p><strong>Demo guide:</strong> <span id="summaryProfessional">Simulated Support Guide</span></p>
       <p><strong>Demo session status:</strong> <span id="summarySessionStatus">Active</span></p>
-      <p><strong>Main concerns detected:</strong> <span id="summaryConcern">General wellbeing support</span></p>
+      <p><strong>Suggested from words selected or entered:</strong> <span id="summaryConcern">General wellbeing support</span></p>
       <p><strong>Resources suggested:</strong> <span id="summaryResources">None yet</span></p>
       <p><strong>Saved resources:</strong> <span id="summarySavedResources">0</span></p>
       <p><strong>Next recommended step:</strong> <span id="summaryNextStep">Continue with university support pathways.</span></p>
+      <label class="storage-consent"><input id="summarySaveConsent" type="checkbox"> I consent to save this summary and its suggested topics in this browser on this device.</label>
       <div class="modal-actions">
-        <button class="modal-btn" id="saveChatSummaryBtn" type="button">Save chat summary</button>
+        <button class="modal-btn" id="saveChatSummaryBtn" type="button" disabled>Save summary on this device</button>
+        <button class="modal-btn" id="deleteSavedSummariesBtn" type="button">Delete saved chat data</button>
         <button class="modal-btn" id="continueAfterSummaryBtn" type="button">Continue Chatting</button>
         <button class="modal-btn danger" id="returnToSelectionBtn" type="button">Return to Professional Selection</button>
       </div>

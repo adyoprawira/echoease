@@ -4,7 +4,7 @@
 
   const SESSION_STATUS = {
     ACTIVE: "Active",
-    ESCALATED: "Escalated",
+    ESCALATED: "Urgent options shown",
     ENDED: "Ended"
   };
 
@@ -28,6 +28,7 @@
   const sendBtn = document.getElementById("sendButton");
   const charCounterEl = document.getElementById("charCounter");
   const promptButtons = Array.from(document.querySelectorAll(".prompt-btn"));
+  const urgentHelpBtn = document.getElementById("urgentHelpBtn");
   const inlineFeatureButtons = Array.from(document.querySelectorAll(".inline-feature-btn"));
 
   const statusEl = document.getElementById("professionalStatus");
@@ -51,6 +52,7 @@
   const privacyBtn = document.getElementById("privacyInfoBtn");
   const privacyPanel = document.getElementById("privacyPanel");
   const closePrivacyPanelBtn = document.getElementById("closePrivacyPanelBtn");
+  const clearStoredChatDataBtn = document.getElementById("clearStoredChatDataBtn");
 
   const mentorProfileBtn = document.getElementById("mentorProfileBtn");
   const mentorProfileModal = document.getElementById("mentorProfileModal");
@@ -88,6 +90,8 @@
   const summarySavedResourcesEl = document.getElementById("summarySavedResources");
   const summaryNextStepEl = document.getElementById("summaryNextStep");
   const saveChatSummaryBtn = document.getElementById("saveChatSummaryBtn");
+  const summarySaveConsent = document.getElementById("summarySaveConsent");
+  const deleteSavedSummariesBtn = document.getElementById("deleteSavedSummariesBtn");
   const continueAfterSummaryBtn = document.getElementById("continueAfterSummaryBtn");
   const returnToSelectionBtn = document.getElementById("returnToSelectionBtn");
 
@@ -97,20 +101,20 @@
 
   const professionals = {
     sarah: {
-      name: "Dr. Sarah Jenkins",
-      role: "Peer Support Officer",
-      status: "Demo status: available",
-      specialties: "academic stress, anxiety, study burnout",
+      name: "Simulated Support Guide",
+      role: "Automated demo responses",
+      status: "Prototype simulation",
+      specialties: "study, financial, and wellbeing resources",
       photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop",
-      placeholder: "Message Dr. Sarah Jenkins..."
+      placeholder: "Enter text to preview resource suggestions..."
     },
     marcus: {
-      name: "Marcus Thompson",
-      role: "Mental Health Counsellor",
-      status: "Demo status: available",
-      specialties: "relationship issues, mindfulness, emotional wellbeing",
+      name: "Simulated Support Guide",
+      role: "Automated demo responses",
+      status: "Prototype simulation",
+      specialties: "wellbeing and support resources",
       photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop",
-      placeholder: "Message Marcus Thompson..."
+      placeholder: "Enter text to preview resource suggestions..."
     }
   };
 
@@ -120,90 +124,98 @@
       description: "Support for fees, rent pressure, and living cost concerns.",
       urgency: "Medium",
       concernLabel: "Financial stress",
-      defaultConfidence: "Medium",
       details: {
         helpsWith: "Fee pressure, rent stress, and short-term financial hardship.",
         whenToUse: "Use when money concerns are affecting your study and day-to-day stability.",
         nextStep: "Review funding options and ask student services about payment plans and grants."
       },
       acknowledgement:
-        "Thanks for sharing that financial pressure is affecting you. I can suggest a financial support pathway while we keep chatting."
+        "Financial support resources are available in this prototype. You can review the suggested pathway below."
     },
     crisis: {
       title: "After-hours Care / Crisis Support",
       description: "Immediate safety pathways and urgent phone support.",
       urgency: "High",
       concernLabel: "Immediate safety concern",
-      defaultConfidence: "High",
       details: {
         helpsWith: "Urgent support when you feel unsafe or at risk of harm.",
         whenToUse: "Use immediately if safety is at risk, including self-harm or suicide concerns.",
         nextStep: "Contact emergency services first, then continue with crisis and university support."
       },
       acknowledgement:
-        "Thank you for telling me this. Your safety comes first, and I am showing urgent crisis support now."
+        "Urgent help options are shown below. If there is immediate danger, call emergency services now."
     },
     disability: {
       title: "Disability Support",
       description: "Accessibility planning and accommodation support.",
       urgency: "Medium",
       concernLabel: "Accessibility and accommodations",
-      defaultConfidence: "Medium",
       details: {
         helpsWith: "Learning adjustments, accessibility needs, and formal accommodation planning.",
         whenToUse: "Use when disability or accessibility barriers are impacting your study progress.",
         nextStep: "Request disability support advice and discuss available academic adjustments."
       },
       acknowledgement:
-        "I hear that accessibility needs are important for you right now. I can direct you to disability support options."
+        "Accessibility support resources are available. You can review the suggested pathway below."
     },
     health: {
       title: "Health Clinic",
       description: "Medical support and health appointment pathways.",
       urgency: "Medium",
       concernLabel: "Health and medical support",
-      defaultConfidence: "Medium",
       details: {
         helpsWith: "General health concerns, illness, and advice from clinical services.",
         whenToUse: "Use when physical or medical symptoms are affecting wellbeing or study capacity.",
         nextStep: "Book clinic support and discuss immediate care needs with a health professional."
       },
       acknowledgement:
-        "Thanks for sharing your health concern. I can suggest clinic support options you can use now."
+        "Health support resources are available. You can review the suggested pathway below."
     },
     study: {
       title: "Study Support and Burnout Care",
       description: "Support for exam pressure, burnout, and study overload.",
       urgency: "Medium",
       concernLabel: "Study burnout and exam pressure",
-      defaultConfidence: "Medium",
       details: {
         helpsWith: "Exam stress, burnout recovery, and practical study planning.",
         whenToUse: "Use when study demands feel overwhelming and are affecting your mental wellbeing.",
         nextStep: "Connect to study wellbeing support and build a manageable short-term plan."
       },
       acknowledgement:
-        "It sounds like study pressure is heavy right now. I can suggest targeted study and burnout support."
+        "Study support resources are available. You can review the suggested pathway below."
     },
     counselling: {
-      title: "Counselling / UQ Professional Support",
-      description: "One-to-one wellbeing support and guided mental health care.",
+      title: "Counselling and Wellbeing Resources",
+      description: "Contact pathways for wellbeing support conversations.",
       urgency: "Low",
       concernLabel: "Emotional wellbeing support",
-      defaultConfidence: "Low",
       details: {
         helpsWith: "Loneliness, emotional load, and ongoing wellbeing support conversations.",
-        whenToUse: "Use when you need someone to talk to or want structured professional support.",
-        nextStep: "Continue chat support and consider a counselling referral for deeper follow-up."
+        whenToUse: "Use when you want to review contact options for wellbeing support.",
+        nextStep: "Review wellbeing support and counselling contact options if useful."
       },
       acknowledgement:
-        "I hear that you need someone to talk to. I can recommend counselling support while we continue this chat."
+        "Wellbeing support resources are available. You can review the suggested pathway below."
     }
   };
 
   const concernKeywordMap = {
     financial: ["financial", "money", "rent", "fee", "afford", "cost"],
-    crisis: ["crisis", "unsafe", "danger", "emergency", "harm", "suicide", "self-harm", "self harm"],
+    crisis: [
+      "crisis",
+      "unsafe",
+      "danger",
+      "emergency",
+      "harm",
+      "suicide",
+      "self-harm",
+      "self harm",
+      "hurt myself",
+      "kill myself",
+      "want to die",
+      "end my life",
+      "can't go on"
+    ],
     disability: ["disability", "accessibility", "accommodations", "accommodation", "learning plan"],
     health: ["sick", "health", "doctor", "clinic", "medical", "illness"],
     study: ["exam", "study", "burnout", "overwhelmed", "stress"],
@@ -222,10 +234,9 @@
   const concernDetectionOrder = ["crisis", "financial", "disability", "health", "study", "counselling"];
 
   const defaultReplies = [
-    "Thanks for sharing that. You are not alone in this, and we can take it one step at a time.",
-    "That sounds heavy right now. Would it help if we break this down into one practical next step?",
-    "I hear you. We can build a short plan for today so it feels more manageable.",
-    "You did the right thing by reaching out. We can work through this together."
+    "This demo can suggest support resources when you select a topic or enter related words.",
+    "You can browse support resources or choose a topic above to preview an appropriate pathway.",
+    "For practical next steps, select a resource topic or open the Resources page."
   ];
 
   const queryParams = new URLSearchParams(window.location.search);
@@ -301,45 +312,30 @@
 
   function initializeSessionState() {
     let sessionId = sessionStorage.getItem(STORAGE_KEYS.chatSessionId);
-    const previousStatus = sessionStorage.getItem(STORAGE_KEYS.chatSessionStatus);
 
-    if (!sessionId || previousStatus === SESSION_STATUS.ENDED) {
+    if (!sessionId) {
       sessionId = createSessionId();
       sessionStorage.setItem(STORAGE_KEYS.chatSessionId, sessionId);
-      sessionStorage.setItem(STORAGE_KEYS.chatSessionStatus, SESSION_STATUS.ACTIVE);
     }
 
     state.sessionId = sessionId;
-    state.sessionStatus = sessionStorage.getItem(STORAGE_KEYS.chatSessionStatus) || SESSION_STATUS.ACTIVE;
-
-    const shown = parseStoredArray(sessionStorage.getItem(getShownReferralsStorageKey()));
-    const dismissed = parseStoredArray(sessionStorage.getItem(getDismissedReferralsStorageKey()));
-    state.shownReferrals = new Set(shown);
-    state.dismissedReferrals = new Set(dismissed);
-    state.suggestedResources = shown.slice();
-    state.referralCount = shown.length;
+    state.sessionStatus = SESSION_STATUS.ACTIVE;
+    sessionStorage.removeItem(STORAGE_KEYS.chatSessionStatus);
 
     updateSessionStatusLabel();
     updateReferralCountLabel();
   }
 
   function persistShownReferrals() {
-    sessionStorage.setItem(
-      getShownReferralsStorageKey(),
-      JSON.stringify(Array.from(state.shownReferrals))
-    );
+    // Resource suggestions remain in page memory unless the user explicitly saves one.
   }
 
   function persistDismissedReferrals() {
-    sessionStorage.setItem(
-      getDismissedReferralsStorageKey(),
-      JSON.stringify(Array.from(state.dismissedReferrals))
-    );
+    // Dismissed suggestions remain in page memory only.
   }
 
   function setSessionStatus(nextStatus) {
     state.sessionStatus = nextStatus;
-    sessionStorage.setItem(STORAGE_KEYS.chatSessionStatus, nextStatus);
     updateSessionStatusLabel();
   }
 
@@ -512,17 +508,6 @@
     return resource ? resource.concernLabel : "General wellbeing concern";
   }
 
-  function persistReferralSummary() {
-    const summary = {
-      professional: activeProfessional.name,
-      concerns_detected: state.detectedConcerns.map(getConcernLabel),
-      resources_suggested: state.suggestedResources.map(getResourceTitle),
-      timestamp: new Date().toISOString()
-    };
-
-    sessionStorage.setItem(STORAGE_KEYS.referralSummary, JSON.stringify(summary));
-  }
-
   function trackDetectedConcern(category) {
     if (state.detectedConcerns.indexOf(category) < 0) {
       state.detectedConcerns.push(category);
@@ -532,7 +517,6 @@
       state.mainConcernKey = category;
     }
 
-    persistReferralSummary();
   }
 
   function markResourceSuggested(category) {
@@ -552,7 +536,6 @@
     state.referralCount += 1;
     updateReferralCountLabel();
     persistShownReferrals();
-    persistReferralSummary();
     return true;
   }
 
@@ -561,7 +544,7 @@
       return;
     }
 
-    setStatus("Typing...");
+    setStatus("Generating demo response...");
 
     state.typingRow = document.createElement("div");
     state.typingRow.className = "msg-row them typing-row";
@@ -616,22 +599,6 @@
     return concernReasonMap[category] || keyword;
   }
 
-  function getConfidenceLabel(category, matchCount) {
-    if (category === "crisis") {
-      return "High";
-    }
-
-    if (matchCount >= 2) {
-      return "High";
-    }
-
-    if (category === "counselling" && matchCount === 1) {
-      return "Low";
-    }
-
-    return "Medium";
-  }
-
   function detectConcerns(messageText) {
     const normalized = messageText.toLowerCase();
     const detected = [];
@@ -651,8 +618,7 @@
         category: category,
         keyword: firstKeyword,
         matchCount: matches.length,
-        confidence: getConfidenceLabel(category, matches.length),
-        reasonLine: "Suggested because you mentioned " + buildReasonPhrase(category, firstKeyword) + "."
+        reasonLine: "Suggested from words selected or entered: " + buildReasonPhrase(category, firstKeyword) + "."
       });
     });
 
@@ -701,21 +667,8 @@
   }
 
   function prepareHandoffContext(resource, reason) {
-    const handoff = {
-      handoffReason: reason,
-      recommendedResource: resource.title,
-      sourceProfessional: activeProfessional.name,
-      sourceChatSessionId: state.sessionId,
-      timestamp: new Date().toISOString()
-    };
-
-    sessionStorage.setItem(STORAGE_KEYS.handoffReason, handoff.handoffReason);
-    sessionStorage.setItem(STORAGE_KEYS.recommendedResource, handoff.recommendedResource);
-    sessionStorage.setItem(STORAGE_KEYS.sourceProfessional, handoff.sourceProfessional);
-    sessionStorage.setItem(STORAGE_KEYS.sourceChatSessionId, handoff.sourceChatSessionId);
-    sessionStorage.setItem(STORAGE_KEYS.handoffTimestamp, handoff.timestamp);
-    sessionStorage.setItem(STORAGE_KEYS.handoffContext, JSON.stringify(handoff));
-
+    void resource;
+    void reason;
     showHandoffBanner();
   }
 
@@ -751,16 +704,16 @@
     urgencyBadge.className = "resource-urgency " + resource.urgency.toLowerCase();
     urgencyBadge.textContent = resource.urgency;
 
-    const confidenceBadge = document.createElement("span");
-    confidenceBadge.className = "resource-confidence " + detection.confidence.toLowerCase();
-    confidenceBadge.textContent = detection.confidence + " confidence";
+    const suggestionBadge = document.createElement("span");
+    suggestionBadge.className = "resource-suggestion-label";
+    suggestionBadge.textContent = "Words selected or entered";
 
     badgeWrap.appendChild(urgencyBadge);
-    badgeWrap.appendChild(confidenceBadge);
+    badgeWrap.appendChild(suggestionBadge);
 
     const concernMeta = document.createElement("div");
     concernMeta.className = "resource-concern";
-    concernMeta.textContent = "Detected concern: " + resource.concernLabel;
+    concernMeta.textContent = "Suggested topic: " + resource.concernLabel;
 
     const reason = document.createElement("p");
     reason.className = "resource-reason";
@@ -785,7 +738,7 @@
     saveResourceBtn.className = "resource-card-btn";
     saveResourceBtn.dataset.resourceAction = "save-resource";
     saveResourceBtn.dataset.category = detection.category;
-    saveResourceBtn.textContent = "Save Resource";
+    saveResourceBtn.textContent = "Save on This Device";
 
     const notRelevantBtn = document.createElement("button");
     notRelevantBtn.type = "button";
@@ -880,7 +833,7 @@
 
     if (resourceDetailsNoteEl) {
       const concern = getConcernLabel(category).toLowerCase();
-      resourceDetailsNoteEl.textContent = "Suggested based on concerns around " + concern + ".";
+      resourceDetailsNoteEl.textContent = "Suggested from words selected or entered about " + concern + ".";
     }
 
     openModal(resourceDetailsModal, triggerEl);
@@ -938,7 +891,7 @@
     }
 
     if (state.savedResourceCategories.has(category)) {
-      showToast("Resource already saved.");
+      showToast("This resource is already saved on this device.");
       return;
     }
 
@@ -953,7 +906,7 @@
     localStorage.setItem(STORAGE_KEYS.savedResources, JSON.stringify(saved));
     state.savedResourceCategories.add(category);
     state.savedResourceCount += 1;
-    showToast("Resource saved in this browser for this prototype.");
+    showToast("Resource saved on this device. Use Delete saved chat data to remove it.");
   }
 
   function dismissResource(buttonEl, category) {
@@ -1007,7 +960,7 @@
 
     const lowered = userText.toLowerCase();
     if (lowered.includes("talk") || lowered.includes("alone") || lowered.includes("lonely")) {
-      return "I am here with you. If you want, we can unpack what has felt hardest this week.";
+      return "Wellbeing contact resources can be reviewed below if talking with someone would help.";
     }
 
     return defaultReplies[Math.floor(Math.random() * defaultReplies.length)];
@@ -1071,6 +1024,9 @@
       if (markResourceSuggested("crisis")) {
         createResourceCard(crisisDetection);
       }
+
+      addTextBlock("No simulated reply is generated for urgent safety text. Use the verified contact options shown now.", "system-note");
+      return;
     }
 
     queueSupportReply(text, detections);
@@ -1192,7 +1148,7 @@
     if (state.sessionStatus === SESSION_STATUS.ESCALATED || concerns.indexOf(getConcernLabel("crisis")) >= 0) {
       nextStep = "Prioritise urgent safety support and crisis pathways first.";
     } else if (resources.length > 0) {
-      nextStep = "Review suggested resources and continue with professional support follow-up.";
+      nextStep = "Review suggested resources and choose an appropriate support pathway.";
     }
 
     return {
@@ -1242,17 +1198,50 @@
   }
 
   function saveChatSummaryToLocal() {
+    if (!summarySaveConsent || !summarySaveConsent.checked) {
+      showToast("Select consent before saving a summary on this device.");
+      return;
+    }
+
     const summary = buildSummaryPayload();
     const saved = parseStoredArray(localStorage.getItem(STORAGE_KEYS.savedSummaries));
     saved.push(summary);
     localStorage.setItem(STORAGE_KEYS.savedSummaries, JSON.stringify(saved));
-    showToast("Chat summary saved in this browser for this prototype.");
+    showToast("Chat summary saved on this device. You can delete saved chat data here.");
+  }
+
+  function deleteSavedChatData() {
+    localStorage.removeItem(STORAGE_KEYS.savedSummaries);
+    localStorage.removeItem(STORAGE_KEYS.savedResources);
+    [
+      STORAGE_KEYS.referralSummary,
+      STORAGE_KEYS.lastChatSummary,
+      STORAGE_KEYS.handoffReason,
+      STORAGE_KEYS.recommendedResource,
+      STORAGE_KEYS.sourceProfessional,
+      STORAGE_KEYS.sourceChatSessionId,
+      STORAGE_KEYS.handoffTimestamp,
+      STORAGE_KEYS.handoffContext
+    ].forEach(function (key) {
+      sessionStorage.removeItem(key);
+    });
+
+    for (let index = sessionStorage.length - 1; index >= 0; index -= 1) {
+      const key = sessionStorage.key(index);
+      if (key && (key.indexOf("chatShownReferrals:") === 0 || key.indexOf("chatDismissedReferrals:") === 0)) {
+        sessionStorage.removeItem(key);
+      }
+    }
+
+    state.savedResourceCategories.clear();
+    state.savedResourceCount = 0;
+    if (summarySavedResourcesEl) {
+      summarySavedResourcesEl.textContent = "0";
+    }
+    showToast("Saved chat summaries and resources were deleted from this device.");
   }
 
   function returnToProfessionalSelection() {
-    const summary = buildSummaryPayload();
-    sessionStorage.setItem(STORAGE_KEYS.lastChatSummary, JSON.stringify(summary));
-    persistReferralSummary();
     window.location.href = "professional-selection.html";
   }
 
@@ -1273,7 +1262,12 @@
 
   function showEndChatSummaryModal() {
     populateSummaryModal();
-    persistReferralSummary();
+    if (summarySaveConsent) {
+      summarySaveConsent.checked = false;
+    }
+    if (saveChatSummaryBtn) {
+      saveChatSummaryBtn.disabled = true;
+    }
     openModal(endChatSummaryModal, endChatBtn);
   }
 
@@ -1295,7 +1289,7 @@
     setSessionStatus(SESSION_STATUS.ENDED);
     disableChatInputs();
     removeWelcome();
-    addTextBlock("Chat ended. Review your triage summary before leaving.", "system-note");
+    addTextBlock("Demo chat ended. Review the resource summary before leaving.", "system-note");
     showEndChatSummaryModal();
   }
 
@@ -1385,6 +1379,12 @@
     });
   });
 
+  if (urgentHelpBtn) {
+    urgentHelpBtn.addEventListener("click", function () {
+      openPanel(emergencyPanel, urgentHelpBtn);
+    });
+  }
+
   inlineFeatureButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       showInlineFeatureNote(button.dataset.featureNote);
@@ -1408,6 +1408,10 @@
   closePrivacyPanelBtn.addEventListener("click", function () {
     closePanel(true);
   });
+
+  if (clearStoredChatDataBtn) {
+    clearStoredChatDataBtn.addEventListener("click", deleteSavedChatData);
+  }
 
   mentorProfileBtn.addEventListener("click", function () {
     openModal(mentorProfileModal, mentorProfileBtn);
@@ -1456,7 +1460,7 @@
       requestOpenResourcePage(
         state.currentResourceKey,
         openResourcePageBtn,
-        "Suggested based on current chat referral."
+        "Suggested from words selected or entered."
       );
     });
   }
@@ -1491,6 +1495,16 @@
     saveChatSummaryBtn.addEventListener("click", function () {
       saveChatSummaryToLocal();
     });
+  }
+
+  if (summarySaveConsent && saveChatSummaryBtn) {
+    summarySaveConsent.addEventListener("change", function () {
+      saveChatSummaryBtn.disabled = !summarySaveConsent.checked;
+    });
+  }
+
+  if (deleteSavedSummariesBtn) {
+    deleteSavedSummariesBtn.addEventListener("click", deleteSavedChatData);
   }
 
   if (continueAfterSummaryBtn) {
@@ -1552,6 +1566,13 @@
   initializeSessionState();
   applyProfessionalProfile();
   updateCharacterCounter();
-  persistReferralSummary();
   hideHandoffBanner();
+
+  /*
+    Manual chat safety checklist:
+    - Select Urgent help options: verified emergency links appear without sending a simulated message.
+    - Enter text containing "unsafe" or "suicide": emergency options and crisis card appear immediately, with no delayed demo reply.
+    - Select a non-crisis prompt and send it: a clearly simulated resource suggestion appears without clinical assessment phrasing.
+    - End chat: saving remains disabled until local-storage consent is selected; Delete saved chat data clears stored summaries/resources.
+  */
 })();
