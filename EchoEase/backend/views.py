@@ -1,27 +1,39 @@
-from rest_framework import viewsets, permissions
-from .models import ForumPost, ChatMessage, EmergencyResource, Tag
-from .serializers import ForumPostSerializer, EmergencyResourceSerializer
+from rest_framework import mixins, permissions, viewsets
 
-class ForumPostViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows forum posts to be viewed or created.
-    """
-    queryset = ForumPost.objects.all()
+from .models import EmergencyResource, ForumPost, ForumReport
+from .serializers import EmergencyResourceSerializer, ForumPostSerializer, ForumReportSerializer
+from .throttles import ForumPostCreateThrottle, ForumReportCreateThrottle
+
+
+class ForumPostViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
+):
+    """Anonymous, plain-text community posts for the minimal MVP."""
+
+    queryset = ForumPost.objects.prefetch_related("tags").all()
     serializer_class = ForumPostSerializer
-    # Allow anyone to read, but require authentication to post? 
-    # Based on MVP, we want low friction, so we might allow anonymous posts.
     permission_classes = [permissions.AllowAny]
+    throttle_classes = [ForumPostCreateThrottle]
 
     def perform_create(self, serializer):
-        if self.request.user.is_authenticated:
-            serializer.save(author=self.request.user)
-        else:
-            serializer.save(author=None, is_anonymous=True)
+        serializer.save(author=None, is_anonymous=True)
+
+
+class ForumReportViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    """Records a concern; it does not represent an active moderation workflow."""
+
+    queryset = ForumReport.objects.all()
+    serializer_class = ForumReportSerializer
+    permission_classes = [permissions.AllowAny]
+    throttle_classes = [ForumReportCreateThrottle]
+
 
 class EmergencyResourceViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    API endpoint for quick access to emergency resources.
-    """
+    """Read-only official contact data for urgent-help UI."""
+
     queryset = EmergencyResource.objects.all()
     serializer_class = EmergencyResourceSerializer
     permission_classes = [permissions.AllowAny]

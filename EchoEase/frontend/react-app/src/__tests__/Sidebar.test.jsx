@@ -1,50 +1,27 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Sidebar from "../layout/Sidebar";
 
-const renderSidebar = (initialPath = "/") => {
+function renderSidebar(path = "/") {
   render(
-    <MemoryRouter initialEntries={[initialPath]}>
+    <MemoryRouter initialEntries={[path]}>
       <Sidebar />
     </MemoryRouter>
   );
-};
+}
 
-describe("Sidebar Component", () => {
-  it("renders the sidebar", () => {
+describe("Sidebar", () => {
+  it("provides accessible desktop and mobile primary route names", () => {
     renderSidebar();
-    expect(screen.getByText("Well-being Hub")).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "Community" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "Chat" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "Resources" }).length).toBeGreaterThan(0);
   });
 
-  it("renders all navigation links", () => {
+  it("marks Settings unavailable and routes Help to resources", () => {
     renderSidebar();
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Community")).toBeInTheDocument();
-    expect(screen.getByText("Chat")).toBeInTheDocument();
-    expect(screen.getByText("Resources")).toBeInTheDocument();
-  });
-
-  it("renders Support & Well-being on the Courses page", () => {
-    renderSidebar("/courses");
-    const supportLink = screen.getByRole("link", { name: /Support & Well-being/i });
-    expect(supportLink).toBeInTheDocument();
-    expect(supportLink).toHaveAttribute("href", "/");
-  });
-
-  it("hides Support & Well-being on non-Courses pages", () => {
-    renderSidebar("/");
-    expect(screen.queryByRole("link", { name: /Support & Well-being/i })).not.toBeInTheDocument();
-  });
-
-  it("renders Settings and Help links at bottom", () => {
-    renderSidebar();
-    expect(screen.getByText("Settings")).toBeInTheDocument();
-    expect(screen.getByText("Help")).toBeInTheDocument();
-  });
-
-  it("renders correct branding subtitle", () => {
-    renderSidebar();
-    expect(screen.getByText("Student Support")).toBeInTheDocument();
+    expect(screen.getByText(/settings \(unavailable\)/i).closest("[aria-disabled='true']")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /help resources/i })).toHaveAttribute("href", "/resources");
   });
 });

@@ -1,4 +1,5 @@
 import { Bell, CircleUserRound } from "lucide-react";
+import { QUICK_EXIT_URL } from "../data/mvpContent";
 
 function TopNav() {
   return (
@@ -10,21 +11,23 @@ function TopNav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="https://www.google.com"
+            href={QUICK_EXIT_URL}
             className="rounded-full bg-brand px-4 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
           >
             Quick Exit
           </a>
           <button
             type="button"
-            aria-label="Notifications"
+            aria-label="Notifications unavailable in this prototype"
+            disabled
             className="grid h-9 w-9 place-items-center rounded-full border border-line bg-paper text-slate-600 transition hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             <Bell size={16} />
           </button>
           <button
             type="button"
-            aria-label="Open profile"
+            aria-label="Profile unavailable in this prototype"
+            disabled
             className="grid h-9 w-9 place-items-center rounded-full bg-[#ff8a6e] text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             <CircleUserRound size={16} />

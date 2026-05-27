@@ -1,86 +1,36 @@
-# UQ Student Well-being React Frontend
+# EchoEase React MVP Prototype
 
-A modern React + Tailwind CSS frontend for the UQ Student Well-being platform.
+This is the active React prototype for the student wellbeing journey. It is intentionally labelled
+as a simulation: it does not connect a user to a live counsellor, submit bookings, or store chat
+and journal text.
 
-## Quick Start
-
-### Prerequisites
-- **Node.js** 18+ (download from https://nodejs.org/)
-- **npm** (comes with Node.js)
-
-### Installation & Running
-
-1. **Navigate to the project folder:**
-   ```bash
-   cd Code/frontend/react-app
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser** to the URL shown in the terminal (usually `http://localhost:5173`)
-
-## Available Routes
-
-- `/` — Well-being Landing Page (home)
-- `/courses` — Courses & Deadlines Dashboard
-- `/community` — Community Forum (placeholder)
-- `/chat` — Private Chat (placeholder)
-- `/resources` — Resources (placeholder)
-
-## Building for Production
+## Run Locally
 
 ```bash
+npm install
+npm run dev
+npx vitest run
 npm run build
 ```
 
-Output will be in the `dist/` folder.
+## Active Routes
 
-## Tech Stack
+- `/`: landing page with direct Community, Chat, Resources, and urgent-help actions.
+- `/community`: demo community feed with in-page anonymous display-name post creation.
+- `/resources`: resource directory and verified urgent phone actions.
+- `/chat`: fictional scripted-guide selection and booking interaction preview.
+- `/queue/:guideId`: honest queue preview with no real queue state.
+- `/chat-session/:guideId`: scripted chat/resource suggestion simulation.
 
-- **React 18** — UI library
-- **Tailwind CSS 4** — Utility-first styling
-- **Vite** — Fast build tool
-- **React Router 6** — Client-side routing
-- **Lucide React** — Icons
+Unknown routes redirect to the landing page. Invalid queue/chat guide identifiers render a
+recoverable unavailable state.
 
-## Project Structure
+## Safety Boundaries
 
-```
-src/
-├── App.jsx              # Route configuration
-├── main.jsx             # Entry point
-├── styles.css           # Global styles & Tailwind theme
-├── layout/
-│   ├── MainLayout.jsx   # Persistent layout shell
-│   ├── TopNav.jsx       # Header with Quick Exit
-│   └── Sidebar.jsx      # Navigation sidebar
-├── pages/
-│   ├── WellbeingLandingPage.jsx
-│   ├── CoursesPage.jsx
-│   └── PlaceholderPage.jsx
-└── components/
-    └── ProgressRing.jsx
-```
+- Emergency contacts are centralised in `src/data/mvpContent.js` and linked to official sources.
+- Community posts remain in page state and are not submitted to the backend in this frontend MVP.
+- Chat text remains in page state and is cleared when a preview is ended.
+- Queue and booking interactions are demonstrations only.
+- No encryption, guaranteed anonymity, live support, or clinical assessment is claimed.
 
-## Notes for Team
-
-- The sidebar remains persistent while the main content area changes based on the route
-- Mobile: sidebar collapses to an icon rail
-- Desktop: sidebar is full width
-- All styling uses Tailwind utilities (no custom CSS files needed except `styles.css`)
-- Icons are from lucide-react
-
-## Need Help?
-
-- Check `package.json` for all dependencies
-- Tailwind docs: https://tailwindcss.com/docs
-- React Router docs: https://reactrouter.com/
-- Lucide icons: https://lucide.dev/
+See `HEURISTIC_AUDIT.md` for the Nielsen-style audit and remaining parity gaps.
