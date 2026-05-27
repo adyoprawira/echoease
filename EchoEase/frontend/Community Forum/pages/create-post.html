@@ -213,6 +213,22 @@
           <textarea id="postContent" class="textarea" placeholder="Tell us more... (Posts are moderated for safety)"></textarea>
         </div>
 
+        <div class="field">
+          <label for="postImage">Photo <span style="font-weight: 400; color: var(--muted-fg);">(optional)</span></label>
+          <div class="image-upload">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg></span>
+            <input id="postImage" type="file" accept="image/jpeg,image/png,image/webp" />
+          </div>
+          <p class="upload-note">Upload a JPG, PNG, or WebP photo up to 5 MB. Images are resized for this prototype.</p>
+          <div class="upload-preview" id="uploadPreview" hidden>
+            <img id="uploadPreviewImage" src="" alt="" />
+            <div class="upload-preview-actions">
+              <input id="postImageAlt" class="input" type="text" maxlength="100" placeholder="Briefly describe the photo" aria-label="Photo description" />
+              <button class="remove-image-btn" id="removeImageBtn" type="button">Remove</button>
+            </div>
+          </div>
+        </div>
+
         <div class="anon-toggle">
           <div class="anon-text">
             <h4 style="margin: 0; color: var(--fg);">Post Anonymously</h4>
@@ -267,8 +283,28 @@
   <script src="../scripts/community-posts.js"></script>
   <script>
     const anonSwitch = document.getElementById("anonSwitch");
+    const imageInput = document.getElementById("postImage");
+    const imageAltInput = document.getElementById("postImageAlt");
+    const preview = document.getElementById("uploadPreview");
+    const previewImage = document.getElementById("uploadPreviewImage");
+    const removeImageBtn = document.getElementById("removeImageBtn");
+    let selectedImage = null;
+    let imageProcessing = false;
+
+    function applyPostPreferences(preferences) {
+      const anonymous = !preferences || preferences.anonymousByDefault !== false;
+      anonSwitch.classList.toggle("off", !anonymous);
+      anonSwitch.setAttribute("aria-pressed", String(anonymous));
+    }
+
+    applyPostPreferences(loadProfilePreferences());
+    window.addEventListener("profile-settings-saved", event => {
+      applyPostPreferences(event.detail);
+    });
+
     anonSwitch.addEventListener("click", () => {
       anonSwitch.classList.toggle("off");
+      anonSwitch.setAttribute("aria-pressed", String(!anonSwitch.classList.contains("off")));
     });
 
     const topicButtons = document.querySelectorAll(".topic-btn");
@@ -278,6 +314,69 @@
         btn.classList.add("active");
       });
     });
+
+    function removeSelectedImage() {
+      selectedImage = null;
+      imageInput.value = "";
+      imageAltInput.value = "";
+      previewImage.src = "";
+      previewImage.alt = "";
+      preview.hidden = true;
+    }
+
+    function prepareImage(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("read"));
+        reader.onload = () => {
+          const image = new Image();
+          image.onerror = () => reject(new Error("decode"));
+          image.onload = () => {
+            const maxWidth = 1100;
+            const maxHeight = 720;
+            const scale = Math.min(1, maxWidth / image.width, maxHeight / image.height);
+            const canvas = document.createElement("canvas");
+            canvas.width = Math.max(1, Math.round(image.width * scale));
+            canvas.height = Math.max(1, Math.round(image.height * scale));
+            canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL("image/jpeg", 0.82));
+          };
+          image.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    imageInput.addEventListener("change", async () => {
+      const file = imageInput.files[0];
+      if (!file) {
+        removeSelectedImage();
+        return;
+      }
+
+      if (!["image/jpeg", "image/png", "image/webp"].includes(file.type) || file.size > 5 * 1024 * 1024) {
+        alert("Please choose a JPG, PNG, or WebP image smaller than 5 MB.");
+        removeSelectedImage();
+        return;
+      }
+
+      imageProcessing = true;
+      try {
+        const src = await prepareImage(file);
+        selectedImage = { src, alt: "" };
+        previewImage.src = src;
+        previewImage.alt = "Selected photo preview";
+        preview.hidden = false;
+        imageAltInput.focus();
+      } catch (error) {
+        alert("This image could not be processed. Please select another photo.");
+        removeSelectedImage();
+      } finally {
+        imageProcessing = false;
+      }
+    });
+
+    removeImageBtn.addEventListener("click", removeSelectedImage);
 
     document.getElementById("publishPostBtn").addEventListener("click", () => {
       const titleInput = document.getElementById("postTitle");
@@ -297,11 +396,32 @@
         return;
       }
 
+      if (imageProcessing) {
+        alert("Please wait while the photo is prepared.");
+        return;
+      }
+
+      if (selectedImage && !imageAltInput.value.trim()) {
+        alert("Please add a brief photo description for accessibility.");
+        imageAltInput.focus();
+        return;
+      }
+
       const topic = document.querySelector(".topic-btn.active")?.textContent.trim() || "Other";
       const anonymous = !anonSwitch.classList.contains("off");
-      const post = buildForumPost({ title, content, topic, anonymous });
+      const image = selectedImage
+        ? { src: selectedImage.src, alt: imageAltInput.value.trim() }
+        : null;
+      const post = buildForumPost({ title, content, topic, anonymous, image });
 
-      saveUserPost(post);
+      if (!saveUserPost(post)) {
+        alert("This post could not be saved. Try using a smaller photo.");
+        return;
+      }
+
+      if (window.mvpApp) {
+        window.mvpApp.addNotification("Your new community post has been published.", "community");
+      }
       window.location.href = "post-published.html";
     });
   </script>

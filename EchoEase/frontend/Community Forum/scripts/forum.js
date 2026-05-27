@@ -1,11 +1,11 @@
 const COMMUNITY_REPLIES_STORAGE_KEY = "communityForumReplies";
 
-const categories = [
-  { name: "All Posts", count: 248, active: true },
-  { name: "Study Stress", count: 87 },
-  { name: "Anxiety", count: 64 },
-  { name: "Relationships", count: 41 },
-  { name: "Self-Care", count: 56 },
+const categoryDefinitions = [
+  { id: "all", name: "All Posts", tags: [] },
+  { id: "study", name: "Study Stress", tags: ["#studyburnout", "#exams", "#academicpressure", "#stress"] },
+  { id: "anxiety", name: "Anxiety", tags: ["#anxiety"] },
+  { id: "relationships", name: "Relationships", tags: ["#relationships", "#loneliness"] },
+  { id: "self-care", name: "Self-Care", tags: ["#selfcare", "#mindfulness", "#sleep"] },
 ];
 
 const trending = ["#Exams", "#Anxiety", "#Mindfulness", "#StudyTips", "#SelfCare", "#Sleep"];
@@ -137,8 +137,12 @@ function getAllPosts() {
 
 let posts = getAllPosts();
 let focusPostId = getLatestPostId();
+let activeCategoryId = "all";
+let searchQuery = "";
 
 const postsEl = document.getElementById("posts");
+const categoriesEl = document.getElementById("categories");
+const searchInput = document.getElementById("postSearch");
 const expandedPostIds = new Set();
 let savedRepliesByPost = loadSavedReplies();
 
@@ -179,6 +183,25 @@ function getReplies(post) {
 
 function getReplyLabel(count) {
   return `${count} ${count === 1 ? "reply" : "replies"}`;
+}
+
+function categoryMatches(post, categoryId) {
+  if (categoryId === "all") {
+    return true;
+  }
+
+  const category = categoryDefinitions.find(item => item.id === categoryId);
+  const postTags = post.tags.map(tag => tag.toLowerCase());
+  return category ? category.tags.some(tag => postTags.includes(tag)) : true;
+}
+
+function postMatchesSearch(post) {
+  if (!searchQuery) {
+    return true;
+  }
+
+  const text = `${post.title} ${post.excerpt} ${post.author} ${post.tags.join(" ")}`.toLowerCase();
+  return text.includes(searchQuery);
 }
 
 function renderReplyThread(post, replies) {
@@ -238,7 +261,14 @@ function renderReplyThread(post, replies) {
 }
 
 function renderPosts() {
-  posts = getAllPosts();
+  const allPosts = getAllPosts();
+  posts = allPosts.filter(post => categoryMatches(post, activeCategoryId) && postMatchesSearch(post));
+
+  if (posts.length === 0) {
+    postsEl.innerHTML = '<div class="posts-empty">No posts match this category or search.</div>';
+    return;
+  }
+
   postsEl.innerHTML = posts.map(post => {
     const replies = getReplies(post);
     const isFocused = focusPostId === post.id;
@@ -275,11 +305,15 @@ function renderPosts() {
 }
 
 function renderCategories() {
-  document.getElementById("categories").innerHTML = categories.map(category => `
-    <li><button class="cat-btn ${category.active ? "active" : ""}">
-      <span>${escapeHtml(category.name)}</span><span class="cat-count">${category.count}</span>
-    </button></li>
-  `).join("");
+  const allPosts = getAllPosts();
+  categoriesEl.innerHTML = categoryDefinitions.map(category => {
+    const count = allPosts.filter(post => categoryMatches(post, category.id)).length;
+    return `
+      <li><button class="cat-btn ${category.id === activeCategoryId ? "active" : ""}" type="button" data-category="${category.id}" aria-pressed="${category.id === activeCategoryId}">
+        <span>${escapeHtml(category.name)}</span><span class="cat-count">${count}</span>
+      </button></li>
+    `;
+  }).join("");
 }
 
 function renderTrending() {
@@ -337,6 +371,22 @@ postsEl.addEventListener("submit", event => {
   expandedPostIds.add(postId);
   renderPosts();
   document.getElementById(`replyInput-${postId}`)?.focus();
+});
+
+categoriesEl.addEventListener("click", event => {
+  const button = event.target instanceof Element ? event.target.closest(".cat-btn") : null;
+  if (!button) {
+    return;
+  }
+
+  activeCategoryId = button.dataset.category || "all";
+  renderCategories();
+  renderPosts();
+});
+
+searchInput.addEventListener("input", event => {
+  searchQuery = event.target.value.trim().toLowerCase();
+  renderPosts();
 });
 
 renderPosts();

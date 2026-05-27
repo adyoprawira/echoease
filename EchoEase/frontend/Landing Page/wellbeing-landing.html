@@ -47,7 +47,7 @@
 
     <main class="main">
       <header class="topbar">
-        <button class="quick" id="quickExitTop" type="button" aria-label="Quick Exit to Blackboard">Quick Exit</button>
+        <button class="quick" id="quickExitTop" data-quick-exit-url="blackboard.html" type="button" aria-label="Quick Exit to Blackboard">Quick Exit</button>
         <button
           class="top-icon-btn"
           id="notificationButton"
@@ -87,17 +87,17 @@
         <div class="layout-2">
           <div>
             <!-- Community Stories Card -->
-            <article class="side-card" style="background: linear-gradient(135deg, var(--mint), #a8ede6); color: var(--teal);">
+            <article class="side-card" style="background: linear-gradient(135deg, #f5eafa, #eadcf5); color: var(--purple);">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
                 <span class="icon" aria-hidden="true" style="width: 32px; height: 32px; flex-shrink: 0;">
                   <svg viewBox="0 0 24 24" style="width: 100%; height: 100%;">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"></path>
                   </svg>
                 </span>
-                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Community Stories</h2>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950; color: var(--purple);">Community Stories</h2>
               </div>
               <p style="color: inherit; margin: 0 0 16px; line-height: 1.45;">Read experiences from other students and share your journey in our supportive community forum.</p>
-              <a href="../Community Forum/pages/community.html" class="white-btn" style="background: white; color: var(--teal); display: inline-block;">Explore Stories</a>
+              <a href="../Community Forum/pages/community.html" class="white-btn" style="background: white; color: var(--purple); display: inline-block;">Explore Stories</a>
             </article>
 
             <!-- Chat with Someone Card -->
@@ -108,7 +108,7 @@
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"></path>
                   </svg>
                 </span>
-                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Chat with Someone</h2>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950; color: white;">Chat with Someone</h2>
               </div>
               <p style="color: rgba(255,255,255,0.9); margin: 0 0 16px; line-height: 1.45;">Connect with a trained support officer for a private, confidential conversation about what's on your mind.</p>
               <a href="../Chat/pages/professional-selection.html" class="white-btn" style="background: white; color: var(--purple); display: inline-block;">Start Chat</a>
@@ -125,7 +125,7 @@
                     <path d="M8 15h6" stroke="currentColor" stroke-width="2"></path>
                   </svg>
                 </span>
-                <h2 style="font-size: 22px; margin: 0; font-weight: 950;">Resources & Support</h2>
+                <h2 style="font-size: 22px; margin: 0; font-weight: 950; color: var(--purple);">Resources & Support</h2>
               </div>
               <p style="color: var(--muted); margin: 0 0 16px; line-height: 1.45;">Access helpful articles, self-care tips, and resources to support your well-being journey.</p>
               <a href="../Resources/pages/resources.html" class="white-btn" style="background: var(--purple); color: white; display: inline-block;">Browse Resources</a>
@@ -146,9 +146,9 @@
 
             <!-- Mindfulness Pulse -->
             <article class="side-card">
-              <h2 style="color: var(--teal); font-size: 22px; margin: 0 0 12px;">Mindfulness Pulse</h2>
+              <h2 style="color: var(--purple); font-size: 22px; margin: 0 0 12px;">Mindfulness Pulse</h2>
               <p style="color: #59545f; font-size: 13px; margin: 0 0 16px; line-height: 1.4;">You've completed 8 mindfulness sessions this month. Keep up the great work!</p>
-              <div style="width: 100%; height: 80px; border-radius: 12px; background: linear-gradient(135deg, var(--mint), #a8ede6); display: grid; place-items: center; color: var(--teal); font-weight: 950; font-size: 28px;">
+              <div style="width: 100%; height: 80px; border-radius: 12px; background: linear-gradient(135deg, #f5eafa, #eadcf5); display: grid; place-items: center; color: var(--purple); font-weight: 950; font-size: 28px;">
                 📈 +8%
               </div>
               <p style="color: #77809a; font-size: 12px; margin: 12px 0 0; text-align: center;">Well-being Score</p>
@@ -156,12 +156,12 @@
 
             <!-- Events/Activities -->
             <article class="side-card">
-              <h2 style="color: var(--teal); font-size: 22px; margin: 0 0 12px;">Upcoming Events</h2>
+              <h2 style="color: var(--purple); font-size: 22px; margin: 0 0 12px;">Upcoming Events</h2>
               <div style="border-left: 3px solid var(--purple); padding-left: 12px; margin-bottom: 12px;">
                 <p style="margin: 0; font-weight: 900; color: var(--text); font-size: 14px;">Stress Management Workshop</p>
                 <p style="margin: 4px 0 0; color: #77809a; font-size: 12px;">Friday, 2:00 PM</p>
               </div>
-              <div style="border-left: 3px solid #78b78f; padding-left: 12px;">
+              <div style="border-left: 3px solid #b784d9; padding-left: 12px;">
                 <p style="margin: 0; font-weight: 900; color: var(--text); font-size: 14px;">Meditation Circle</p>
                 <p style="margin: 4px 0 0; color: #77809a; font-size: 12px;">Tuesday, 5:30 PM</p>
               </div>
@@ -193,133 +193,39 @@
   </div>
 
   <div class="mvp-modal-backdrop" id="profileModal" hidden>
-    <div class="mvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <div class="mvp-modal-card profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
       <button class="mvp-modal-close" id="closeProfileModalBtn" type="button" aria-label="Close profile modal">Close</button>
-      <h2 id="profileTitle">Student Profile</h2>
-      <p><strong>Name:</strong> Daniel Morgan</p>
-      <p><strong>Program:</strong> Bachelor of Engineering</p>
-      <p><strong>Status:</strong> Active student</p>
-      <p><strong>Support preference:</strong> Anonymous when possible</p>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px;">
-        <a class="mvp-modal-btn" href="../Resources/pages/resources.html" style="text-decoration: none;">Manage Support Preferences</a>
-        <a class="mvp-modal-btn" href="blackboard.html" style="text-decoration: none;">Go to Blackboard</a>
+      <div class="profile-modal-header">
+        <div class="profile-avatar-large" aria-hidden="true">DM</div>
+        <div>
+          <h2 id="profileModalTitle">Darren Marcello</h2>
+          <p class="profile-modal-role">Student</p>
+        </div>
+      </div>
+      <div class="profile-modal-grid">
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span><div><span class="profile-info-label">Email</span><span class="profile-info-value">darrenms7120@gmail.com</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span><div><span class="profile-info-label">Student ID</span><span class="profile-info-value">s4980052</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-6 9 6"></path><path d="M5 10v9h14v-9"></path><path d="M9 19v-5h6v5"></path></svg></span><div><span class="profile-info-label">University</span><span class="profile-info-value">University of Queensland</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></span><div><span class="profile-info-label">Program</span><span class="profile-info-value">Student Support MVP Demo</span></div></div>
+        <div class="profile-info-item"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></svg></span><div><span class="profile-info-label">Status</span><span class="profile-info-value">Active student</span></div></div>
+      </div>
+      <p class="profile-privacy-note">This is static demo profile data for the MVP.</p>
+      <div class="mvp-modal-actions">
+        <button class="mvp-modal-btn" id="copyProfileEmailBtn" type="button">Copy Email</button>
+        <button class="mvp-modal-btn" id="copyStudentIdBtn" type="button">Copy Student ID</button>
+        <button class="mvp-modal-btn primary" type="button" id="profileCloseActionBtn">Close</button>
       </div>
     </div>
   </div>
 
+  <script src="../Chat/scripts/app.js"></script>
   <script>
-    // Quick Exit functionality
-    document.getElementById('quickExitTop').addEventListener('click', () => {
-      window.location.href = 'blackboard.html';
+    document.getElementById("emergencyBtn").addEventListener("click", function () {
+      window.location.href = "tel:000";
     });
-
-    // Notification panel and profile interactions
-    const notificationButton = document.getElementById('notificationButton');
-    const notificationPanel = document.getElementById('notificationPanel');
-    const notificationBadge = document.getElementById('notificationBadge');
-    const notificationList = document.getElementById('notificationList');
-    const clearNotificationsBtn = document.getElementById('clearNotificationsBtn');
-    const closeNotificationPanelBtn = document.getElementById('closeNotificationPanelBtn');
-    const profileButton = document.getElementById('profileButton');
-    const profileModal = document.getElementById('profileModal');
-    const closeProfileModalBtn = document.getElementById('closeProfileModalBtn');
-    const emergencyBtn = document.getElementById('emergencyBtn');
-    const lifelineBtn = document.getElementById('lifelineBtn');
-
-    const notifications = [
-      { title: 'New Community Reply', detail: 'Someone responded to your support post.' },
-      { title: 'Mindfulness Reminder', detail: 'Take a 3 minute breathing break today.' },
-      { title: 'Workshop Tomorrow', detail: 'Stress Management starts at 2:00 PM.' }
-    ];
-
-    function renderNotifications() {
-      if (!notificationList || !notificationBadge) {
-        return;
-      }
-
-      notificationList.innerHTML = '';
-
-      if (notifications.length === 0) {
-        const empty = document.createElement('li');
-        empty.textContent = 'No notifications right now.';
-        notificationList.appendChild(empty);
-        notificationBadge.hidden = true;
-        return;
-      }
-
-      notifications.forEach((item) => {
-        const row = document.createElement('li');
-        row.innerHTML = '<strong>' + item.title + '</strong><br><span>' + item.detail + '</span>';
-        notificationList.appendChild(row);
-      });
-
-      notificationBadge.hidden = false;
-      notificationBadge.textContent = String(notifications.length);
-    }
-
-    renderNotifications();
-
-    if (notificationButton && notificationPanel) {
-      notificationButton.addEventListener('click', () => {
-        const isHidden = notificationPanel.hidden;
-        notificationPanel.hidden = !isHidden;
-        notificationButton.setAttribute('aria-expanded', !isHidden);
-      });
-
-      if (closeNotificationPanelBtn) {
-        closeNotificationPanelBtn.addEventListener('click', () => {
-          notificationPanel.hidden = true;
-          notificationButton.setAttribute('aria-expanded', false);
-        });
-      }
-
-      if (clearNotificationsBtn) {
-        clearNotificationsBtn.addEventListener('click', () => {
-          notifications.length = 0;
-          renderNotifications();
-        });
-      }
-    }
-
-    if (profileButton && profileModal && closeProfileModalBtn) {
-      profileButton.addEventListener('click', () => {
-        profileModal.hidden = false;
-      });
-
-      closeProfileModalBtn.addEventListener('click', () => {
-        profileModal.hidden = true;
-      });
-
-      profileModal.addEventListener('click', (event) => {
-        if (event.target === profileModal) {
-          profileModal.hidden = true;
-        }
-      });
-    }
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        if (profileModal) {
-          profileModal.hidden = true;
-        }
-        if (notificationPanel && notificationButton) {
-          notificationPanel.hidden = true;
-          notificationButton.setAttribute('aria-expanded', false);
-        }
-      }
+    document.getElementById("lifelineBtn").addEventListener("click", function () {
+      window.location.href = "tel:131114";
     });
-
-    if (emergencyBtn) {
-      emergencyBtn.addEventListener('click', () => {
-        window.location.href = 'tel:000';
-      });
-    }
-
-    if (lifelineBtn) {
-      lifelineBtn.addEventListener('click', () => {
-        window.location.href = 'tel:131114';
-      });
-    }
   </script>
 </body>
 </html>

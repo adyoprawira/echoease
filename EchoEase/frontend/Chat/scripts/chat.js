@@ -202,12 +202,12 @@
   };
 
   const concernKeywordMap = {
-    financial: ["financial", "money", "rent", "fee", "afford", "cost"],
+    financial: ["financial", "money", "rent", "fee", "fees", "afford", "cost", "costs"],
     crisis: ["crisis", "unsafe", "danger", "emergency", "harm", "suicide", "self-harm", "self harm"],
     disability: ["disability", "accessibility", "accommodations", "accommodation", "learning plan"],
     health: ["sick", "health", "doctor", "clinic", "medical", "illness"],
-    study: ["exam", "study", "burnout", "overwhelmed", "stress"],
-    counselling: ["lonely", "alone", "talk", "anxiety", "depression", "sad", "support"]
+    study: ["exam", "exams", "study", "studying", "burnout", "overwhelmed", "stress", "stressed"],
+    counselling: ["lonely", "alone", "talk", "anxiety", "depression", "sad", "support", "wellbeing"]
   };
 
   const concernReasonMap = {
@@ -609,12 +609,16 @@
       return "feeling unsafe";
     }
 
-    if (category === "financial" && (keyword === "rent" || keyword === "fee" || keyword === "cost")) {
+    if (category === "financial" && (keyword === "rent" || keyword === "fee" || keyword === "fees" || keyword === "cost" || keyword === "costs")) {
       return "financial stress";
     }
 
     if (category === "study" && (keyword === "burnout" || keyword === "overwhelmed")) {
       return "study burnout";
+    }
+
+    if (category === "study" && (keyword === "exam" || keyword === "exams" || keyword === "stress" || keyword === "stressed")) {
+      return "exam and study pressure";
     }
 
     return concernReasonMap[category] || keyword;
@@ -636,6 +640,12 @@
     return "Medium";
   }
 
+  function matchesConcernKeyword(messageText, keyword) {
+    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const keywordPattern = new RegExp("(^|\\W)" + escapedKeyword + "(?=$|\\W)", "i");
+    return keywordPattern.test(messageText);
+  }
+
   function detectConcerns(messageText) {
     const normalized = messageText.toLowerCase();
     const detected = [];
@@ -643,7 +653,7 @@
     concernDetectionOrder.forEach(function (category) {
       const keywords = concernKeywordMap[category] || [];
       const matches = keywords.filter(function (keyword) {
-        return normalized.indexOf(keyword) >= 0;
+        return matchesConcernKeyword(normalized, keyword);
       });
 
       if (matches.length === 0) {
