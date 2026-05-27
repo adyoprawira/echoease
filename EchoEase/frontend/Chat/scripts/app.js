@@ -503,7 +503,7 @@
 
   if (copyProfileEmailBtn) {
     copyProfileEmailBtn.addEventListener("click", function () {
-      copyText("alex.example@demo.invalid")
+      copyText("darrenms7120@gmail.com")
         .then(function () {
           showToast("Email copied.");
         })
@@ -515,7 +515,7 @@
 
   if (copyStudentIdBtn) {
     copyStudentIdBtn.addEventListener("click", function () {
-      copyText("demo-student-001")
+      copyText("s4980052")
         .then(function () {
           showToast("Student ID copied.");
         })
@@ -554,11 +554,6 @@
 
   quickExitButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      if (window.EchoEaseSafety && typeof window.EchoEaseSafety.quickExit === "function") {
-        window.EchoEaseSafety.quickExit();
-        return;
-      }
-
       window.location.href = "../../Landing%20Page/blackboard.html";
     });
   });

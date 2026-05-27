@@ -209,16 +209,6 @@
   font-weight:700;
 }
 
-.bottom-nav .bottom-item[aria-disabled="true"]{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-radius:9px;
-  color:#8b858f;
-  cursor:not-allowed;
-}
-
 @media(max-width:900px){
   .mvp-modal-card{width:min(540px,100%);padding:14px}
   .mvp-modal-card h2{font-size:22px}
