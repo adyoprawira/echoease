@@ -3,7 +3,7 @@
 ---
 
 ## Hypothesis 1: Students will use services more if the process is intuitive and centralized  
-[TestCard1](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-1-intuitive--centralized-services)
+[TestCard1](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-1-intuitive--centralized-services)
 
 **HYPOTHESIS**  
 We believed that students will use services more if the process is intuitive and centralized.
@@ -23,7 +23,7 @@ Therefore, we will partially accept this hypothesis and investigate decentralize
 ---
 
 ## Hypothesis 2: Anonymity and low-effort entry points will increase service uptake  
-[TestCard2](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-2-anonymity--low-effort-entry-points)
+[TestCard2](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-2-anonymity--low-effort-entry-points)
 
 **HYPOTHESIS**  
 We believed that anonymity and low-effort entry points will increase service uptake compared to formal appointments.
@@ -43,7 +43,7 @@ Therefore, we will reject the assumption that automated tools are sufficient and
 ---
 
 ## Hypothesis 3: Part-time working students avoid financial aid because it isn’t guided or easy to access  
-[TestCard3](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-3-financial-aid-accessibility)
+[TestCard3](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-3-financial-aid-accessibility)
 
 **HYPOTHESIS**  
 We believed that part-time working students avoid financial aid because it isn’t guided or easy to access.
@@ -62,7 +62,7 @@ Therefore, we will partially accept this hypothesis and explore reframing financ
 ---
 
 ## Hypothesis 4: Students prefer self-coping unless intervention is extremely low-effort  
-[TestCard4](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-4-self-coping-vs-low-effort-intervention)
+[TestCard4](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-4-self-coping-vs-low-effort-intervention)
 
 **HYPOTHESIS**  
 We believed that students prefer self-coping unless an intervention is extremely low-effort.
@@ -83,7 +83,7 @@ Therefore, we will accept this hypothesis and design a system with instant, low-
 ---
 
 ## Hypothesis 5: Students are more likely to access support if it is integrated into Blackboard  
-[TestCard5](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-5-integrated-access-refined-from-centralization)
+[TestCard5](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-5-integrated-access-refined-from-centralization)
 
 **HYPOTHESIS**  
 We believed that students are more likely to access support when it is embedded in Blackboard rather than separate platforms.
@@ -104,7 +104,7 @@ Therefore, we will accept this hypothesis and implement a one-click support feat
 ---
 
 ## Hypothesis 6: Students prefer peer-based community support over automation  
-[TestCard6](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-6-community-vs-automation-refined-from-anonymity-hypothesis)
+[TestCard6](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-6-community-vs-automation-refined-from-anonymity-hypothesis)
 
 **HYPOTHESIS**  
 We believed that students prefer peer-based support over automated tools.
@@ -124,7 +124,7 @@ Forums are better as a secondary feature rather than a primary solution.
 Therefore, we will accept this hypothesis with refinement by combining peer forums with real-time human support.
 
 ## Hypothesis 7: Zero‑Friction Intervention Increases Help‑Seeking
-[TestCard7](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%202/test_cards.md#test-card-7-zero-friction-intervention)
+[TestCard7](https://github.com/COMP1100-2026-s1/54_Richard/blob/main/Documents/Iteration%203/test_cards.md#test-card-7-zero-friction-intervention)
 
 **HYPOTHESIS**  
 We believed that students will only shift from self‑coping to seeking support if the intervention requires zero effort, no booking, no forms, and instant access.
