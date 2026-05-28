@@ -1,5 +1,6 @@
 const COMMUNITY_POSTS_STORAGE_KEY = "communityForumUserPosts";
 const LATEST_POST_SESSION_KEY = "communityForumLatestPostId";
+const PROFILE_SETTINGS_STORAGE_KEY = "wellbeingProfileSettings";
 
 function createPostId() {
   return `user-post-${Date.now()}`;
@@ -10,15 +11,43 @@ function topicToTag(topic) {
   return `#${normalized}`;
 }
 
+function loadProfilePreferences() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PROFILE_SETTINGS_STORAGE_KEY) || "null");
+    if (parsed && typeof parsed === "object") {
+      return {
+        displayName: typeof parsed.displayName === "string" && parsed.displayName.trim()
+          ? parsed.displayName.trim().slice(0, 40)
+          : "Darren Marcello",
+        anonymousByDefault: parsed.anonymousByDefault !== false
+      };
+    }
+  } catch {
+    // Default preferences remain usable when browser storage is unavailable.
+  }
+
+  return { displayName: "Darren Marcello", anonymousByDefault: true };
+}
+
+function getInitials(name) {
+  return String(name)
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(word => word.charAt(0).toUpperCase())
+    .join("") || "DM";
+}
+
 function getAuthorInfo(anonymous) {
   if (anonymous) {
     return { author: "Anonymous Student", initials: "AS" };
   }
 
-  return { author: "Alex Example", initials: "AX" };
+  const preferences = loadProfilePreferences();
+  return { author: preferences.displayName, initials: getInitials(preferences.displayName) };
 }
 
-function buildForumPost({ title, content, topic, anonymous }) {
+function buildForumPost({ title, content, topic, anonymous, image }) {
   const { author, initials } = getAuthorInfo(anonymous);
 
   return {
@@ -29,8 +58,10 @@ function buildForumPost({ title, content, topic, anonymous }) {
     initials,
     time: "Just now",
     tags: [topicToTag(topic)],
+    topic,
     likes: 0,
     replies: [],
+    image: image || null,
     userPublished: true,
   };
 }
@@ -51,41 +82,6 @@ function saveUserPost(post) {
   try {
     localStorage.setItem(COMMUNITY_POSTS_STORAGE_KEY, JSON.stringify(posts));
     sessionStorage.setItem(LATEST_POST_SESSION_KEY, post.id);
-  } catch {
-    sessionStorage.setItem(LATEST_POST_SESSION_KEY, post.id);
-  }
-
-  return post.id;
-}
-
-function updateUserPost(postId, updates) {
-  const posts = loadUserPosts();
-  const index = posts.findIndex(post => post.id === postId);
-
-  if (index < 0) {
-    return false;
-  }
-
-  posts[index] = { ...posts[index], ...updates };
-
-  try {
-    localStorage.setItem(COMMUNITY_POSTS_STORAGE_KEY, JSON.stringify(posts));
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function deleteUserPost(postId) {
-  const posts = loadUserPosts();
-  const nextPosts = posts.filter(post => post.id !== postId);
-
-  if (posts.length === nextPosts.length) {
-    return false;
-  }
-
-  try {
-    localStorage.setItem(COMMUNITY_POSTS_STORAGE_KEY, JSON.stringify(nextPosts));
     return true;
   } catch {
     return false;

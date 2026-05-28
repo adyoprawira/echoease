@@ -208,16 +208,59 @@
   font-size:12px;
   font-weight:700;
 }
-
-.bottom-nav .bottom-item[aria-disabled="true"]{
+.utility-modal-card{width:min(560px,100%)}
+.utility-intro{margin-bottom:16px!important}
+.settings-form{display:grid;gap:10px}
+.settings-form>label:not(.setting-check){
+  margin-top:4px;
+  color:#44384e;
+  font-size:13px;
+  font-weight:800;
+}
+.settings-form>input{
+  width:100%;
+  border:1px solid #ded1e8;
+  border-radius:10px;
+  background:#fcfaff;
+  padding:11px 12px;
+  color:#3a3345;
+  font:inherit;
+}
+.setting-check{
   display:flex;
   align-items:center;
   gap:10px;
+  border:1px solid #ece3f4;
+  border-radius:10px;
+  background:#fcfaff;
   padding:10px 12px;
-  border-radius:9px;
-  color:#8b858f;
-  cursor:not-allowed;
+  color:#44384e;
+  font-size:13px;
+  font-weight:700;
 }
+.setting-check input{accent-color:var(--purple)}
+.help-steps{
+  margin:0 0 16px;
+  padding-left:20px;
+  color:#514759;
+  font-size:14px;
+  line-height:1.55;
+}
+.help-steps li{margin-bottom:8px}
+.faq-list{display:grid;gap:8px}
+.faq-list details{
+  border:1px solid #ece3f4;
+  border-radius:10px;
+  background:#fcfaff;
+  padding:10px 12px;
+}
+.faq-list summary{
+  cursor:pointer;
+  color:var(--purple);
+  font-size:14px;
+  font-weight:850;
+}
+.faq-list p{margin:8px 0 0!important;font-size:13px}
 
 @media(max-width:900px){
   .mvp-modal-card{width:min(540px,100%);padding:14px}
@@ -344,6 +387,36 @@
 
 
 /* RESOURCE DIRECTORY GRID */
+.resource-handoff {
+  background: #f7effc;
+  border: 1px solid #dbc9e8;
+  border-radius: 14px;
+  color: var(--purple);
+  margin-bottom: 26px;
+  padding: 16px 20px;
+}
+
+.resource-handoff[hidden] {
+  display: none;
+}
+
+.resource-handoff strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.resource-handoff p {
+  color: #5f5369;
+  margin: 0;
+}
+
+.resource-match {
+  outline: 3px solid #b784d9;
+  outline-offset: 3px;
+  box-shadow: 0 16px 36px rgba(75, 15, 116, .16);
+}
+
 .resource-grid-top-2 {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -404,6 +477,21 @@ text-align: justify;
   margin-top: 75px;
   object-fit: cover;
   display: block;
+}
+
+.resource-card-tall .resource-actions {
+  flex-wrap: wrap;
+}
+
+.resource-card-tall .resource-actions .outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .7);
+  color: white;
+  padding: 12px 18px;
+}
+
+.resource-card-tall .resource-actions .outline:hover {
+  background: rgba(255, 255, 255, .12);
 }
 
 /* Standard cards (Counselling + Disability) */
@@ -483,7 +571,7 @@ text-align: justify;
 /* Small cards at bottom */
 .resource-grid-small {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
   gap: 26px;
   margin-top: 26px;
 }

@@ -1,11 +1,11 @@
 const COMMUNITY_REPLIES_STORAGE_KEY = "communityForumReplies";
 
-const categories = [
-  { name: "All Posts", key: "all" },
-  { name: "Study Stress", key: "study" },
-  { name: "Anxiety", key: "anxiety" },
-  { name: "Relationships", key: "relationships" },
-  { name: "Self-Care", key: "self-care" },
+const categoryDefinitions = [
+  { id: "all", name: "All Posts", tags: [] },
+  { id: "study", name: "Study Stress", tags: ["#studyburnout", "#exams", "#academicpressure", "#stress"] },
+  { id: "anxiety", name: "Anxiety", tags: ["#anxiety"] },
+  { id: "relationships", name: "Relationships", tags: ["#relationships", "#loneliness"] },
+  { id: "self-care", name: "Self-Care", tags: ["#selfcare", "#mindfulness", "#sleep"] },
 ];
 
 const trending = ["#Exams", "#Anxiety", "#Mindfulness", "#StudyTips", "#SelfCare", "#Sleep"];
@@ -16,14 +16,14 @@ const basePosts = [
     pinned: true,
     title: "Welcome to the Well-being Community",
     author: "Moderator", initials: "MO", time: "Pinned",
-    excerpt: "This prototype feed demonstrates sharing and support. Posts created here remain in this browser.",
+    excerpt: "A safe, anonymous space to share, support, and grow. Please read our community guidelines before posting.",
     tags: ["#Announcement", "#Guidelines"], likes: 132,
     replies: [
       {
         author: "Peer Support Team",
         initials: "PS",
         time: "Pinned",
-        text: "This is example content. Moderation and urgent-safety review are not active in this prototype."
+        text: "Thanks for helping keep this space supportive. Reports and urgent safety concerns are reviewed by the team."
       },
       {
         author: "Anonymous Student",
@@ -135,18 +135,16 @@ function getAllPosts() {
   return [...pinned, ...userPosts, ...staticPosts];
 }
 
+let posts = getAllPosts();
 let focusPostId = getLatestPostId();
-let editingPostId = "";
-let savedRepliesByPost = loadSavedReplies();
+let activeCategoryId = "all";
+let searchQuery = "";
 
 const postsEl = document.getElementById("posts");
 const categoriesEl = document.getElementById("categories");
-const trendingEl = document.getElementById("trending");
-const searchEl = document.getElementById("forumSearch");
-const filterStatusEl = document.getElementById("filterStatus");
+const searchInput = document.getElementById("postSearch");
 const expandedPostIds = new Set();
-const demoReports = new Set();
-const filters = { query: "", category: "all", tag: "" };
+let savedRepliesByPost = loadSavedReplies();
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, char => ({
@@ -171,7 +169,7 @@ function saveReplies() {
   try {
     localStorage.setItem(COMMUNITY_REPLIES_STORAGE_KEY, JSON.stringify(savedRepliesByPost));
   } catch {
-    // Keep the reply visible in this page even if browser storage is unavailable.
+    // The reply still appears for the current render even if storage is unavailable.
   }
 }
 
@@ -187,67 +185,23 @@ function getReplyLabel(count) {
   return `${count} ${count === 1 ? "reply" : "replies"}`;
 }
 
-function isUserPost(post) {
-  return post.userPublished === true;
-}
-
-function matchesCategory(post, category) {
-  if (category === "all") {
+function categoryMatches(post, categoryId) {
+  if (categoryId === "all") {
     return true;
   }
 
-  const searchable = `${post.title} ${post.excerpt} ${post.tags.join(" ")}`.toLowerCase();
-  const terms = {
-    study: ["study", "exam", "academic", "stress", "burnout"],
-    anxiety: ["anxiety", "anxious"],
-    relationships: ["relationship", "loneliness", "friends", "lonely"],
-    "self-care": ["mindfulness", "selfcare", "sleep", "breathing"]
-  };
-
-  return (terms[category] || []).some(term => searchable.includes(term));
+  const category = categoryDefinitions.find(item => item.id === categoryId);
+  const postTags = post.tags.map(tag => tag.toLowerCase());
+  return category ? category.tags.some(tag => postTags.includes(tag)) : true;
 }
 
-function matchesFilters(post) {
-  const query = filters.query.toLowerCase();
-  const searchable = [
-    post.title,
-    post.excerpt,
-    post.author,
-    post.tags.join(" "),
-    getReplies(post).map(reply => reply.text).join(" ")
-  ].join(" ").toLowerCase();
-
-  return (
-    (!query || searchable.includes(query)) &&
-    matchesCategory(post, filters.category) &&
-    (!filters.tag || post.tags.some(tag => tag.toLowerCase() === filters.tag.toLowerCase()))
-  );
-}
-
-function getReportStatus(key) {
-  return demoReports.has(key)
-    ? '<p class="demo-report-status" role="status">Report noted for this demo only. No moderation team has been notified.</p>'
-    : "";
-}
-
-function renderEditForm(post) {
-  if (editingPostId !== post.id) {
-    return "";
+function postMatchesSearch(post) {
+  if (!searchQuery) {
+    return true;
   }
 
-  return `
-    <form class="edit-post-form" data-post-id="${escapeHtml(post.id)}">
-      <label class="sr-only" for="editTitle-${escapeHtml(post.id)}">Edit title</label>
-      <input id="editTitle-${escapeHtml(post.id)}" name="title" maxlength="120" value="${escapeHtml(post.title)}">
-      <label class="sr-only" for="editContent-${escapeHtml(post.id)}">Edit content</label>
-      <textarea id="editContent-${escapeHtml(post.id)}" name="content" rows="4" maxlength="600">${escapeHtml(post.excerpt)}</textarea>
-      <p class="inline-error" data-edit-error hidden></p>
-      <div class="edit-actions">
-        <button class="reply-submit" type="submit">Save changes</button>
-        <button class="post-action-btn" type="button" data-action="cancel-edit">Cancel</button>
-      </div>
-    </form>
-  `;
+  const text = `${post.title} ${post.excerpt} ${post.author} ${post.tags.join(" ")}`.toLowerCase();
+  return text.includes(searchQuery);
 }
 
 function renderReplyThread(post, replies) {
@@ -265,6 +219,7 @@ function renderReplyThread(post, replies) {
       <span><i class="icon icon-message-square"></i> ${isExpanded ? "Hide replies" : `View ${replyLabel}`}</span>
       <i class="icon ${isExpanded ? "icon-chevron-up" : "icon-chevron-down"}" aria-hidden="true"></i>
     </button>
+
     <section
       class="reply-thread"
       id="replyThread-${escapeHtml(post.id)}"
@@ -273,29 +228,33 @@ function renderReplyThread(post, replies) {
     >
       <div class="reply-thread-head">
         <span>${replyLabel}</span>
-        <span>Anonymous means display name only; entries stay in this browser.</span>
+        <span>Replying as Anonymous Student</span>
       </div>
       <div class="reply-list">
-        ${replies.map((reply, index) => `
+        ${replies.map(reply => `
           <article class="reply-item">
             <div class="reply-avatar">${escapeHtml(reply.initials)}</div>
             <div class="reply-content">
               <div class="reply-meta">
                 <span>${escapeHtml(reply.author)}</span>
                 <span>${escapeHtml(reply.time)}</span>
-                <button class="reply-report-btn" type="button" data-action="report-reply" data-report-key="reply-${escapeHtml(post.id)}-${index}">Report (demo)</button>
               </div>
               <p>${escapeHtml(reply.text)}</p>
-              ${getReportStatus(`reply-${post.id}-${index}`)}
             </div>
           </article>
         `).join("")}
       </div>
       <form class="reply-form" data-post-id="${escapeHtml(post.id)}">
-        <label class="sr-only" for="replyInput-${escapeHtml(post.id)}">Reply with display name Anonymous Student</label>
-        <textarea class="reply-input" id="replyInput-${escapeHtml(post.id)}" name="reply" rows="2" maxlength="220" placeholder="Reply as Anonymous Student..."></textarea>
+        <label class="sr-only" for="replyInput-${escapeHtml(post.id)}">Reply anonymously</label>
+        <textarea
+          class="reply-input"
+          id="replyInput-${escapeHtml(post.id)}"
+          name="reply"
+          rows="2"
+          maxlength="220"
+          placeholder="Reply anonymously..."
+        ></textarea>
         <button class="reply-submit" type="submit">Post</button>
-        <p class="inline-error" data-reply-error hidden>Please enter a reply before posting.</p>
       </form>
     </section>
   `;
@@ -303,24 +262,23 @@ function renderReplyThread(post, replies) {
 
 function renderPosts() {
   const allPosts = getAllPosts();
-  const visiblePosts = allPosts.filter(matchesFilters);
-  const selectedCategory = categories.find(category => category.key === filters.category)?.name || "All Posts";
-  const selectedTag = filters.tag ? ` tagged ${filters.tag}` : "";
-  const queryText = filters.query ? ` matching "${filters.query}"` : "";
+  posts = allPosts.filter(post => categoryMatches(post, activeCategoryId) && postMatchesSearch(post));
 
-  filterStatusEl.textContent = `${visiblePosts.length} demo post${visiblePosts.length === 1 ? "" : "s"} shown in ${selectedCategory}${selectedTag}${queryText}.`;
-
-  if (visiblePosts.length === 0) {
-    postsEl.innerHTML = '<div class="posts-empty">No demo posts match these filters. Clear a filter or try another search.</div>';
+  if (posts.length === 0) {
+    postsEl.innerHTML = '<div class="posts-empty">No posts match this category or search.</div>';
     return;
   }
 
-  postsEl.innerHTML = visiblePosts.map(post => {
+  postsEl.innerHTML = posts.map(post => {
     const replies = getReplies(post);
     const isFocused = focusPostId === post.id;
 
     return `
-      <article class="post ${post.image ? "post-with-media" : ""} ${isFocused ? "post-highlight" : ""}" id="post-${escapeHtml(post.id)}" data-post-id="${escapeHtml(post.id)}">
+      <article
+        class="post ${post.image ? "post-with-media" : ""} ${isFocused ? "post-highlight" : ""}"
+        id="post-${escapeHtml(post.id)}"
+        data-post-id="${escapeHtml(post.id)}"
+      >
         <div class="avatar-circle">${escapeHtml(post.initials)}</div>
         <div class="post-body">
           <div class="post-meta">
@@ -332,20 +290,15 @@ function renderPosts() {
           <div class="post-tags">${post.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
           <div class="post-actions">
             <span><i class="icon icon-message-square"></i> ${getReplyLabel(replies.length)}</span>
-            <span><i class="icon icon-heart"></i> ${post.likes} demo likes</span>
+            <span><i class="icon icon-heart"></i> ${post.likes} likes</span>
           </div>
-          <div class="post-management">
-            <button class="post-action-btn" type="button" data-action="report-post" data-report-key="post-${escapeHtml(post.id)}">Report post (demo)</button>
-            ${isUserPost(post) ? `
-              <button class="post-action-btn" type="button" data-action="edit-post" data-post-id="${escapeHtml(post.id)}">Edit local post</button>
-              <button class="post-action-btn" type="button" data-action="delete-post" data-post-id="${escapeHtml(post.id)}">Delete local post</button>
-            ` : ""}
-          </div>
-          ${getReportStatus(`post-${post.id}`)}
-          ${renderEditForm(post)}
           ${renderReplyThread(post, replies)}
         </div>
-        ${post.image ? `<figure class="post-media"><img src="${post.image.src}" alt="${escapeHtml(post.image.alt)}" loading="lazy"></figure>` : ""}
+        ${post.image ? `
+          <figure class="post-media">
+            <img src="${post.image.src}" alt="${escapeHtml(post.image.alt)}" loading="lazy">
+          </figure>
+        ` : ""}
       </article>
     `;
   }).join("");
@@ -353,10 +306,10 @@ function renderPosts() {
 
 function renderCategories() {
   const allPosts = getAllPosts();
-  categoriesEl.innerHTML = categories.map(category => {
-    const count = allPosts.filter(post => matchesCategory(post, category.key)).length;
+  categoriesEl.innerHTML = categoryDefinitions.map(category => {
+    const count = allPosts.filter(post => categoryMatches(post, category.id)).length;
     return `
-      <li><button class="cat-btn ${filters.category === category.key ? "active" : ""}" type="button" data-category="${category.key}" aria-pressed="${filters.category === category.key}">
+      <li><button class="cat-btn ${category.id === activeCategoryId ? "active" : ""}" type="button" data-category="${category.id}" aria-pressed="${category.id === activeCategoryId}">
         <span>${escapeHtml(category.name)}</span><span class="cat-count">${count}</span>
       </button></li>
     `;
@@ -364,133 +317,100 @@ function renderCategories() {
 }
 
 function renderTrending() {
-  trendingEl.innerHTML = trending.map(tag => `
-    <button class="tag tag-accent ${filters.tag === tag ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}" aria-pressed="${filters.tag === tag}">${escapeHtml(tag)}</button>
-  `).join("");
+  document.getElementById("trending").innerHTML =
+    trending.map(tag => `<span class="tag tag-accent">${escapeHtml(tag)}</span>`).join("");
 }
 
-searchEl.addEventListener("input", () => {
-  filters.query = searchEl.value.trim();
-  renderPosts();
-});
-
-categoriesEl.addEventListener("click", event => {
-  const button = event.target.closest("[data-category]");
-  if (!button) return;
-  filters.category = button.dataset.category;
-  renderCategories();
-  renderPosts();
-});
-
-trendingEl.addEventListener("click", event => {
-  const button = event.target.closest("[data-tag]");
-  if (!button) return;
-  filters.tag = filters.tag === button.dataset.tag ? "" : button.dataset.tag;
-  renderTrending();
-  renderPosts();
-});
-
 postsEl.addEventListener("click", event => {
-  const button = event.target.closest("[data-action], .reply-toggle");
-  if (!button) return;
-
-  if (button.classList.contains("reply-toggle")) {
-    const postId = button.dataset.postId;
-    expandedPostIds.has(postId) ? expandedPostIds.delete(postId) : expandedPostIds.add(postId);
-    renderPosts();
+  const toggleButton = event.target instanceof Element ? event.target.closest(".reply-toggle") : null;
+  if (!toggleButton) {
     return;
   }
 
-  const action = button.dataset.action;
-  const postId = button.dataset.postId;
-
-  if (action === "report-post" || action === "report-reply") {
-    demoReports.add(button.dataset.reportKey);
-    renderPosts();
-    return;
-  }
-
-  if (action === "edit-post") {
-    editingPostId = postId;
-    renderPosts();
-    document.getElementById(`editTitle-${postId}`)?.focus();
-    return;
-  }
-
-  if (action === "cancel-edit") {
-    editingPostId = "";
-    renderPosts();
-    return;
-  }
-
-  if (action === "delete-post" && window.confirm("Delete this post from this browser? This cannot be undone.")) {
-    deleteUserPost(postId);
-    delete savedRepliesByPost[postId];
-    saveReplies();
+  const postId = toggleButton.dataset.postId;
+  if (expandedPostIds.has(postId)) {
     expandedPostIds.delete(postId);
-    editingPostId = "";
-    renderCategories();
-    renderPosts();
+  } else {
+    expandedPostIds.add(postId);
   }
+
+  renderPosts();
 });
 
 postsEl.addEventListener("submit", event => {
-  const replyForm = event.target.closest(".reply-form");
-  const editForm = event.target.closest(".edit-post-form");
-  if (!replyForm && !editForm) return;
-  event.preventDefault();
-
-  if (editForm) {
-    const title = editForm.elements.title.value.trim();
-    const content = editForm.elements.content.value.trim();
-    const error = editForm.querySelector("[data-edit-error]");
-    if (!title || !content) {
-      error.textContent = "Title and content are required before saving.";
-      error.hidden = false;
-      (!title ? editForm.elements.title : editForm.elements.content).focus();
-      return;
-    }
-    if (!updateUserPost(editForm.dataset.postId, { title, excerpt: content })) {
-      error.textContent = "This local post could not be saved in this browser.";
-      error.hidden = false;
-      return;
-    }
-    editingPostId = "";
-    renderPosts();
+  const form = event.target.closest(".reply-form");
+  if (!form) {
     return;
   }
 
-  const postId = replyForm.dataset.postId;
-  const input = replyForm.elements.reply;
-  const error = replyForm.querySelector("[data-reply-error]");
+  event.preventDefault();
+
+  const postId = form.dataset.postId;
+  const input = form.elements.reply;
   const text = input.value.trim();
+
   if (!text) {
-    error.hidden = false;
     input.focus();
     return;
   }
 
   savedRepliesByPost = {
     ...savedRepliesByPost,
-    [postId]: [...getSavedReplies(postId), { author: "Anonymous Student", initials: "AS", time: "Just now", text }]
+    [postId]: [
+      ...getSavedReplies(postId),
+      {
+        author: "Anonymous Student",
+        initials: "AS",
+        time: "Just now",
+        text
+      }
+    ]
   };
+
   saveReplies();
   expandedPostIds.add(postId);
   renderPosts();
+  document.getElementById(`replyInput-${postId}`)?.focus();
 });
 
+categoriesEl.addEventListener("click", event => {
+  const button = event.target instanceof Element ? event.target.closest(".cat-btn") : null;
+  if (!button) {
+    return;
+  }
+
+  activeCategoryId = button.dataset.category || "all";
+  renderCategories();
+  renderPosts();
+});
+
+searchInput.addEventListener("input", event => {
+  searchQuery = event.target.value.trim().toLowerCase();
+  renderPosts();
+});
+
+renderPosts();
 renderCategories();
 renderTrending();
-renderPosts();
 
 function focusPublishedPost() {
-  if (!focusPostId) return;
+  if (!focusPostId) {
+    return;
+  }
+
   const targetId = focusPostId;
   focusPostId = null;
+
   const postElement = document.getElementById(`post-${targetId}`);
-  if (!postElement) return;
+  if (!postElement) {
+    return;
+  }
+
   postElement.scrollIntoView({ behavior: "smooth", block: "center" });
-  window.setTimeout(() => postElement.classList.remove("post-highlight"), 3200);
+
+  window.setTimeout(() => {
+    postElement.classList.remove("post-highlight");
+  }, 3200);
 }
 
 requestAnimationFrame(focusPublishedPost);

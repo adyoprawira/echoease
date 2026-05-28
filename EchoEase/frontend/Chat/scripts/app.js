@@ -1,28 +1,29 @@
 (function () {
   const WELLBEING_NOTIFICATIONS_KEY = "wellbeingNotifications";
-  const VALID_NOTIFICATION_TYPES = ["queue", "schedule", "chat", "system"];
+  const VALID_NOTIFICATION_TYPES = ["queue", "schedule", "chat", "community", "wellbeing", "system"];
   const NOTIFICATION_REFRESH_INTERVAL_MS = 2000;
+  const PROFILE_SETTINGS_KEY = "wellbeingProfileSettings";
 
   const DEFAULT_NOTIFICATIONS = [
     {
-      id: "default-queue-updates",
-      message: "Your queue position updates will appear here.",
-      type: "system",
-      unread: false,
+      id: "demo-community-reply",
+      message: "Someone responded to your support post.",
+      type: "community",
+      unread: true,
       timestamp: null
     },
     {
-      id: "default-session-reminders",
-      message: "Scheduled session reminders will appear here.",
-      type: "system",
-      unread: false,
+      id: "demo-mindfulness-reminder",
+      message: "Take a 3 minute breathing break today.",
+      type: "wellbeing",
+      unread: true,
       timestamp: null
     },
     {
-      id: "default-emergency-alerts",
-      message: "Emergency alerts will appear here.",
-      type: "system",
-      unread: false,
+      id: "demo-workshop-reminder",
+      message: "Stress Management Workshop starts tomorrow at 2:00 PM.",
+      type: "schedule",
+      unread: true,
       timestamp: null
     }
   ];
@@ -40,6 +41,13 @@
   const profileCloseActionBtn = document.getElementById("profileCloseActionBtn");
   const copyProfileEmailBtn = document.getElementById("copyProfileEmailBtn");
   const copyStudentIdBtn = document.getElementById("copyStudentIdBtn");
+  const bottomActionButtons = Array.from(document.querySelectorAll(".bottom-item"));
+  const settingsButtons = bottomActionButtons.filter(function (button) {
+    return button.textContent.trim() === "Settings";
+  });
+  const helpButtons = bottomActionButtons.filter(function (button) {
+    return button.textContent.trim() === "Help";
+  });
 
   const quickExitButtons = [
     document.getElementById("quickExitTop"),
@@ -50,6 +58,8 @@
   let toastStack = document.getElementById("toastStack");
   let panelTrigger = null;
   let modalTrigger = null;
+  let utilityTrigger = null;
+  let utilityModal = null;
 
   let knownUnreadIds = new Set();
 
@@ -185,6 +195,16 @@
     }
   }
 
+  function initializeNotifications() {
+    try {
+      if (localStorage.getItem(WELLBEING_NOTIFICATIONS_KEY) === null) {
+        writeStoredNotifications(DEFAULT_NOTIFICATIONS);
+      }
+    } catch (error) {
+      // Fall through to display defaults if storage is unavailable.
+    }
+  }
+
   function getNotifications() {
     return readStoredNotifications();
   }
@@ -213,6 +233,8 @@
       queue: "Queue",
       schedule: "Schedule",
       chat: "Chat",
+      community: "Community",
+      wellbeing: "Well-being",
       system: "System"
     };
 
@@ -372,6 +394,7 @@
     }
 
     closeProfileModal(false);
+    closeUtilityModal(false);
     notificationPanel.hidden = false;
     panelTrigger = triggerEl || notificationButton;
 
@@ -406,12 +429,164 @@
     }
 
     closeNotificationPanel(false);
+    closeUtilityModal(false);
     profileModal.hidden = false;
     modalTrigger = triggerEl || profileButton;
 
     if (closeProfileModalBtn) {
       closeProfileModalBtn.focus();
     }
+  }
+
+  function readProfileSettings() {
+    const fallback = {
+      displayName: "Darren Marcello",
+      anonymousByDefault: true
+    };
+
+    try {
+      const parsed = JSON.parse(localStorage.getItem(PROFILE_SETTINGS_KEY) || "null");
+      if (!parsed || typeof parsed !== "object") {
+        return fallback;
+      }
+
+      return {
+        displayName: typeof parsed.displayName === "string" && parsed.displayName.trim()
+          ? parsed.displayName.trim().slice(0, 40)
+          : fallback.displayName,
+        anonymousByDefault: parsed.anonymousByDefault !== false
+      };
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  function ensureUtilityModals() {
+    if (document.getElementById("settingsModal") && document.getElementById("helpModal")) {
+      return;
+    }
+
+    const container = document.createElement("div");
+    container.innerHTML = `
+      <div class="mvp-modal-backdrop" id="settingsModal" hidden>
+        <div class="mvp-modal-card utility-modal-card" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+          <button class="mvp-modal-close" type="button" data-close-utility aria-label="Close profile settings">Close</button>
+          <h2 id="settingsModalTitle">Profile Settings</h2>
+          <p class="utility-intro">Set preferences used when you create a community post in this prototype.</p>
+          <form class="settings-form" id="profileSettingsForm">
+            <label for="settingsDisplayName">Forum display name when posting publicly</label>
+            <input id="settingsDisplayName" name="displayName" type="text" maxlength="40" required>
+            <label class="setting-check">
+              <input id="settingsAnonymousDefault" name="anonymousByDefault" type="checkbox">
+              <span>Post anonymously by default</span>
+            </label>
+            <div class="mvp-modal-actions">
+              <button class="mvp-modal-btn" type="button" data-close-utility>Cancel</button>
+              <button class="mvp-modal-btn primary" type="submit">Save Settings</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mvp-modal-backdrop" id="helpModal" hidden>
+        <div class="mvp-modal-card utility-modal-card" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+          <button class="mvp-modal-close" type="button" data-close-utility aria-label="Close help">Close</button>
+          <h2 id="helpModalTitle">Help &amp; FAQ</h2>
+          <p class="utility-intro">How to use the UQ Student Well-being prototype.</p>
+          <ol class="help-steps">
+            <li>Browse <strong>Community</strong> to read posts, filter topics, or share a post anonymously.</li>
+            <li>Choose <strong>Chat</strong> to connect with an available support option.</li>
+            <li>Open <strong>Resources</strong> for university services and urgent support details.</li>
+          </ol>
+          <div class="faq-list" aria-label="Frequently asked questions">
+            <details>
+              <summary>Is my community post anonymous?</summary>
+              <p>Keep the anonymous toggle enabled before publishing. Your name is then hidden from the forum feed.</p>
+            </details>
+            <details>
+              <summary>Where can I find immediate help?</summary>
+              <p>Use Resources or the crisis panel. In immediate danger in Australia, call 000.</p>
+            </details>
+            <details>
+              <summary>Can I attach a photo to a post?</summary>
+              <p>Yes. Select an image in Create New Post and add a short description before publishing.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    `;
+
+    while (container.firstElementChild) {
+      document.body.appendChild(container.firstElementChild);
+    }
+
+    const settingsForm = document.getElementById("profileSettingsForm");
+    settingsForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const settings = {
+        displayName: settingsForm.elements.displayName.value.trim() || "Darren Marcello",
+        anonymousByDefault: settingsForm.elements.anonymousByDefault.checked
+      };
+
+      try {
+        localStorage.setItem(PROFILE_SETTINGS_KEY, JSON.stringify(settings));
+      } catch (error) {
+        showToast("Settings could not be saved in this browser.");
+        return;
+      }
+
+      window.dispatchEvent(new CustomEvent("profile-settings-saved", { detail: settings }));
+      closeUtilityModal(true);
+      showToast("Profile settings saved.");
+    });
+
+    document.querySelectorAll("[data-close-utility]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        closeUtilityModal(true);
+      });
+    });
+
+    ["settingsModal", "helpModal"].forEach(function (id) {
+      const modal = document.getElementById(id);
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeUtilityModal(true);
+        }
+      });
+    });
+  }
+
+  function closeUtilityModal(returnFocus) {
+    if (!utilityModal || utilityModal.hidden) {
+      return;
+    }
+
+    const lastTrigger = utilityTrigger;
+    utilityModal.hidden = true;
+    utilityModal = null;
+    utilityTrigger = null;
+
+    if (returnFocus && lastTrigger) {
+      lastTrigger.focus();
+    }
+  }
+
+  function openUtilityModal(id, triggerEl) {
+    ensureUtilityModals();
+    closeNotificationPanel(false);
+    closeProfileModal(false);
+    closeUtilityModal(false);
+
+    utilityModal = document.getElementById(id);
+    utilityTrigger = triggerEl;
+    utilityModal.hidden = false;
+
+    if (id === "settingsModal") {
+      const settings = readProfileSettings();
+      document.getElementById("settingsDisplayName").value = settings.displayName;
+      document.getElementById("settingsAnonymousDefault").checked = settings.anonymousByDefault;
+    }
+
+    utilityModal.querySelector(".mvp-modal-close").focus();
   }
 
   function syncNotifications(showNewUnreadToasts) {
@@ -503,7 +678,7 @@
 
   if (copyProfileEmailBtn) {
     copyProfileEmailBtn.addEventListener("click", function () {
-      copyText("alex.example@demo.invalid")
+      copyText("darrenms7120@gmail.com")
         .then(function () {
           showToast("Email copied.");
         })
@@ -515,7 +690,7 @@
 
   if (copyStudentIdBtn) {
     copyStudentIdBtn.addEventListener("click", function () {
-      copyText("demo-student-001")
+      copyText("s4980052")
         .then(function () {
           showToast("Student ID copied.");
         })
@@ -525,6 +700,20 @@
     });
   }
 
+  settingsButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      openUtilityModal("settingsModal", button);
+    });
+  });
+
+  helpButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      openUtilityModal("helpModal", button);
+    });
+  });
+
   document.addEventListener("keydown", function (event) {
     if (event.key !== "Escape") {
       return;
@@ -532,6 +721,11 @@
 
     if (notificationPanel && !notificationPanel.hidden) {
       closeNotificationPanel(true);
+      return;
+    }
+
+    if (utilityModal && !utilityModal.hidden) {
+      closeUtilityModal(true);
       return;
     }
 
@@ -554,15 +748,11 @@
 
   quickExitButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      if (window.EchoEaseSafety && typeof window.EchoEaseSafety.quickExit === "function") {
-        window.EchoEaseSafety.quickExit();
-        return;
-      }
-
-      window.location.href = "../../Landing%20Page/blackboard.html";
+      window.location.href = button.dataset.quickExitUrl || "../../Landing%20Page/blackboard.html";
     });
   });
 
+  initializeNotifications();
   syncNotifications(false);
 
   window.mvpApp = {
